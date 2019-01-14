@@ -74,8 +74,9 @@ alert ('asf v2');
 	    
             console.log('Наименование здания: %s', firstGeoObject.getPremise() || '-');
             console.log('Номер здания: %s', firstGeoObject.getPremiseNumber() || '-');
-	 
-            alert ("Адрес объекта: %s " + firstGeoObject.getCountry()+","+firstGeoObject.getLocalities().join(', ')+","+firstGeoObject.getAddressLine()+","+firstGeoObject.getPremise() || "-"+ firstGeoObject.getPremiseNumber() || '-');
+	 	var Zdanie = firstGeoObject.getPremise() || '-';
+	 	var NZdanie = firstGeoObject.getPremiseNumber() || '-';
+            alert ("Государство: %s " + firstGeoObject.getCountry()+", Населенный пункт "+firstGeoObject.getLocalities().join(', ')+", Адрес объекта: "+firstGeoObject.getAddressLine()+", Наименование здания: "+Zdanie+ ", Номер здания" + NZdanie);
 
             /**
              * Если нужно добавить по найденным геокодером координатам метку со своими стилями и контентом балуна, создаем новую метку по координатам найденной и добавляем ее на карту вместо найденной.
