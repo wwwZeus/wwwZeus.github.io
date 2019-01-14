@@ -1,12 +1,12 @@
-function init () {
+function init (gg,wp,point) {
     var map = new ymaps.Map('map', {
             center: [57.626273, 39.894102],
-            zoom: 4 //gg*wp 
+            zoom: gg*wp
 			//controls: ['zoomControl']
         });
 	//map.setZoom(5);
-alert ('asf');
- ymaps.geocode('Ярославль', {
+alert ('asf v2');
+ ymaps.geocode(point, {
         /**
          * Опции запроса
          * @see https://api.yandex.ru/maps/doc/jsapi/2.1/ref/reference/geocode.xml
@@ -85,7 +85,6 @@ alert ('asf');
              }, {
              preset: 'islands#violetStretchyIcon'
              });
-
              map.geoObjects.add(myPlacemark);
             */ 
         });
@@ -100,7 +99,6 @@ alert ('asf');
     ]
 	}
 );
-
 multiRouteKO.model.events.add("requestsuccess", function (event) {
 	A=multiRouteKO.getRoutes().get(0).properties.get("distance").value;
 	alert ((A*0.001).toFixed());
@@ -169,5 +167,5 @@ function drawOutput(lines){
 	}
 	document.getElementById("output").appendChild(table);
 	alert ('DRAW');
-	ymaps.ready(init);
+	ymaps.ready(init(4,2,'Тула'));
 } 
