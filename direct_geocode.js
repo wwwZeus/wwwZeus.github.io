@@ -7,7 +7,7 @@ function init() {
     });
 
     //Точка на карте.
-    var myGeocoder = ymaps.geocode("Minsk");
+    var myGeocoder = ymaps.geocode("Yaroslavl");
 myGeocoder.then(
     
     function (res) {
