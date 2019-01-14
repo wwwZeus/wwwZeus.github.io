@@ -7,7 +7,7 @@ function init() {
     });
 
     //Точка на карте.
-    var myGeocoder = ymaps.geocode("Ярославль, ул. Чехова 17-2 ");
+    var myGeocoder = ymaps.geocode("г. Ярославль, ул. Чехова 17-2 ");
 myGeocoder.then(
     
     function (res) {
