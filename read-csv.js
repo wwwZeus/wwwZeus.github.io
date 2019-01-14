@@ -19,7 +19,6 @@ alert ('asf v2');
         results: 1
     }).then(function (res) {
             // Выбираем первый результат геокодирования.
-			alert ('FF');
             var firstGeoObject = res.geoObjects.get(0),
                 // Координаты геообъекта.
                 coords = firstGeoObject.geometry.getCoordinates(),
@@ -72,6 +71,7 @@ alert ('asf v2');
             console.log('\nГосударство: %s', firstGeoObject.getCountry());
             console.log('Населенный пункт: %s', firstGeoObject.getLocalities().join(', '));
             console.log('Адрес объекта: %s', firstGeoObject.getAddressLine());
+	    alert (firstGeoObject.getAddressLine());
             console.log('Наименование здания: %s', firstGeoObject.getPremise() || '-');
             console.log('Номер здания: %s', firstGeoObject.getPremiseNumber() || '-');
 
@@ -163,6 +163,7 @@ function drawOutput(lines){
 		for (var j = 0; j < lines[i].length; j++) {
 			var firstNameCell = row.insertCell(-1);
 			firstNameCell.appendChild(document.createTextNode(lines[i][j]));
+			alert (document.createTextNode(lines[i][j]));
 		}
 	}
 	document.getElementById("output").appendChild(table);
