@@ -163,7 +163,7 @@ function drawOutput(lines){
 		for (var j = 0; j < lines[i].length; j++) {
 			var firstNameCell = row.insertCell(-1);
 			firstNameCell.appendChild(document.createTextNode(lines[i][j]));
-			alert (document.createTextNode(lines[i][j]));
+			//alert (document.createTextNode(lines[i][j]));
 		}
 	}
 	document.getElementById("output").appendChild(table);
