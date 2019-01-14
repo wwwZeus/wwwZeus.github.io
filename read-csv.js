@@ -1,4 +1,4 @@
-function init (gg,wp,point) {
+function init (gg,wp,point,ret) {
     var map = new ymaps.Map('map', {
             center: [57.626273, 39.894102],
             zoom: gg*wp
@@ -173,6 +173,7 @@ function drawOutput(lines){
 	}
 	document.getElementById("output").appendChild(table);
 	alert ('DRAW');
-	zz=ymaps.ready(init(4,2,'г.Рязань у. Щорса, 30/34'));
-	alert (zz);
+	var ret='';
+	zz=ymaps.ready(init(4,2,'г.Рязань у. Щорса, 30/34',ret));
+	alert (ret);
 } 
