@@ -74,13 +74,13 @@ alert ('asf v2');
 	    
             console.log('Наименование здания: %s', firstGeoObject.getPremise() || '-');
             console.log('Номер здания: %s', firstGeoObject.getPremiseNumber() || '-');
-	 	var Zdanie = firstGeoObject.getPremise() || '-';
-	 	var NZdanie = firstGeoObject.getPremiseNumber() || '-';
+	    var Zdanie = firstGeoObject.getPremise() || '-';
+	    var NZdanie = firstGeoObject.getPremiseNumber() || '-';
 	 
             //alert ("Государство: " + firstGeoObject.getCountry()+", Населенный пункт: "+firstGeoObject.getLocalities().join(', ')+", Адрес объекта: "+firstGeoObject.getAddressLine()+", Наименование здания: "+Zdanie+ ", Номер здания: " + NZdanie);
 var Adress = "Государство: " + firstGeoObject.getCountry()+", Населенный пункт: "+firstGeoObject.getLocalities().join(', ')+", Адрес объекта: "+firstGeoObject.getAddressLine()+", Наименование здания: "+Zdanie+ ", Номер здания: " + NZdanie;
 	 ret = Adress;
-	alert ('Конец функции: ' + ret);	
+	alert ('Функция внутри: ' + ret);	
             /**
              * Если нужно добавить по найденным геокодером координатам метку со своими стилями и контентом балуна, создаем новую метку по координатам найденной и добавляем ее на карту вместо найденной.
              */
@@ -176,5 +176,5 @@ function drawOutput(lines){
 	alert ('DRAW');
 	var ret='';
 	ymaps.ready(init(4,2,'г.Рязань у. Щорса, 30/34',ret));
-	alert (ret);
+	alert ('Полный конец скипта: '+ret);
 } 
