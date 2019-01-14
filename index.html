@@ -1,0 +1,49 @@
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <title>HTML5 File API</title>
+</head>
+<body >
+  <div>
+    <form class="form-horizontal well">
+      <legend>
+        <h3>
+          <div id="title">HTML5 File API</div>
+        </h3>
+      </legend>
+      <fieldset>
+          <label for="csvFileInput"> <strong>CSV File:</strong>
+          </label>
+          <input type="file" id="csvFileInput" onchange="handleFiles(this.files)"
+          accept=".csv">
+        </div>
+      </fieldset>
+    </form>
+    <div id="output">
+    </div>
+  </div>
+  <br>
+  <br>
+  <footer>
+    <center>
+      <p>&copy; Йа</p>
+    </center>
+  </footer>
+
+  <!-- Le javascript
+    ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="read-csv.js"></script>
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=<68f100e4-adf6-43b2-aa7b-c59a6b17fdc1>&lang=ru_RU" type="text/javascript">
+  </script>
+      <style type="text/css">
+        html, body, #map {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+  <div id="map" style="width: 640px; height: 480px"></div>
+</body>
+</html>
