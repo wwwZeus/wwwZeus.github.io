@@ -71,9 +71,11 @@ alert ('asf v2');
             console.log('\nГосударство: %s', firstGeoObject.getCountry());
             console.log('Населенный пункт: %s', firstGeoObject.getLocalities().join(', '));
             console.log('Адрес объекта: %s', firstGeoObject.getAddressLine());
-	    alert ("Адрес объекта: %s" + firstGeoObject.getAddressLine());
+	    
             console.log('Наименование здания: %s', firstGeoObject.getPremise() || '-');
             console.log('Номер здания: %s', firstGeoObject.getPremiseNumber() || '-');
+	 
+            alert ("Адрес объекта: %s " + firstGeoObject.getCountry()+","+firstGeoObject.getLocalities().join(', ')+","+firstGeoObject.getAddressLine()+","+firstGeoObject.getPremise() || "-"+ firstGeoObject.getPremiseNumber() || '-');
 
             /**
              * Если нужно добавить по найденным геокодером координатам метку со своими стилями и контентом балуна, создаем новую метку по координатам найденной и добавляем ее на карту вместо найденной.
