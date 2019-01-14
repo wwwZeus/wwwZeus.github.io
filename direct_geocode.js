@@ -6,19 +6,19 @@ function init() {
         zoom: 3
     });
 
-    // Поиск координат центра Нижнего Новгорода.
-    var myGeocoder = ymaps.geocode("Vologda");
+    //РўРѕС‡РєР° РЅР° РєР°СЂС‚Рµ.
+    var myGeocoder = ymaps.geocode("Minsk");
 myGeocoder.then(
     
     function (res) {
-        alert('YES');
+        alert('СЋ-Р Рђ');
         myMap.geoObjects.add(res.geoObjects);
-        // Выведем в консоль данные, полученные в результате геокодирования объекта.
+        // Г‚Г»ГўГҐГ¤ГҐГ¬ Гў ГЄГ®Г­Г±Г®Г«Гј Г¤Г Г­Г­Г»ГҐ, ГЇГ®Г«ГіГ·ГҐГ­Г­Г»ГҐ Гў Г°ГҐГ§ГіГ«ГјГІГ ГІГҐ ГЈГҐГ®ГЄГ®Г¤ГЁГ°Г®ГўГ Г­ГЁГї Г®ГЎГєГҐГЄГІГ .
         console.log(res.geoObjects.get(0).properties.get('metaDataProperty').getAll());
     },
     function (err) {
         alert('NOT');
-        // Обработка ошибки.
+        // ГЋГЎГ°Г ГЎГ®ГІГЄГ  Г®ГёГЁГЎГЄГЁ.
     }
 );
 
