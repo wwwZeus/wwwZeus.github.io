@@ -171,5 +171,5 @@ function drawOutput(lines){
 	}
 	document.getElementById("output").appendChild(table);
 	alert ('DRAW');
-	ymaps.ready(init(4,2,'г.Рязань'));
+	ymaps.ready(init(4,2,'г.Рязань у. Щорса, 30/34'));
 } 
