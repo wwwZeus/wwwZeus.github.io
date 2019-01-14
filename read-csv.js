@@ -71,7 +71,7 @@ alert ('asf v2');
             console.log('\nГосударство: %s', firstGeoObject.getCountry());
             console.log('Населенный пункт: %s', firstGeoObject.getLocalities().join(', '));
             console.log('Адрес объекта: %s', firstGeoObject.getAddressLine());
-	    alert (firstGeoObject.getAddressLine());
+	    alert ('Адрес объекта: %s', firstGeoObject.getAddressLine());
             console.log('Наименование здания: %s', firstGeoObject.getPremise() || '-');
             console.log('Номер здания: %s', firstGeoObject.getPremiseNumber() || '-');
 
