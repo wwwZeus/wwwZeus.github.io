@@ -11,7 +11,7 @@ function init() {
 myGeocoder.then(
     
     function (res) {
-        alert('ю-РА');
+        alert('ю-РА v2');
         myMap.geoObjects.add(res.geoObjects);
         // Âûâåäåì â êîíñîëü äàííûå, ïîëó÷åííûå â ðåçóëüòàòå ãåîêîäèðîâàíèÿ îáúåêòà.
         console.log(res.geoObjects.get(0).properties.get('metaDataProperty').getAll());
