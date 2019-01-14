@@ -80,7 +80,7 @@ alert ('asf v2');
             //alert ("Государство: " + firstGeoObject.getCountry()+", Населенный пункт: "+firstGeoObject.getLocalities().join(', ')+", Адрес объекта: "+firstGeoObject.getAddressLine()+", Наименование здания: "+Zdanie+ ", Номер здания: " + NZdanie);
 var Adress = "Государство: " + firstGeoObject.getCountry()+", Населенный пункт: "+firstGeoObject.getLocalities().join(', ')+", Адрес объекта: "+firstGeoObject.getAddressLine()+", Наименование здания: "+Zdanie+ ", Номер здания: " + NZdanie;
 	 ret = Adress;
-		
+	alert ('Конец функции: ' + ret);	
             /**
              * Если нужно добавить по найденным геокодером координатам метку со своими стилями и контентом балуна, создаем новую метку по координатам найденной и добавляем ее на карту вместо найденной.
              */
@@ -111,7 +111,7 @@ multiRouteKO.model.events.add("requestsuccess", function (event) {
 }); */
 
 //map.geoObjects.add(multiRouteKO);
-alert ('Конец функции: ' + ret)
+alert ('Конец функции: ' + ret);
 }        
 
 function handleFiles(files) {
@@ -175,6 +175,6 @@ function drawOutput(lines){
 	document.getElementById("output").appendChild(table);
 	alert ('DRAW');
 	var ret='';
-	zz=ymaps.ready(init(4,2,'г.Рязань у. Щорса, 30/34',ret));
+	ymaps.ready(init(4,2,'г.Рязань у. Щорса, 30/34',ret));
 	alert (ret);
 } 
