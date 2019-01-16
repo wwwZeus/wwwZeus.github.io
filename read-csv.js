@@ -85,7 +85,7 @@ var Adress = "Государство: " + firstGeoObject.getCountry()+", Нас�
 	 
 	 	var theEl=document.getElementById("output");
 	 	alert (document.write(theEl.innerHTML));
-	theEl.innerHTML = document.write(theEl.innerHTML)+ret;	
+	theEl.innerHTML = document.write(theEl.innerHTML)+'<b>!!!</b>'+ret;	
             /**
              * Если нужно добавить по найденным геокодером координатам метку со своими стилями и контентом балуна, создаем новую метку по координатам найденной и добавляем ее на карту вместо найденной.
              */
