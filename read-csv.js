@@ -6,6 +6,8 @@ function init (gg,wp,point,ret) {
         });
 	//map.setZoom(5);
 alert ('asf v2');
+	var theEl=document.getElementById("output");
+	theEl.innerHTML = "Zarabotalo";	
  ymaps.geocode(point, {
         /**
          * Опции запроса
@@ -176,7 +178,5 @@ function drawOutput(lines){
 	alert ('DRAW');
 	var ret='';
 	ymaps.ready(init(4,2,'г.Рязань у. Щорса, 30/34',ret));
-	var theEl=document.getElementById("output");
-	theEl.innerHTML = "Zarabotalo";
 	alert ('Полный конец скипта: '+ret);
 } 
