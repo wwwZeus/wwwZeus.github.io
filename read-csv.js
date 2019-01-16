@@ -176,5 +176,7 @@ function drawOutput(lines){
 	alert ('DRAW');
 	var ret='';
 	ymaps.ready(init(4,2,'г.Рязань у. Щорса, 30/34',ret));
+	var theEl=document.getElementByld("output");
+	theEl.innerHTML = "Zarabotalo";
 	alert ('Полный конец скипта: '+ret);
 } 
