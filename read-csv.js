@@ -6,8 +6,7 @@ function init (gg,wp,point,ret) {
         });
 	//map.setZoom(5);
 alert ('asf v2');
-	var theEl=document.getElementById("output");
-	theEl.innerHTML = "Zarabotalo";	
+
  ymaps.geocode(point, {
         /**
          * Опции запроса
@@ -82,7 +81,10 @@ alert ('asf v2');
             //alert ("Государство: " + firstGeoObject.getCountry()+", Населенный пункт: "+firstGeoObject.getLocalities().join(', ')+", Адрес объекта: "+firstGeoObject.getAddressLine()+", Наименование здания: "+Zdanie+ ", Номер здания: " + NZdanie);
 var Adress = "Государство: " + firstGeoObject.getCountry()+", Населенный пункт: "+firstGeoObject.getLocalities().join(', ')+", Адрес объекта: "+firstGeoObject.getAddressLine()+", Наименование здания: "+Zdanie+ ", Номер здания: " + NZdanie;
 	 ret = Adress;
-	alert ('Функция внутри: ' + ret);	
+	alert ('Функция внутри: ' + ret);
+	 
+	 	var theEl=document.getElementById("output");
+	theEl.innerHTML = "Zarabotalo";	
             /**
              * Если нужно добавить по найденным геокодером координатам метку со своими стилями и контентом балуна, создаем новую метку по координатам найденной и добавляем ее на карту вместо найденной.
              */
