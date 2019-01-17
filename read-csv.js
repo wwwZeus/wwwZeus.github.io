@@ -5,7 +5,7 @@ function init (gg,wp,point) {
 			//controls: ['zoomControl']
         });
 	//map.setZoom(5);
-alert ('asf v1.047');
+alert ('asf v1.048');
 
  ymaps.geocode(point, {
         /**
@@ -110,7 +110,7 @@ var Adress = "Координаты: " + firstGeoObject.geometry.getCoordinates()
 	 
 	 
         var theEl=document.getElementById("output");
-	//alert (document.write(theEl.innerHTML));
+	alert (document.write(theEl.innerHTML));
 	theEl.innerHTML = theEl.innerHTML+'<b>!!!</b>'+point+' = '+ret+'<br />'+'; Расстояние: '+(A*0.001).toFixed() + 'км.';
 	 
 	 
