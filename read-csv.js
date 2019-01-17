@@ -5,6 +5,7 @@ function init (gg,wp,point) {
 			//controls: ['zoomControl']
         });
 	//map.setZoom(5);
+	alert ('Яндекс');
  ymaps.geocode(point, {
         /**
          * Опции запроса
@@ -124,6 +125,7 @@ alert ('--Конец функции:--');
 }        
 
 function handleFiles(files) {
+	alert ('Еще какой-то файл');
 	// Check for the various File API support.
 	if (window.FileReader) {
 		// FileReader are supported.
@@ -134,6 +136,7 @@ function handleFiles(files) {
 }
 
 function getAsText(fileToRead) {
+	alert ('Чтение файла');
 	var reader = new FileReader();
 	// Read file into memory as UTF-8      
 	reader.readAsText(fileToRead);
@@ -143,11 +146,13 @@ function getAsText(fileToRead) {
 }
 
 function loadHandler(event) {
+	alert ('CSV2');
 	var csv = event.target.result;
 	processData(csv);             
 }
 
 function processData(csv) {
+    alert ('CSV');
     var allTextLines = csv.split(/\r\n|\n/);
     var lines = [];
     for (var i=0; i<allTextLines.length; i++) {
@@ -163,6 +168,7 @@ function processData(csv) {
 }
 
 function errorHandler(evt) {
+	alert ('Ошибки');
 	if(evt.target.error.name == "NotReadableError") {
 		alert("Canno't read file !");
 	}
@@ -170,7 +176,7 @@ function errorHandler(evt) {
 
 function drawOutput(lines){
 	//Clear previous data
-	alert ('юРА');
+	alert ('Вызов процедур');
 	alert ('asf v1.0498');
 	document.getElementById("output").innerHTML = "";
 	var table = document.createElement("table");
