@@ -5,7 +5,7 @@ function init (gg,wp,point) {
 			//controls: ['zoomControl']
         });
 	//map.setZoom(5);
-alert ('asf v1.0494');
+alert ('asf v1.0495');
 
  ymaps.geocode(point, {
         /**
@@ -106,7 +106,7 @@ var Adress = "Координаты: " + firstGeoObject.geometry.getCoordinates()
 	}
 	);
 	
-	var A = '';
+	//var A = '';
 	multiRouteKO.model.events.add("requestsuccess", function (event) {
 	A=multiRouteKO.getRoutes().get(0).properties.get("distance").value;
 	alert ((A*0.001).toFixed());
