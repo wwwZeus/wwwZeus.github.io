@@ -99,7 +99,7 @@ var Adress = "Координаты: " + firstGeoObject.geometry.getCoordinates()
 
 	 //--------------------------------------
         var theEl=document.getElementById("output");
-	alert (document.write(theEl.innerHTML));
+	//alert (document.write(theEl.innerHTML));
 	theEl.innerHTML = theEl.innerHTML+'<b>!!!</b>'+point+' = '+ret+'<br />'; //+'; Расстояние: '+(A*0.001).toFixed() + 'км.';
 	 var multiRouteKO = new ymaps.multiRouter.MultiRoute({   
    	 // Точки маршрута. Точки могут быть заданы как координатами, так и адресом. 
@@ -153,7 +153,7 @@ function getAsText(fileToRead) {
 }
 
 function loadHandler(event) {
-	alert ('CSV2');
+	//alert ('CSV2');
 	var csv = event.target.result;
 	processData(csv);             
 }
