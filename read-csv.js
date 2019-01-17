@@ -114,7 +114,7 @@ var Adress = "Координаты: " + firstGeoObject.geometry.getCoordinates()
 	alert ((A*0.001).toFixed());
 	});*/
 
- }
+ });
 	
 /* var multiRouteKO = new ymaps.multiRouter.MultiRoute({   
     // Точки маршрута. Точки могут быть заданы как координатами, так и адресом. 
