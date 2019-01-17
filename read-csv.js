@@ -125,7 +125,12 @@ var Adress = "Координаты: " + firstGeoObject.geometry.getCoordinates()
 	A=multiRouteKO.getRoutes().get(0).properties.get("distance").value;
 	alert ((A*0.001).toFixed());
 	});*/
-
+var map = new ymaps.Map('map', {
+            center: [57.626273, 39.894102],
+            zoom: gg*wp
+	    //controls: ['zoomControl']
+        });
+	 
  });
 	
 /* var multiRouteKO = new ymaps.multiRouter.MultiRoute({   
