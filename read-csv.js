@@ -95,8 +95,10 @@ var Adress = "Координаты: " + firstGeoObject.geometry.getCoordinates()
              map.geoObjects.add(myPlacemark);
             */ 
 	 
+	 
+	 --------------------------------------
 	var multiRouteKO = new ymaps.multiRouter.MultiRoute({   
-    // Точки маршрута. Точки могут быть заданы как координатами, так и адресом. 
+    	// Точки маршрута. Точки могут быть заданы как координатами, так и адресом. 
   	  referencePoints: [
         [57.626273, 39.894102], //Ярославль
         firstGeoObject.geometry.getCoordinates() //Точка запроса
@@ -111,8 +113,9 @@ var Adress = "Координаты: " + firstGeoObject.geometry.getCoordinates()
  	});
 	 
 	//A=multiRouteKO.getRoutes().get(0).properties.get("distance").value;
-	 alert(multiRouteKO.getRoutes().get(0).properties.get("distance").value);
+	//alert(multiRouteKO.getRoutes().get(0).properties.get("distance").value);
 	//alert ((A*0.001).toFixed()); 
+	 --------------------------------------
         var theEl=document.getElementById("output");
 	alert (document.write(theEl.innerHTML));
 	theEl.innerHTML = theEl.innerHTML+'<b>!!!</b>'+point+' = '+ret+'<br />'; //+'; Расстояние: '+(A*0.001).toFixed() + 'км.';
