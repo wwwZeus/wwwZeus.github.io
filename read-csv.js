@@ -5,7 +5,7 @@ function init (gg,wp,point) {
 			//controls: ['zoomControl']
         });
 	//map.setZoom(5);
-alert ('asf v1.0495');
+alert ('asf v1.0496');
 
  ymaps.geocode(point, {
         /**
@@ -97,24 +97,7 @@ var Adress = "Координаты: " + firstGeoObject.geometry.getCoordinates()
 	 
 	 
 	 --------------------------------------
-	var multiRouteKO = new ymaps.multiRouter.MultiRoute({   
-    	// Точки маршрута. Точки могут быть заданы как координатами, так и адресом. 
-  	  referencePoints: [
-        [57.626273, 39.894102], //Ярославль
-        firstGeoObject.geometry.getCoordinates() //Точка запроса
-  	  ]
-	}
-	);
-	
-	//var A = '';
-	multiRouteKO.model.events.add("requestsuccess", function (event) {
-	A=multiRouteKO.getRoutes().get(0).properties.get("distance").value;
-	alert ((A*0.001).toFixed());
- 	});
-	 
-	//A=multiRouteKO.getRoutes().get(0).properties.get("distance").value;
-	//alert(multiRouteKO.getRoutes().get(0).properties.get("distance").value);
-	//alert ((A*0.001).toFixed()); 
+
 	 --------------------------------------
         var theEl=document.getElementById("output");
 	alert (document.write(theEl.innerHTML));
@@ -129,7 +112,7 @@ var Adress = "Координаты: " + firstGeoObject.geometry.getCoordinates()
     // Точки маршрута. Точки могут быть заданы как координатами, так и адресом. 
     referencePoints: [
         [57.626273, 39.894102], //Ярославль
-        [57.768087, 40.926583] //Кострома
+        firstGeoObject.geometry.getCoordinates()  //Кострома
     ]
 	}
 );
