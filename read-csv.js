@@ -1,9 +1,9 @@
 function init (gg,wp,point) {
-    var map = new ymaps.Map('map', {
+    /*var map = new ymaps.Map('map', {
             center: [57.626273, 39.894102],
             zoom: gg*wp
 			//controls: ['zoomControl']
-        });
+        });*/
 	//map.setZoom(5);
 	//alert ('Яндекс');
  ymaps.geocode(point, {
