@@ -111,6 +111,7 @@ var Adress = "Координаты: " + firstGeoObject.geometry.getCoordinates()
  	});
 	 
 	//A=multiRouteKO.getRoutes().get(0).properties.get("distance").value;
+	 alert(multiRouteKO.getRoutes().get(0).properties.get("distance").value);
 	//alert ((A*0.001).toFixed()); 
         var theEl=document.getElementById("output");
 	alert (document.write(theEl.innerHTML));
