@@ -5,7 +5,7 @@ function init (gg,wp,point) {
 			//controls: ['zoomControl']
         });
 	//map.setZoom(5);
-alert ('asf v2');
+alert ('asf v1.041');
 
  ymaps.geocode(point, {
         /**
@@ -180,7 +180,7 @@ function drawOutput(lines){
 	document.getElementById("output").appendChild(table);
 	alert ('DRAW');
 	//var ret='';
-	//ymaps.ready(init(4,2,'г.Рязань у. Щорса, 30/34'));
+	ymaps.ready(init(4,2,'г.Рязань у. Щорса, 30/34'));
 	ymaps.ready(init(4,2,'г.Ярославль пл. Труда, 2'));
 	alert ('Полный конец скипта');
 } 
