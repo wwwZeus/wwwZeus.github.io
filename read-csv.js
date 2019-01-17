@@ -5,7 +5,7 @@ function init (gg,wp,point) {
 			//controls: ['zoomControl']
         });
 	//map.setZoom(5);
-alert ('asf v1.045');
+alert ('asf v1.046');
 
  ymaps.geocode(point, {
         /**
@@ -98,6 +98,20 @@ var Adress = "Координаты: " + firstGeoObject.geometry.getCoordinates()
              });
              map.geoObjects.add(myPlacemark);
             */ 
+	 
+	 var multiRouteKO = new ymaps.multiRouter.MultiRoute({   
+    // Точки маршрута. Точки могут быть заданы как координатами, так и адресом. 
+  	  referencePoints: [
+        [57.626273, 39.894102], //Ярославль
+        firstGeoObject.geometry.getCoordinates() //Точка запроса
+  	  ]
+	}
+	);
+		multiRouteKO.model.events.add("requestsuccess", function (event) {
+	A=multiRouteKO.getRoutes().get(0).properties.get("distance").value;
+	alert ((A*0.001).toFixed());
+ 	});
+	 
         });
 
 
