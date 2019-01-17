@@ -127,7 +127,7 @@ var Adress = "Координаты: " + firstGeoObject.geometry.getCoordinates()
 	});*/
 var map = new ymaps.Map('map', {
             center: [57.626273, 39.894102],
-            zoom: gg*wp
+            zoom: 9 //gg*wp
 	    //controls: ['zoomControl']
         });
 	 
