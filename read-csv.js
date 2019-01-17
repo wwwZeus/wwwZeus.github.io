@@ -5,7 +5,7 @@ function init (gg,wp,point) {
 			//controls: ['zoomControl']
         });
 	//map.setZoom(5);
-alert ('asf v1.046');
+alert ('asf v1.047');
 
  ymaps.geocode(point, {
         /**
@@ -82,10 +82,6 @@ alert ('asf v1.046');
 var Adress = "Координаты: " + firstGeoObject.geometry.getCoordinates() + "; Государство: " + firstGeoObject.getCountry()+"; Населенный пункт: "+firstGeoObject.getLocalities().join(', ')+"; Адрес объекта: "+firstGeoObject.getAddressLine()+"; Наименование здания: "+Zdanie+ "; Номер здания: " + NZdanie;
 	var ret = Adress;
 	alert ('Функция внутри: ' + ret);
-	 
-	 	var theEl=document.getElementById("output");
-	 	alert (document.write(theEl.innerHTML));
-	theEl.innerHTML = theEl.innerHTML+'<b>!!!</b>'+point+' = '+ret+'<br />';	
             /**
              * Если нужно добавить по найденным геокодером координатам метку со своими стилями и контентом балуна, создаем новую метку по координатам найденной и добавляем ее на карту вместо найденной.
              */
@@ -109,8 +105,14 @@ var Adress = "Координаты: " + firstGeoObject.geometry.getCoordinates()
 	);
 		multiRouteKO.model.events.add("requestsuccess", function (event) {
 	A=multiRouteKO.getRoutes().get(0).properties.get("distance").value;
-	alert ((A*0.001).toFixed());
+	//alert ((A*0.001).toFixed());
  	});
+	 
+	 
+        var theEl=document.getElementById("output");
+	alert (document.write(theEl.innerHTML));
+	theEl.innerHTML = theEl.innerHTML+'<b>!!!</b>'+point+' = '+ret+'<br />'+'Расстояние: '+(A*0.001).toFixed() + 'км.';
+	 
 	 
         });
 
