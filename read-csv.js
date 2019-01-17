@@ -110,7 +110,7 @@ var Adress = "Координаты: " + firstGeoObject.geometry.getCoordinates()
 	 
 	 
         var theEl=document.getElementById("output");
-	alert (document.write(theEl.innerHTML));
+	//alert (document.write(theEl.innerHTML));
 	theEl.innerHTML = theEl.innerHTML+'<b>!!!</b>'+point+' = '+ret+'<br />'+'; Расстояние: '+(A*0.001).toFixed() + 'км.';
 	 
 	 
