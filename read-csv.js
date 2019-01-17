@@ -5,7 +5,7 @@ function init (gg,wp,point) {
 			//controls: ['zoomControl']
         });
 	//map.setZoom(5);
-alert ('asf v1.041');
+alert ('asf v1.042');
 
  ymaps.geocode(point, {
         /**
@@ -85,7 +85,7 @@ var Adress = "Государство: " + firstGeoObject.getCountry()+", Нас�
 	 
 	 	var theEl=document.getElementById("output");
 	 	alert (document.write(theEl.innerHTML));
-	theEl.innerHTML = theEl.innerHTML+'<b>!!!</b>'+ret;	
+	theEl.innerHTML = theEl.innerHTML+'<b>!!!</b>'+ret+' '+'\n';	
             /**
              * Если нужно добавить по найденным геокодером координатам метку со своими стилями и контентом балуна, создаем новую метку по координатам найденной и добавляем ее на карту вместо найденной.
              */
