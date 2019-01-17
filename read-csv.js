@@ -116,7 +116,7 @@ multiRouteKO.model.events.add("requestsuccess", function (event) {
 }); */
 
 //map.geoObjects.add(multiRouteKO);
-alert ('Конец функции: ' + ret);
+alert ('--Конец функции:--');
 }        
 
 function handleFiles(files) {
