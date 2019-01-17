@@ -5,8 +5,6 @@ function init (gg,wp,point) {
 			//controls: ['zoomControl']
         });
 	//map.setZoom(5);
-alert ('asf v1.0497');
-
  ymaps.geocode(point, {
         /**
          * Опции запроса
@@ -173,6 +171,7 @@ function errorHandler(evt) {
 function drawOutput(lines){
 	//Clear previous data
 	//alert ('юРА');
+	alert ('asf v1.0498');
 	document.getElementById("output").innerHTML = "";
 	var table = document.createElement("table");
 	for (var i = 0; i < lines.length; i++) {
