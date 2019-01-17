@@ -170,7 +170,7 @@ function errorHandler(evt) {
 
 function drawOutput(lines){
 	//Clear previous data
-	//alert ('юРА');
+	alert ('юРА');
 	alert ('asf v1.0498');
 	document.getElementById("output").innerHTML = "";
 	var table = document.createElement("table");
