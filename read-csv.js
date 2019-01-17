@@ -5,7 +5,7 @@ function init (gg,wp,point) {
 			//controls: ['zoomControl']
         });
 	//map.setZoom(5);
-alert ('asf v1.0493');
+alert ('asf v1.0494');
 
  ymaps.geocode(point, {
         /**
