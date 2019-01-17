@@ -200,6 +200,6 @@ function drawOutput(lines){
 	alert ('DRAW');
 	//var ret='';
 	//ymaps.ready(init(4,2,'г.Рязань у. Щорса, 30/34'));
-	//ymaps.ready(init(4,2,'г.Ярославль пл. Труда, 2'));
+	ymaps.ready(init(4,2,'г.Ярославль пл. Труда, 2'));
 	alert ('Полный конец скипта');
 } 
