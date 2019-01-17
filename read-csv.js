@@ -105,12 +105,12 @@ var Adress = "Координаты: " + firstGeoObject.geometry.getCoordinates()
 	);
 	
 	var A = '';
-	multiRouteKO.model.events.add("requestsuccess", function (event) {
+	var Route = multiRouteKO.model.events.add("requestsuccess", function (event) {
 	A=multiRouteKO.getRoutes().get(0).properties.get("distance").value;
 	//alert ((A*0.001).toFixed());
  	});
 	 
-	A=multiRouteKO.getRoutes().get(0).properties.get("distance").value; 
+	A=Route.getRoutes().get(0).properties.get("distance").value; 
 	alert ((A*0.001).toFixed()); 
         var theEl=document.getElementById("output");
 	alert (document.write(theEl.innerHTML));
