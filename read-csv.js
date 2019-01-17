@@ -5,7 +5,7 @@ function init (gg,wp,point) {
 			//controls: ['zoomControl']
         });
 	//map.setZoom(5);
-alert ('asf v1.0492');
+alert ('asf v1.0493');
 
  ymaps.geocode(point, {
         /**
@@ -105,13 +105,13 @@ var Adress = "Координаты: " + firstGeoObject.geometry.getCoordinates()
 	);
 	
 	var A = '';
-	/*var Route = multiRouteKO.model.events.add("requestsuccess", function (event) {
+	multiRouteKO.model.events.add("requestsuccess", function (event) {
 	A=multiRouteKO.getRoutes().get(0).properties.get("distance").value;
-	//alert ((A*0.001).toFixed());
- 	});*/
+	alert ((A*0.001).toFixed());
+ 	});
 	 
-	A=multiRouteKO.getRoutes().get(0).properties.get("distance").value;
-	alert ((A*0.001).toFixed()); 
+	//A=multiRouteKO.getRoutes().get(0).properties.get("distance").value;
+	//alert ((A*0.001).toFixed()); 
         var theEl=document.getElementById("output");
 	alert (document.write(theEl.innerHTML));
 	theEl.innerHTML = theEl.innerHTML+'<b>!!!</b>'+point+' = '+ret+'<br />'; //+'; Расстояние: '+(A*0.001).toFixed() + 'км.';
