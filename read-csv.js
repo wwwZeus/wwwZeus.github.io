@@ -5,7 +5,7 @@ function init (gg,wp,point) {
 			//controls: ['zoomControl']
         });
 	//map.setZoom(5);
-	alert ('Яндекс');
+	//alert ('Яндекс');
  ymaps.geocode(point, {
         /**
          * Опции запроса
