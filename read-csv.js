@@ -101,9 +101,17 @@ var Adress = "Координаты: " + firstGeoObject.geometry.getCoordinates()
         var theEl=document.getElementById("output");
 	alert (document.write(theEl.innerHTML));
 	theEl.innerHTML = theEl.innerHTML+'<b>!!!</b>'+point+' = '+ret+'<br />'; //+'; Расстояние: '+(A*0.001).toFixed() + 'км.';
+	 var multiRouteKO = new ymaps.multiRouter.MultiRoute({   
+   	 // Точки маршрута. Точки могут быть заданы как координатами, так и адресом. 
+    	referencePoints: [
+        [57.626273, 39.894102], //Ярославль
+        firstGeoObject.geometry.getCoordinates()  //Искомый объект
+    	]});
 	 
-	 
-        });
+	multiRouteKO.model.events.add("requestsuccess", function (event) {
+	A=multiRouteKO.getRoutes().get(0).properties.get("distance").value;
+	alert ((A*0.001).toFixed());
+	});
 
 
 	
@@ -112,9 +120,8 @@ var Adress = "Координаты: " + firstGeoObject.geometry.getCoordinates()
     referencePoints: [
         [57.626273, 39.894102], //Ярославль
         firstGeoObject.geometry.getCoordinates()  //Кострома
-    ]
-	}
-);
+    ]}
+    );
 multiRouteKO.model.events.add("requestsuccess", function (event) {
 	A=multiRouteKO.getRoutes().get(0).properties.get("distance").value;
 	alert ((A*0.001).toFixed());
@@ -125,7 +132,7 @@ alert ('--Конец функции:--');
 }        
 
 function handleFiles(files) {
-	alert ('Еще какой-то файл');
+	//alert ('Еще какой-то файл');
 	// Check for the various File API support.
 	if (window.FileReader) {
 		// FileReader are supported.
@@ -136,7 +143,7 @@ function handleFiles(files) {
 }
 
 function getAsText(fileToRead) {
-	alert ('Чтение файла');
+	//alert ('Чтение файла');
 	var reader = new FileReader();
 	// Read file into memory as UTF-8      
 	reader.readAsText(fileToRead);
@@ -152,7 +159,7 @@ function loadHandler(event) {
 }
 
 function processData(csv) {
-    alert ('CSV');
+    //alert ('CSV');
     var allTextLines = csv.split(/\r\n|\n/);
     var lines = [];
     for (var i=0; i<allTextLines.length; i++) {
@@ -168,7 +175,7 @@ function processData(csv) {
 }
 
 function errorHandler(evt) {
-	alert ('Ошибки');
+	//alert ('Ошибки');
 	if(evt.target.error.name == "NotReadableError") {
 		alert("Canno't read file !");
 	}
@@ -176,8 +183,8 @@ function errorHandler(evt) {
 
 function drawOutput(lines){
 	//Clear previous data
-	alert ('Вызов процедур');
-	alert ('asf v1.0498');
+	//alert ('Вызов процедур');
+	alert ('asf v1.0411');
 	document.getElementById("output").innerHTML = "";
 	var table = document.createElement("table");
 	for (var i = 0; i < lines.length; i++) {
