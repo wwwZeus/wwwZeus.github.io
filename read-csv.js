@@ -101,7 +101,8 @@ var Adress = "Координаты: " + firstGeoObject.geometry.getCoordinates()
         var theEl=document.getElementById("output");
 	//alert (document.write(theEl.innerHTML));
 	theEl.innerHTML = theEl.innerHTML+'<b>!!!</b>'+point+' = '+ret+'<br />'; //+'; Расстояние: '+(A*0.001).toFixed() + 'км.';
-	 var multiRouteKO = new ymaps.multiRouter.MultiRoute({   
+	 
+	 /*var multiRouteKO = new ymaps.multiRouter.MultiRoute({   
    	 // Точки маршрута. Точки могут быть заданы как координатами, так и адресом. 
     	referencePoints: [
         [57.626273, 39.894102], //Ярославль
@@ -111,7 +112,7 @@ var Adress = "Координаты: " + firstGeoObject.geometry.getCoordinates()
 	multiRouteKO.model.events.add("requestsuccess", function (event) {
 	A=multiRouteKO.getRoutes().get(0).properties.get("distance").value;
 	alert ((A*0.001).toFixed());
-	});
+	});*/
 
 
 	
