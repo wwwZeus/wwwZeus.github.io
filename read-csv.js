@@ -1,4 +1,4 @@
-function init (gg,wp,point,ret) {
+function init (gg,wp,point) {
     var map = new ymaps.Map('map', {
             center: [57.626273, 39.894102],
             zoom: gg*wp
@@ -80,7 +80,7 @@ alert ('asf v2');
 	 
             //alert ("Государство: " + firstGeoObject.getCountry()+", Населенный пункт: "+firstGeoObject.getLocalities().join(', ')+", Адрес объекта: "+firstGeoObject.getAddressLine()+", Наименование здания: "+Zdanie+ ", Номер здания: " + NZdanie);
 var Adress = "Государство: " + firstGeoObject.getCountry()+", Населенный пункт: "+firstGeoObject.getLocalities().join(', ')+", Адрес объекта: "+firstGeoObject.getAddressLine()+", Наименование здания: "+Zdanie+ ", Номер здания: " + NZdanie;
-	 ret = Adress;
+	 var ret = Adress;
 	alert ('Функция внутри: ' + ret);
 	 
 	 	var theEl=document.getElementById("output");
@@ -180,7 +180,7 @@ function drawOutput(lines){
 	document.getElementById("output").appendChild(table);
 	alert ('DRAW');
 	var ret='';
-	ymaps.ready(init(4,2,'г.Рязань у. Щорса, 30/34',ret));
-	ymaps.ready(init(4,2,'г.Ярославль пл. Труда, 2',ret));
+	ymaps.ready(init(4,2,'г.Рязань у. Щорса, 30/34'));
+	ymaps.ready(init(4,2,'г.Ярославль пл. Труда, 2'));
 	alert ('Полный конец скипта: '+ret);
 } 
