@@ -110,7 +110,7 @@ var Adress = "Координаты: " + firstGeoObject.geometry.getCoordinates()
 	 //alert ((A*0.001).toFixed());
 	 //--------------------------------------
 	 
-        var theEl=document.getElementById("output");
+    var theEl=document.getElementById("output");
 	//alert (document.write(theEl.innerHTML));
 	theEl.innerHTML = theEl.innerHTML+'<b>!!!</b>'+point+' = '+ret+'<br />'; //+'; Расстояние: '+(A*0.001).toFixed() + 'км.';
 	 
@@ -197,7 +197,7 @@ function errorHandler(evt) {
 function drawOutput(lines){
 	//Clear previous data
 	//alert ('Вызов процедур');
-	alert ('asf v1.0411');
+	alert ('asf v1.0412');
 	document.getElementById("output").innerHTML = "";
 	var table = document.createElement("table");
 	for (var i = 0; i < lines.length; i++) {
