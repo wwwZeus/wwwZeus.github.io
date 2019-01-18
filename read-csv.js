@@ -1,9 +1,9 @@
 function init (gg,wp,point) {
-    /*var map = new ymaps.Map('map', {
+    var map = new ymaps.Map('map', {
             center: [57.626273, 39.894102],
             zoom: gg*wp
 			//controls: ['zoomControl']
-        });*/
+        });
 	//map.setZoom(5);
 	//alert ('Яндекс');
  ymaps.geocode(point, {
@@ -125,11 +125,6 @@ var Adress = "Координаты: " + firstGeoObject.geometry.getCoordinates()
 	A=multiRouteKO.getRoutes().get(0).properties.get("distance").value;
 	alert ((A*0.001).toFixed());
 	});*/
-var map = new ymaps.Map('map', {
-            center: [57.626273, 39.894102],
-            zoom: 9 //gg*wp
-	    //controls: ['zoomControl']
-        });
 	 
  });
 	
