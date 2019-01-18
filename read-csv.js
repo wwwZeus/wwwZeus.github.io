@@ -217,6 +217,7 @@ function drawOutput(lines){
 	alert ('DRAW');
 	//var ret='';
 	//ymaps.ready(init(4,2,'г.Рязань у. Щорса, 30/34'));
-	ymaps.ready(init(4,2,'г.Ярославль Ыбинская 27'));
+	ymaps.ready(init(4,2,'г.Ярославль Батова 26'));
+	ymaps.ready(init(4,2,'г.Ярославль Тутаевское 71'));
 	alert ('Полный конец скипта');
 } 
