@@ -106,13 +106,18 @@ var Adress = "Координаты: " + firstGeoObject.geometry.getCoordinates()
 	multiRouteKO.model.events.add("requestsuccess", function (event) {
 	A=multiRouteKO.getRoutes().get(0).properties.get("distance").value;
 	alert ((A*0.001).toFixed());
+		
+	var theEl=document.getElementById("output");
+	//alert (document.write(theEl.innerHTML));
+	theEl.innerHTML = theEl.innerHTML+'<b>!!!</b>'+point+' = '+ret+'; Расстояние: '+(A*0.001).toFixed() + 'км.' +'<br />'; //+'; Расстояние: '+(A*0.001).toFixed() + 'км.';	
+		
 	});
 	 //alert ((A*0.001).toFixed());
 	 //--------------------------------------
 	 
-    var theEl=document.getElementById("output");
+    /*var theEl=document.getElementById("output");
 	//alert (document.write(theEl.innerHTML));
-	theEl.innerHTML = theEl.innerHTML+'<b>!!!</b>'+point+' = '+ret+'<br />'; //+'; Расстояние: '+(A*0.001).toFixed() + 'км.';
+	theEl.innerHTML = theEl.innerHTML+'<b>!!!</b>'+point+' = '+ret+'<br />'; //+'; Расстояние: '+(A*0.001).toFixed() + 'км.';*/
 	 
 	 /*var multiRouteKO = new ymaps.multiRouter.MultiRoute({   
    	 // Точки маршрута. Точки могут быть заданы как координатами, так и адресом. 
