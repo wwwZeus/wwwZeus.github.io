@@ -78,9 +78,9 @@ function init (gg,wp,point) {
 	    var NZdanie = firstGeoObject.getPremiseNumber() || '-';
 	 
             //alert ("Государство: " + firstGeoObject.getCountry()+", Населенный пункт: "+firstGeoObject.getLocalities().join(', ')+", Адрес объекта: "+firstGeoObject.getAddressLine()+", Наименование здания: "+Zdanie+ ", Номер здания: " + NZdanie);
-var Adress = "Координаты: " + firstGeoObject.geometry.getCoordinates() + "; Государство: " + firstGeoObject.getCountry()+"; Населенный пункт: "+firstGeoObject.getLocalities().join(', ')+"; Адрес объекта: "+firstGeoObject.getAddressLine()+"; Наименование здания: "+Zdanie+ "; Номер здания: " + NZdanie;
+        var Adress = "Координаты: " + firstGeoObject.geometry.getCoordinates() + "; Государство: " + firstGeoObject.getCountry()+"; Населенный пункт: "+firstGeoObject.getLocalities().join(', ')+"; Адрес объекта: "+firstGeoObject.getAddressLine()+"; Наименование здания: "+Zdanie+ "; Номер здания: " + NZdanie;
 	var ret = Adress;
-	alert ('Функция внутри: ' + ret);
+	//alert ('Функция внутри: ' + ret);
             /**
              * Если нужно добавить по найденным геокодером координатам метку со своими стилями и контентом балуна, создаем новую метку по координатам найденной и добавляем ее на карту вместо найденной.
              */
@@ -105,7 +105,7 @@ var Adress = "Координаты: " + firstGeoObject.geometry.getCoordinates()
 	 
 	multiRouteKO.model.events.add("requestsuccess", function (event) {
 	A=multiRouteKO.getRoutes().get(0).properties.get("distance").value;
-	alert ((A*0.001).toFixed());
+	//alert ((A*0.001).toFixed());
 		
 	var theEl=document.getElementById("output");
 	//alert (document.write(theEl.innerHTML));
@@ -146,7 +146,7 @@ multiRouteKO.model.events.add("requestsuccess", function (event) {
 }); */
 
 //map.geoObjects.add(multiRouteKO);
-alert ('--Конец функции:--');
+//alert ('--Конец функции:--');
 }        
 
 function handleFiles(files) {
@@ -219,9 +219,10 @@ function drawOutput(lines){
 	//ymaps.ready(init(4,2,'г.Рязань у. Щорса, 30/34'));
 	ymaps.ready(init(4,2,'г.Ярославль Батова 26'));
 	ymaps.ready(init(4,2,'г.Ярославль Тутаевское 71'));
-	ymaps.ready(init(4,2,'г.Ярославль Алмазная, дом 5'));
+	ymaps.ready(init(4,2,'г.Ярославль Амлазная, дом 5'));
 	ymaps.ready(init(4,2,'г.Ярославль Блюхера, дом 17'));
 	ymaps.ready(init(4,2,'г.Ярославль Калевала 2'));
 	ymaps.ready(init(4,2,'г.Ярославль Школьный п-д 107'));
+	ymaps.ready(init(4,2,'г.Ярославль Советская 34а'));
 	alert ('Полный конец скипта');
 } 
