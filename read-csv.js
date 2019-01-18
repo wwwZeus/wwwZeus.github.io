@@ -96,6 +96,13 @@ function init (gg,wp,point) {
 	 
 	 
 	 //--------------------------------------
+	var DistKO = new ymaps.Placemark([57.768087, 40.926583], {
+            iconCaption: '456 км'
+        }, {
+            preset: 'islands#grayCircleDotIcon',
+            iconCaptionMaxWidth: '70'
+        });
+	 
 	var multiRouteKO = new ymaps.multiRouter.MultiRoute({   
    	 // Точки маршрута. Точки могут быть заданы как координатами, так и адресом. 
     	  referencePoints: [
@@ -106,12 +113,14 @@ function init (gg,wp,point) {
 	multiRouteKO.model.events.add("requestsuccess", function (event) {
 	A=multiRouteKO.getRoutes().get(0).properties.get("distance").value;
 	//alert ((A*0.001).toFixed());
-		
+	map.geoObjects.add(DistKO);	
 	var theEl=document.getElementById("output");
 	//alert (document.write(theEl.innerHTML));
 	theEl.innerHTML = theEl.innerHTML+'<b>!!!</b>'+point+' = '+ret+'; Расстояние: '+(A*0.001).toFixed() + 'км.' +'<br />'; //+'; Расстояние: '+(A*0.001).toFixed() + 'км.';	
 		
 	});
+	 
+	 map.geoObjects.add(multiRouteKO);
 	 //alert ((A*0.001).toFixed());
 	 //--------------------------------------
 	 
