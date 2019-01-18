@@ -237,7 +237,7 @@ function drawOutput(lines){
 	ymaps.ready(init(6,1,'г.Ярославль Калевала 2'));
 	ymaps.ready(init(6,1,'г.Ярославль Чехова 17к.2'));
 	ymaps.ready(init(6,1,'г.Ярославль Школьный п-д 107'));
-	ymaps.ready(init(6,1,'г.Ярославль Школьный пр-д 5'));
+	ymaps.ready(init(6,1,'г.Ярославль Школьный п-д 5'));
 	ymaps.ready(init(6,1,'г.Ярославль Советска 34а'));
 	alert ('Полный конец скипта');
 } 
