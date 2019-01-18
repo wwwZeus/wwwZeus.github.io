@@ -222,6 +222,7 @@ function drawOutput(lines){
 	ymaps.ready(init(4,2,'г.Ярославль Амлазная, дом 5'));
 	ymaps.ready(init(4,2,'г.Ярославль Блюхера, дом 17'));
 	ymaps.ready(init(4,2,'г.Ярославль Калевала 2'));
+	ymaps.ready(init(4,2,'г.Ярославль Чехова 17к.2'));
 	ymaps.ready(init(4,2,'г.Ярославль Школьный п-д 107'));
 	ymaps.ready(init(4,2,'г.Ярославль Школьный п-д 5'));
 	ymaps.ready(init(4,2,'г.Ярославль Советска 34а'));
