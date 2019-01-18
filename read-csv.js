@@ -99,7 +99,7 @@ function init (gg,wp,point) {
 	var multiRouteKO = new ymaps.multiRouter.MultiRoute({   
    	 // Точки маршрута. Точки могут быть заданы как координатами, так и адресом. 
     	  referencePoints: [
-          [57.626273, 39.894102], //Ярославль
+          [57.635685, 39.882938], //Ярославль
           firstGeoObject.geometry.getCoordinates()  //Искомый объект
     	]});
 	 
