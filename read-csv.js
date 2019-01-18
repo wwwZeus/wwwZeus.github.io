@@ -225,15 +225,15 @@ function drawOutput(lines){
 	document.getElementById("output").appendChild(table);
 	alert ('DRAW');
 	//var ret='';
-	ymaps.ready(init(4,2,'г.Рязань у. Щорса, 30/34'));
-	ymaps.ready(init(4,2,'г.Ярославль Батова 26'));
-	ymaps.ready(init(4,2,'г.Ярославль Тутаевское 71'));
-	ymaps.ready(init(4,2,'г.Ярославль Амлазная, дом 5'));
-	ymaps.ready(init(4,2,'г.Ярославль Блюхера, дом 17'));
-	ymaps.ready(init(4,2,'г.Ярославль Калевала 2'));
-	ymaps.ready(init(4,2,'г.Ярославль Чехова 17к.2'));
-	ymaps.ready(init(4,2,'г.Ярославль Школьный п-д 107'));
-	ymaps.ready(init(4,2,'г.Ярославль Школьный пр-д 5'));
-	ymaps.ready(init(4,2,'г.Ярославль Советска 34а'));
+	ymaps.ready(init(5,1,'г.Рязань у. Щорса, 30/34'));
+	ymaps.ready(init(6,1,'г.Ярославль Батова 26'));
+	ymaps.ready(init(6,1,'г.Ярославль Тутаевское 71'));
+	ymaps.ready(init(6,1,'г.Ярославль Амлазная, дом 5'));
+	ymaps.ready(init(6,1,'г.Ярославль Блюхера, дом 17'));
+	ymaps.ready(init(6,1,'г.Ярославль Калевала 2'));
+	ymaps.ready(init(6,1,'г.Ярославль Чехова 17к.2'));
+	ymaps.ready(init(6,1,'г.Ярославль Школьный п-д 107'));
+	ymaps.ready(init(6,1,'г.Ярославль Школьный пр-д 5'));
+	ymaps.ready(init(6,1,'г.Ярославль Советска 34а'));
 	alert ('Полный конец скипта');
 } 
