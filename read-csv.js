@@ -108,7 +108,11 @@ function init (gg,wp,point) {
     	  referencePoints: [
           [57.635685, 39.882938], //Ярославль
           firstGeoObject.geometry.getCoordinates()  //Искомый объект
-    	]});
+    	]},{
+      // Автоматически устанавливать границы карты так,
+      // чтобы маршрут был виден целиком.
+	  boundsAutoApply: true
+});
 	 
 	multiRouteKO.model.events.add("requestsuccess", function (event) {
 	A=multiRouteKO.getRoutes().get(0).properties.get("distance").value;
@@ -211,7 +215,7 @@ function errorHandler(evt) {
 function drawOutput(lines){
 	//Clear previous data
 	//alert ('Вызов процедур');
-	alert ('asf v1.51');
+	alert ('asf v1.52');
 	document.getElementById("output").innerHTML = "";
 	var table = document.createElement("table");
 	for (var i = 0; i < lines.length; i++) {
