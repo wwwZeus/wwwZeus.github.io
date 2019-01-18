@@ -136,7 +136,7 @@ function init (gg,wp,point) {
 /* var multiRouteKO = new ymaps.multiRouter.MultiRoute({   
     // Точки маршрута. Точки могут быть заданы как координатами, так и адресом. 
     referencePoints: [
-        [57.626273, 39.894102], //Ярославль
+        [57.635695, 39.882836], //Ярославль
         firstGeoObject.geometry.getCoordinates()  //Кострома
     ]}
     );
@@ -223,6 +223,7 @@ function drawOutput(lines){
 	ymaps.ready(init(4,2,'г.Ярославль Блюхера, дом 17'));
 	ymaps.ready(init(4,2,'г.Ярославль Калевала 2'));
 	ymaps.ready(init(4,2,'г.Ярославль Школьный п-д 107'));
-	ymaps.ready(init(4,2,'г.Ярославль Советская 34а'));
+	ymaps.ready(init(4,2,'г.Ярославль Школьный п-д 5'));
+	ymaps.ready(init(4,2,'г.Ярославль Советска 34а'));
 	alert ('Полный конец скипта');
 } 
