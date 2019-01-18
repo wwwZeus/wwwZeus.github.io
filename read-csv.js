@@ -219,5 +219,9 @@ function drawOutput(lines){
 	//ymaps.ready(init(4,2,'г.Рязань у. Щорса, 30/34'));
 	ymaps.ready(init(4,2,'г.Ярославль Батова 26'));
 	ymaps.ready(init(4,2,'г.Ярославль Тутаевское 71'));
+	ymaps.ready(init(4,2,'г.Ярославль Алмазная, дом 5'));
+	ymaps.ready(init(4,2,'г.Ярославль Блюхера, дом 17'));
+	ymaps.ready(init(4,2,'г.Ярославль Калевала 2'));
+	ymaps.ready(init(4,2,'г.Ярославль Школьный п-д 107'));
 	alert ('Полный конец скипта');
 } 
