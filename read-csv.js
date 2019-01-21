@@ -215,7 +215,7 @@ function errorHandler(evt) {
 function drawOutput(lines){
 	//Clear previous data
 	//alert ('Вызов процедур');
-	alert ('asf v1.53');
+	alert ('asf v1.54');
 	document.getElementById("output").innerHTML = "";
 	var table = document.createElement("table");
 	for (var i = 0; i < lines.length; i++) {
@@ -231,6 +231,7 @@ function drawOutput(lines){
 	//var ret='';
 	ymaps.ready(init(6,1,'г.Ярославль Батова 26'));
 	ymaps.ready(init(6,1,'г.Ярославль Тутаевское 71'));
+	ymaps.ready(init(6,1,'г.Ярославль Серго Орджонекидже 22к2'));
 	ymaps.ready(init(6,1,'г.Ярославль Амлазная, дом 5'));
 	ymaps.ready(init(6,1,'г.Ярославль Блюхера, дом 17'));
 	ymaps.ready(init(5,1,'г.Рязань у. Щорса, 30/34'));
