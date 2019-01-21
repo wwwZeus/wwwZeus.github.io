@@ -229,7 +229,7 @@ function drawOutput(lines){
 	document.getElementById("output").appendChild(table);
 	alert ('DRAW');
 	//var ret='';
-	нmaps.ready(init(6,1,'г.Ярославль Батова 26'));
+	ymaps.ready(init(6,1,'г.Ярославль Батова 26'));
 	ymaps.ready(init(6,1,'г.Ярославль Тутаевское 71'));
 	ymaps.ready(init(6,1,'г.Ярославль Амлазная, дом 5'));
 	ymaps.ready(init(6,1,'г.Ярославль Блюхера, дом 17'));
