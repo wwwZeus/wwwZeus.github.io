@@ -119,8 +119,8 @@ function init (gg,wp,point) {
 	//alert ((A*0.001).toFixed());
 	map.geoObjects.add(DistKO);	
 	var theEl=document.getElementById("output");
-	//alert (document.write(theEl.innerHTML));
-	theEl.innerHTML = theEl.innerHTML+'<b>!!!</b>'+point+' = '+ret+'; Расстояние: '+(A*0.001).toFixed() + 'км.' +'<br />'; //+'; Расстояние: '+(A*0.001).toFixed() + 'км.';	
+	//theEl.innerHTML = theEl.innerHTML+'<tr><td bgcolor="#f0f0f0">34,5</td><td bgcolor="#f0f0f0">3,5</td><td>36</td><td>23</td></tr>'
+	theEl.innerHTML = theEl.innerHTML+'<tr><td bgcolor="#f0f0f0">'+point+'</td><td bgcolor="#f0f0f0">'+ret+';</td><td bgcolor="#f0f0f0">'+(A*0.001).toFixed() + 'км.' +'</td></tr>'; //+'; Расстояние: '+(A*0.001).toFixed() + 'км.';	
 		
 	});
 	 
