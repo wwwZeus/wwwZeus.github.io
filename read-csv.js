@@ -2,20 +2,11 @@ function init (gg,wp,point) {
     var map = new ymaps.Map('map', {
             center: [57.626273, 39.894102],
             zoom: gg*wp
-			//controls: ['zoomControl']
+	    controls: ['zoomControl']
         });
 	//map.setZoom(5);
 	//alert ('Яндекс');
  ymaps.geocode(point, {
-        /**
-         * Опции запроса
-         * @see https://api.yandex.ru/maps/doc/jsapi/2.1/ref/reference/geocode.xml
-         */
-        // Сортировка результатов от центра окна карты.
-        // boundedBy: map.getBounds(),
-        // strictBounds: true,
-        // Вместе с опцией boundedBy будет искать строго внутри области, указанной в boundedBy.
-        // Если нужен только один результат, экономим трафик пользователей.
         results: 1
     }).then(function (res) {
             // Выбираем первый результат геокодирования.
@@ -80,22 +71,7 @@ function init (gg,wp,point) {
             //alert ("Государство: " + firstGeoObject.getCountry()+", Населенный пункт: "+firstGeoObject.getLocalities().join(', ')+", Адрес объекта: "+firstGeoObject.getAddressLine()+", Наименование здания: "+Zdanie+ ", Номер здания: " + NZdanie);
         var Adress = "Координаты: " + firstGeoObject.geometry.getCoordinates() + "; Государство: " + firstGeoObject.getCountry()+"; Населенный пункт: "+firstGeoObject.getLocalities().join(', ')+"; Адрес объекта: "+firstGeoObject.getAddressLine()+"; Наименование здания: "+Zdanie+ "; Номер здания: " + NZdanie;
 	var ret = Adress;
-	//alert ('Функция внутри: ' + ret);
-            /**
-             * Если нужно добавить по найденным геокодером координатам метку со своими стилями и контентом балуна, создаем новую метку по координатам найденной и добавляем ее на карту вместо найденной.
-             */
-            /**
-             var myPlacemark = new ymaps.Placemark(coords, {
-             iconContent: 'моя метка',
-             balloonContent: 'Содержимое балуна <strong>моей метки</strong>'
-             }, {
-             preset: 'islands#violetStretchyIcon'
-             });
-             map.geoObjects.add(myPlacemark);
-            */ 
-	 
-	 
-	 //--------------------------------------
+	//--------------------------------------
 	var DistKO = new ymaps.Placemark([57.768087, 40.926583], {
             iconCaption: '456 км'
         }, {
@@ -109,57 +85,20 @@ function init (gg,wp,point) {
           [57.635685, 39.882938], //Ярославль
           firstGeoObject.geometry.getCoordinates()  //Искомый объект
     	]},{
-      // Автоматически устанавливать границы карты так,
-      // чтобы маршрут был виден целиком.
 	  boundsAutoApply: true
 });
 	 
-	multiRouteKO.model.events.add("requestsuccess", function (event) {
+multiRouteKO.model.events.add("requestsuccess", function (event) {
 	A=multiRouteKO.getRoutes().get(0).properties.get("distance").value;
 	//alert ((A*0.001).toFixed());
 	map.geoObjects.add(DistKO);	
 	var theEl=document.getElementById("output");
 	//alert (document.write(theEl.innerHTML));
 	theEl.innerHTML = theEl.innerHTML+'<b>!!!</b>'+point+' = '+ret+'; Расстояние: '+(A*0.001).toFixed() + 'км.' +'<br />'; //+'; Расстояние: '+(A*0.001).toFixed() + 'км.';	
-		
-	});
+});
 	 
-	 map.geoObjects.add(multiRouteKO);
-	 //alert ((A*0.001).toFixed());
-	 //--------------------------------------
-	 
-    /*var theEl=document.getElementById("output");
-	//alert (document.write(theEl.innerHTML));
-	theEl.innerHTML = theEl.innerHTML+'<b>!!!</b>'+point+' = '+ret+'<br />'; //+'; Расстояние: '+(A*0.001).toFixed() + 'км.';*/
-	 
-	 /*var multiRouteKO = new ymaps.multiRouter.MultiRoute({   
-   	 // Точки маршрута. Точки могут быть заданы как координатами, так и адресом. 
-    	referencePoints: [
-        [57.626273, 39.894102], //Ярославль
-        firstGeoObject.geometry.getCoordinates()  //Искомый объект
-    	]});
-	 
-	multiRouteKO.model.events.add("requestsuccess", function (event) {
-	A=multiRouteKO.getRoutes().get(0).properties.get("distance").value;
-	alert ((A*0.001).toFixed());
-	});*/
-	 
+map.geoObjects.add(multiRouteKO); 
  });
-	
-/* var multiRouteKO = new ymaps.multiRouter.MultiRoute({   
-    // Точки маршрута. Точки могут быть заданы как координатами, так и адресом. 
-    referencePoints: [
-        [57.635695, 39.882836], //Ярославль
-        firstGeoObject.geometry.getCoordinates()  //Кострома
-    ]}
-    );
-multiRouteKO.model.events.add("requestsuccess", function (event) {
-	A=multiRouteKO.getRoutes().get(0).properties.get("distance").value;
-	alert ((A*0.001).toFixed());
-}); */
-
-//map.geoObjects.add(multiRouteKO);
-//alert ('--Конец функции:--');
 }        
 
 function handleFiles(files) {
