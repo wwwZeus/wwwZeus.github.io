@@ -120,7 +120,7 @@ function init (gg,wp,point) {
 	map.geoObjects.add(DistKO);	
 	var theEl=document.getElementById("output");
 	//theEl.innerHTML = theEl.innerHTML+'<tr><td bgcolor="#f0f0f0">34,5</td><td bgcolor="#f0f0f0">3,5</td><td>36</td><td>23</td></tr>'
-	theEl.innerHTML = theEl.innerHTML+'<tr><td bgcolor="#f0f0f0">'+point+'</td><td bgcolor="#f0f0f0">'+ret+';</td><td bgcolor="#f0f0f0">'+(A*0.001).toFixed() + 'км.' +'</td></tr>'; //+'; Расстояние: '+(A*0.001).toFixed() + 'км.';	
+	theEl.innerHTML = theEl.innerHTML+'<table border="0"><tr><td bgcolor="#f0f0f0">'+point+'</td><td bgcolor="#f0f0f0">'+ret+';</td><td bgcolor="#f0f0f0">'+(A*0.001).toFixed() + 'км.' +'</td></tr>'; //+'; Расстояние: '+(A*0.001).toFixed() + 'км.';	
 		
 	});
 	 
