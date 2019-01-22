@@ -109,8 +109,6 @@ function init (gg,wp,point) {
           [57.635685, 39.882938], //Ярославль
           firstGeoObject.geometry.getCoordinates()  //Искомый объект
     	]},{
-      // Автоматически устанавливать границы карты так,
-      // чтобы маршрут был виден целиком.
 	  boundsAutoApply: true
 });
 	 
@@ -122,44 +120,11 @@ function init (gg,wp,point) {
 	//theEl.innerHTML = theEl.innerHTML+'<tr><td bgcolor="#f0f0f0">34,5</td><td bgcolor="#f0f0f0">3,5</td><td>36</td><td>23</td></tr>'
 	theEl.innerHTML = theEl.innerHTML+'<table border="0"><tr><td bgcolor="#f0f0f0">'+point+'</td><td bgcolor="#f0f0f0">'+ret+';</td><td bgcolor="#f0f0f0">'+(A*0.001).toFixed() + 'км.' +'</td></tr>'; //+'; Расстояние: '+(A*0.001).toFixed() + 'км.';	
 		
-	});
-	 
-	 map.geoObjects.add(multiRouteKO);
-	 //alert ((A*0.001).toFixed());
-	 //--------------------------------------
-	 
-    /*var theEl=document.getElementById("output");
-	//alert (document.write(theEl.innerHTML));
-	theEl.innerHTML = theEl.innerHTML+'<b>!!!</b>'+point+' = '+ret+'<br />'; //+'; Расстояние: '+(A*0.001).toFixed() + 'км.';*/
-	 
-	 /*var multiRouteKO = new ymaps.multiRouter.MultiRoute({   
-   	 // Точки маршрута. Точки могут быть заданы как координатами, так и адресом. 
-    	referencePoints: [
-        [57.626273, 39.894102], //Ярославль
-        firstGeoObject.geometry.getCoordinates()  //Искомый объект
-    	]});
-	 
-	multiRouteKO.model.events.add("requestsuccess", function (event) {
-	A=multiRouteKO.getRoutes().get(0).properties.get("distance").value;
-	alert ((A*0.001).toFixed());
-	});*/
-	 
+	});	 
+	 map.geoObjects.add(multiRouteKO);	 
  });
 	
-/* var multiRouteKO = new ymaps.multiRouter.MultiRoute({   
-    // Точки маршрута. Точки могут быть заданы как координатами, так и адресом. 
-    referencePoints: [
-        [57.635695, 39.882836], //Ярославль
-        firstGeoObject.geometry.getCoordinates()  //Кострома
-    ]}
-    );
-multiRouteKO.model.events.add("requestsuccess", function (event) {
-	A=multiRouteKO.getRoutes().get(0).properties.get("distance").value;
-	alert ((A*0.001).toFixed());
-}); */
 
-//map.geoObjects.add(multiRouteKO);
-//alert ('--Конец функции:--');
 }        
 
 function handleFiles(files) {
@@ -215,7 +180,7 @@ function errorHandler(evt) {
 function drawOutput(lines){
 	//Clear previous data
 	//alert ('Вызов процедур');
-	alert ('asf v1.54');
+	alert ('asf v1.55');
 	document.getElementById("output").innerHTML = "";
 	var table = document.createElement("table");
 	for (var i = 0; i < lines.length; i++) {
