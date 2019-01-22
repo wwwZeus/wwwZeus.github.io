@@ -227,6 +227,10 @@ function drawOutput(lines){
 		}
 	}
 	document.getElementById("output").appendChild(table);
+	
+	var theEl=document.getElementById("output");
+	theEl.innerHTML = theEl.innerHTML+'<table border="0"><tr><td bgcolor="#f0f0f0">34,5</td><td bgcolor="#f0f0f0">3,5</td><td>36</td><td>23</td></tr>'
+		
 	alert ('DRAW');
 	//var ret='';
 	ymaps.ready(init(6,1,'г.Ярославль Батова 26'));
