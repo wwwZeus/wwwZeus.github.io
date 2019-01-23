@@ -2,7 +2,7 @@ function init (gg,wp,point) {
     var map = new ymaps.Map('map', {
             center: [57.626273, 39.894102],
             zoom: gg*wp
-			//controls: ['zoomControl']
+	    //controls: ['zoomControl']
         });
 	//map.setZoom(5);
 	//alert ('Яндекс');
@@ -94,13 +94,11 @@ function init (gg,wp,point) {
 	map.geoObjects.add(DistKO);	
 	var theEl=document.getElementById("output");
 	//theEl.innerHTML = theEl.innerHTML+'<tr><td bgcolor="#f0f0f0">34,5</td><td bgcolor="#f0f0f0">3,5</td><td>36</td><td>23</td></tr>'
-	theEl.innerHTML = theEl.innerHTML+'<table border="1"><tr><td class="lc">'+point+'</td><td class="even">'+ret+';</td><td class="way">'+(A*0.001).toFixed() + 'км.' +'</td></tr>'; //+'; Расстояние: '+(A*0.001).toFixed() + 'км.';	
+	theEl.innerHTML = theEl.innerHTML+'<table border="1"><tr><td class="lc">'+point+'</td><td class="even">'+ret+';</td><td class="way">'+(A*0.001).toFixed() + ' км.' +'</td></tr>'; //+'; Расстояние: '+(A*0.001).toFixed() + 'км.';	
 		
 	});	 
 	 map.geoObjects.add(multiRouteKO);	 
  });
-	
-
 }        
 
 function handleFiles(files) {
@@ -156,7 +154,7 @@ function errorHandler(evt) {
 function drawOutput(lines){
 	//Clear previous data
 	//alert ('Вызов процедур');
-	alert ('asf v1.558');
+	alert ('asf v1.559');
 	document.getElementById("output").innerHTML = "";
 	var table = document.createElement("table");
 	for (var i = 0; i < lines.length; i++) {
@@ -170,7 +168,7 @@ function drawOutput(lines){
 	document.getElementById("output").appendChild(table);
 	
 	var theEl=document.getElementById("output");
-	theEl.innerHTML = theEl.innerHTML+'<table border="1">'
+	theEl.innerHTML = theEl.innerHTML+'<table border="0">'
 		
 	//alert ('DRAW');
 	//var ret='';
