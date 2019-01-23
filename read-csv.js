@@ -103,7 +103,7 @@ function init (gg,wp,point) {
 	map.geoObjects.add(DistKO);	
 	var theEl=document.getElementById("output");
 	//theEl.innerHTML = theEl.innerHTML+'<tr><td bgcolor="#f0f0f0">34,5</td><td bgcolor="#f0f0f0">3,5</td><td>36</td><td>23</td></tr>'
-	theEl.innerHTML = theEl.innerHTML+'<table border="0"><tr><td class="even">'+point+'</td><td>'+ret+';</td><td bgcolor="#f0f0f0">'+(A*0.001).toFixed() + 'км.' +'</td></tr>'; //+'; Расстояние: '+(A*0.001).toFixed() + 'км.';	
+	theEl.innerHTML = theEl.innerHTML+'<table border="1"><tr><td class="lc">'+point+'</td><td class="even">'+ret+';</td><td>'+(A*0.001).toFixed() + 'км.' +'</td></tr>'; //+'; Расстояние: '+(A*0.001).toFixed() + 'км.';	
 		
 	});	 
 	 map.geoObjects.add(multiRouteKO);	 
@@ -165,7 +165,7 @@ function errorHandler(evt) {
 function drawOutput(lines){
 	//Clear previous data
 	//alert ('Вызов процедур');
-	alert ('asf v1.553');
+	alert ('asf v1.554');
 	document.getElementById("output").innerHTML = "";
 	var table = document.createElement("table");
 	for (var i = 0; i < lines.length; i++) {
@@ -179,7 +179,7 @@ function drawOutput(lines){
 	document.getElementById("output").appendChild(table);
 	
 	var theEl=document.getElementById("output");
-	theEl.innerHTML = theEl.innerHTML+'<table border="0"><tr><td class="lc">34,5</td><td class="even">3,5</td><td>36</td><td class="even">23</td></tr>'
+	theEl.innerHTML = theEl.innerHTML+'<table border="1"><tr><td class="lc">34,5</td><td class="even">3,5</td><td>36</td><td class="even">23</td></tr>'
 		
 	alert ('DRAW');
 	//var ret='';
