@@ -165,7 +165,7 @@ function errorHandler(evt) {
 function drawOutput(lines){
 	//Clear previous data
 	//alert ('Вызов процедур');
-	alert ('asf v1.555');
+	alert ('asf v1.557');
 	document.getElementById("output").innerHTML = "";
 	var table = document.createElement("table");
 	for (var i = 0; i < lines.length; i++) {
@@ -179,7 +179,7 @@ function drawOutput(lines){
 	document.getElementById("output").appendChild(table);
 	
 	var theEl=document.getElementById("output");
-	theEl.innerHTML = theEl.innerHTML+'<table border="1"><tr><td class="lc">34,5</td><td class="even">3,5</td><td>36</td><td class="even">23</td></tr>'
+	theEl.innerHTML = theEl.innerHTML+'<table border="1"><tr><td class="lc">34,5</td><td class="even">3,5</td><td>36</td><td class="way">23</td></tr>'
 		
 	alert ('DRAW');
 	//var ret='';
