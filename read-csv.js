@@ -69,7 +69,7 @@ function init (gg,wp,point) {
 	    var NZdanie = firstGeoObject.getPremiseNumber() || '-';
 	 
             //alert ("Государство: " + firstGeoObject.getCountry()+", Населенный пункт: "+firstGeoObject.getLocalities().join(', ')+", Адрес объекта: "+firstGeoObject.getAddressLine()+", Наименование здания: "+Zdanie+ ", Номер здания: " + NZdanie);
-        var Adress = "Координаты: " + firstGeoObject.geometry.getCoordinates() + "; Государство: " + firstGeoObject.getCountry()+"; Населенный пункт: "+firstGeoObject.getLocalities().join(', ')+"; Адрес объекта: "+firstGeoObject.getAddressLine()+"; Наименование здания: "+Zdanie+ "; Номер здания: " + NZdanie;
+        var Adress = "Координаты: " + firstGeoObject.geometry.getCoordinates() + ";<br /> Государство: " + firstGeoObject.getCountry()+";<br /> Населенный пункт: "+firstGeoObject.getLocalities().join(', ')+";<br /> Адрес объекта: "+firstGeoObject.getAddressLine()+"; Наименование здания: "+Zdanie+ "; Номер здания: " + NZdanie;
 	var ret = Adress;
  //----------------------------------------------------
 	var DistKO = new ymaps.Placemark([57.768087, 40.926583], {
@@ -154,7 +154,7 @@ function errorHandler(evt) {
 function drawOutput(lines){
 	//Clear previous data
 	//alert ('Вызов процедур');
-	alert ('asf v1.559');
+	alert ('asf v1.6');
 	document.getElementById("output").innerHTML = "";
 	var table = document.createElement("table");
 	for (var i = 0; i < lines.length; i++) {
