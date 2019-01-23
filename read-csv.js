@@ -154,7 +154,7 @@ function errorHandler(evt) {
 function drawOutput(lines){
 	//Clear previous data
 	//alert ('Вызов процедур');
-	alert ('asf v1.61');
+	alert ('asf v1.62');
 	document.getElementById("output").innerHTML = "";
 	var table = document.createElement("table");
 	for (var i = 0; i < lines.length; i++) {
@@ -162,7 +162,7 @@ function drawOutput(lines){
 		for (var j = 0; j < lines[i].length; j++) {
 			var firstNameCell = row.insertCell(-1);
 			firstNameCell.appendChild(document.createTextNode(lines[i][j]));
-			//alert (document.createTextNode(lines[i][j]));
+			alert (document.createTextNode(lines[i][j]));
 		}
 	}
 	document.getElementById("output").appendChild(table);
