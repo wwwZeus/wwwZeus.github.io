@@ -80,22 +80,7 @@ function init (gg,wp,point) {
             //alert ("Государство: " + firstGeoObject.getCountry()+", Населенный пункт: "+firstGeoObject.getLocalities().join(', ')+", Адрес объекта: "+firstGeoObject.getAddressLine()+", Наименование здания: "+Zdanie+ ", Номер здания: " + NZdanie);
         var Adress = "Координаты: " + firstGeoObject.geometry.getCoordinates() + "; Государство: " + firstGeoObject.getCountry()+"; Населенный пункт: "+firstGeoObject.getLocalities().join(', ')+"; Адрес объекта: "+firstGeoObject.getAddressLine()+"; Наименование здания: "+Zdanie+ "; Номер здания: " + NZdanie;
 	var ret = Adress;
-	//alert ('Функция внутри: ' + ret);
-            /**
-             * Если нужно добавить по найденным геокодером координатам метку со своими стилями и контентом балуна, создаем новую метку по координатам найденной и добавляем ее на карту вместо найденной.
-             */
-            /**
-             var myPlacemark = new ymaps.Placemark(coords, {
-             iconContent: 'моя метка',
-             balloonContent: 'Содержимое балуна <strong>моей метки</strong>'
-             }, {
-             preset: 'islands#violetStretchyIcon'
-             });
-             map.geoObjects.add(myPlacemark);
-            */ 
-	 
-	 
-	 //--------------------------------------
+ //----------------------------------------------------
 	var DistKO = new ymaps.Placemark([57.768087, 40.926583], {
             iconCaption: '456 км'
         }, {
