@@ -154,18 +154,18 @@ function errorHandler(evt) {
 function drawOutput(lines){
 	//Clear previous data
 	//alert ('Вызов процедур');
-	alert ('asf v1.6253');
+	alert ('asf v1.6254');
 	document.getElementById("output").innerHTML = "";
 	var table = document.createElement("table");
 	for (var i = 0; i < lines.length; i++) {
 		var row = table.insertRow(-1);
-		for (var j = 0; j < lines[i].length; j++) {
-			var firstNameCell = row.insertCell(-1);
-			firstNameCell.appendChild(document.createTextNode(lines[i][j]));
+		//for (var j = 0; j < lines[i].length; j++) {
+			//var firstNameCell = row.insertCell(-1);
+			//firstNameCell.appendChild(document.createTextNode(lines[i][j]));
 			//ymaps.ready(init(6,1,lines[i][j],[57.635685, 39.882938]));
 			alert (lines[i][0]);
 			alert (lines[i][1]);
-		}
+		//}
 	}
 	//document.getElementById("output").appendChild(table);
 	
