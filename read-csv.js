@@ -82,7 +82,7 @@ function init (gg,wp,point,pointB) {
 	var multiRouteKO = new ymaps.multiRouter.MultiRoute({   
    	 // Точки маршрута. Точки могут быть заданы как координатами, так и адресом. 
     	  referencePoints: [
-          pointB, //[57.635685, 39.882938] Сбербанк
+          [57.635685, 39.882938], //[57.635685, 39.882938] Сбербанк
           firstGeoObject.geometry.getCoordinates()  //Искомый объект
     	]},{
 	  boundsAutoApply: true
