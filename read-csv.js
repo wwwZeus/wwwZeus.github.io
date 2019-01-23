@@ -71,6 +71,7 @@ function init (gg,wp,point,pointB) {
             //alert ("Государство: " + firstGeoObject.getCountry()+", Населенный пункт: "+firstGeoObject.getLocalities().join(', ')+", Адрес объекта: "+firstGeoObject.getAddressLine()+", Наименование здания: "+Zdanie+ ", Номер здания: " + NZdanie);
         var Adress = "<b>Координаты:</b> " + firstGeoObject.geometry.getCoordinates() + ";<br /> <b>Государство:</b> " + firstGeoObject.getCountry()+";<br /> <b>Населенный пункт: </b>"+firstGeoObject.getLocalities().join(', ')+";<br /> <b>Адрес объекта:</b> "+firstGeoObject.getAddressLine()+"; Наименование здания: "+Zdanie+ "; Номер здания: " + NZdanie;
 	var ret = Adress;
+	alert ('Путь до'+PointB);
  //----------------------------------------------------
 	var DistKO = new ymaps.Placemark([57.768087, 40.926583], {
             iconCaption: '456 км'
@@ -154,7 +155,7 @@ function errorHandler(evt) {
 function drawOutput(lines){
 	//Clear previous data
 	//alert ('Вызов процедур');
-	alert ('asf v1.63');
+	alert ('asf v1.64');
 	document.getElementById("output").innerHTML = "";
 	var table = document.createElement("table");
 	for (var i = 0; i < lines.length; i++) {
