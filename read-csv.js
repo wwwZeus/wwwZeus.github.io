@@ -83,7 +83,7 @@ function init (gg,wp,point,pointB) {
 	var multiRouteKO = new ymaps.multiRouter.MultiRoute({   
    	 // Точки маршрута. Точки могут быть заданы как координатами, так и адресом. 
     	  referencePoints: [
-          [[57.635685, 39.882938]], //[57.635685, 39.882938] Сбербанк
+          [pointB], //[57.635685, 39.882938] Сбербанк
           firstGeoObject.geometry.getCoordinates()  //Искомый объект
     	]},{
 	  boundsAutoApply: true
@@ -155,7 +155,7 @@ function errorHandler(evt) {
 function drawOutput(lines){
 	//Clear previous data
 	//alert ('Вызов процедур');
-	alert ('asf v1.642');
+	alert ('asf v1.643');
 	document.getElementById("output").innerHTML = "";
 	var table = document.createElement("table");
 	for (var i = 0; i < lines.length; i++) {
