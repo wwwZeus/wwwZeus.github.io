@@ -154,7 +154,7 @@ function errorHandler(evt) {
 function drawOutput(lines){
 	//Clear previous data
 	//alert ('Вызов процедур');
-	alert ('asf v1.623');
+	alert ('asf v1.624');
 	document.getElementById("output").innerHTML = "";
 	var table = document.createElement("table");
 	for (var i = 0; i < lines.length; i++) {
@@ -162,8 +162,8 @@ function drawOutput(lines){
 		for (var j = 0; j < lines[i].length; j++) {
 			var firstNameCell = row.insertCell(-1);
 			firstNameCell.appendChild(document.createTextNode(lines[i][j]));
-			ymaps.ready(init(6,1,lines[i][j]));
-			alert (lines[i][j]);
+			//ymaps.ready(init(6,1,lines[i][j]));
+			alert (lines[i][1]);
 		}
 	}
 	//document.getElementById("output").appendChild(table);
@@ -173,7 +173,7 @@ function drawOutput(lines){
 		
 	//alert ('DRAW');
 	//var ret='';
-	ymaps.ready(init(6,1,'г.Ярославль Батова 26'));
+	//ymaps.ready(init(6,1,'г.Ярославль Батова 26'));
 	/*ymaps.ready(init(6,1,'г.Ярославль Тутаевское 71'));
 	ymaps.ready(init(6,1,'г.Ярославль Серго Орджонекидже 22к2'));
 	ymaps.ready(init(6,1,'г.Ярославль Амлазная, дом 5'));
