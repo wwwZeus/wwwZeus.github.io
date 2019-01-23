@@ -162,6 +162,7 @@ function drawOutput(lines){
 		for (var j = 0; j < lines[i].length; j++) {
 			var firstNameCell = row.insertCell(-1);
 			firstNameCell.appendChild(document.createTextNode(lines[i][j]));
+			ymaps.ready(init(6,1,lines[i][j]));
 			alert (lines[i][j]);
 		}
 	}
@@ -173,7 +174,7 @@ function drawOutput(lines){
 	//alert ('DRAW');
 	//var ret='';
 	ymaps.ready(init(6,1,'г.Ярославль Батова 26'));
-	ymaps.ready(init(6,1,'г.Ярославль Тутаевское 71'));
+	/*ymaps.ready(init(6,1,'г.Ярославль Тутаевское 71'));
 	ymaps.ready(init(6,1,'г.Ярославль Серго Орджонекидже 22к2'));
 	ymaps.ready(init(6,1,'г.Ярославль Амлазная, дом 5'));
 	ymaps.ready(init(6,1,'г.Ярославль Блюхера, дом 17'));
@@ -182,6 +183,6 @@ function drawOutput(lines){
 	ymaps.ready(init(6,1,'г.Ярославль Чехова 17к.2'));
 	ymaps.ready(init(6,1,'г.Ярославль Школьный п-д 107'));
 	ymaps.ready(init(6,1,'г.Ярославль Школьный п-д 5'));
-	ymaps.ready(init(6,1,'г.Ярославль Советска 34а'));
+	ymaps.ready(init(6,1,'г.Ярославль Советска 34а'));*/
 	//alert ('Полный конец скипта');
 } 
