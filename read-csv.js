@@ -179,7 +179,7 @@ function drawOutput(lines){
 	document.getElementById("output").appendChild(table);
 	
 	var theEl=document.getElementById("output");
-	theEl.innerHTML = theEl.innerHTML+'<table border="1"><tr><td class="lc">34,5</td><td class="even">3,5</td><td>36</td><td class="way">23</td></tr>'
+	theEl.innerHTML = theEl.innerHTML+'<table border="1">'
 		
 	alert ('DRAW');
 	//var ret='';
