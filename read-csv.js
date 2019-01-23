@@ -7,16 +7,7 @@ function init (gg,wp,point) {
 	//map.setZoom(5);
 	//alert ('Яндекс');
  ymaps.geocode(point, {
-        /**
-         * Опции запроса
-         * @see https://api.yandex.ru/maps/doc/jsapi/2.1/ref/reference/geocode.xml
-         */
-        // Сортировка результатов от центра окна карты.
-        // boundedBy: map.getBounds(),
-        // strictBounds: true,
-        // Вместе с опцией boundedBy будет искать строго внутри области, указанной в boundedBy.
-        // Если нужен только один результат, экономим трафик пользователей.
-        results: 1
+       results: 1
     }).then(function (res) {
             // Выбираем первый результат геокодирования.
             var firstGeoObject = res.geoObjects.get(0),
@@ -165,7 +156,7 @@ function errorHandler(evt) {
 function drawOutput(lines){
 	//Clear previous data
 	//alert ('Вызов процедур');
-	alert ('asf v1.557');
+	alert ('asf v1.558');
 	document.getElementById("output").innerHTML = "";
 	var table = document.createElement("table");
 	for (var i = 0; i < lines.length; i++) {
@@ -181,7 +172,7 @@ function drawOutput(lines){
 	var theEl=document.getElementById("output");
 	theEl.innerHTML = theEl.innerHTML+'<table border="1">'
 		
-	alert ('DRAW');
+	//alert ('DRAW');
 	//var ret='';
 	ymaps.ready(init(6,1,'г.Ярославль Батова 26'));
 	ymaps.ready(init(6,1,'г.Ярославль Тутаевское 71'));
