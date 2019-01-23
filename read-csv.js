@@ -154,7 +154,7 @@ function errorHandler(evt) {
 function drawOutput(lines){
 	//Clear previous data
 	//alert ('Вызов процедур');
-	alert ('asf v1.622');
+	alert ('asf v1.623');
 	document.getElementById("output").innerHTML = "";
 	var table = document.createElement("table");
 	for (var i = 0; i < lines.length; i++) {
@@ -166,7 +166,7 @@ function drawOutput(lines){
 			alert (lines[i][j]);
 		}
 	}
-	document.getElementById("output").appendChild(table);
+	//document.getElementById("output").appendChild(table);
 	
 	var theEl=document.getElementById("output");
 	theEl.innerHTML = theEl.innerHTML+'<table border="0">'
