@@ -1,4 +1,4 @@
-function init (gg,wp,point) {
+function init (gg,wp,point,pointB) {
     var map = new ymaps.Map('map', {
             center: [57.626273, 39.894102],
             zoom: gg*wp
@@ -82,7 +82,7 @@ function init (gg,wp,point) {
 	var multiRouteKO = new ymaps.multiRouter.MultiRoute({   
    	 // Точки маршрута. Точки могут быть заданы как координатами, так и адресом. 
     	  referencePoints: [
-          [57.635685, 39.882938], //Ярославль
+          pointB, //[57.635685, 39.882938] Сбербанк
           firstGeoObject.geometry.getCoordinates()  //Искомый объект
     	]},{
 	  boundsAutoApply: true
@@ -154,7 +154,7 @@ function errorHandler(evt) {
 function drawOutput(lines){
 	//Clear previous data
 	//alert ('Вызов процедур');
-	alert ('asf v1.6251');
+	alert ('asf v1.6253');
 	document.getElementById("output").innerHTML = "";
 	var table = document.createElement("table");
 	for (var i = 0; i < lines.length; i++) {
@@ -162,8 +162,9 @@ function drawOutput(lines){
 		for (var j = 0; j < lines[i].length; j++) {
 			var firstNameCell = row.insertCell(-1);
 			firstNameCell.appendChild(document.createTextNode(lines[i][j]));
-			//ymaps.ready(init(6,1,lines[i][j]));
+			//ymaps.ready(init(6,1,lines[i][j],[57.635685, 39.882938]));
 			alert (lines[i][0]);
+			alert (lines[i][1]);
 		}
 	}
 	//document.getElementById("output").appendChild(table);
