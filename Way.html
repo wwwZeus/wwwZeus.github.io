@@ -39,8 +39,10 @@ ymaps.ready(function () {
             
             console.log("Нетю");
         } else {
-		console.log("Длина: " + activeRoute.properties.get("distance").text);
+	console.log("Нашли:");
+	console.log("Длина: " + activeRoute.properties.get("distance").text);
         console.log("Время прохождения: " + activeRoute.properties.get("duration").text);
+        myMap.geoObjects.add(multiRoute);
 	}
         // Вывод информации о маршруте.
         //console.log("Длина: " + activeRoute.properties.get("distance").text);
@@ -52,7 +54,7 @@ ymaps.ready(function () {
         }
     }); 
     // Добавление маршрута на карту.
-    myMap.geoObjects.add(multiRoute);   
+      
 }); 
 </script> 
 
