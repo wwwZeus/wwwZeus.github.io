@@ -59,11 +59,12 @@ function init (gg,wp,point,pointB) {
             * Прямые методы для работы с результатами геокодирования.
             * @see https://tech.yandex.ru/maps/doc/jsapi/2.1/ref/reference/GeocodeResult-docpage/#getAddressLine
             */
-	    console.log('\Координаты: %s', firstGeoObject.geometry.getCoordinates()); 
+	    
             console.log('\nГосударство: %s', firstGeoObject.getCountry());
             console.log('Населенный пункт: %s', firstGeoObject.getLocalities().join(', '));
             console.log('Адрес объекта: %s', firstGeoObject.getAddressLine());
-	    
+	    console.log('Координаты: %s', firstGeoObject.geometry.getCoordinates()); 
+	 
             console.log('Наименование здания: %s', firstGeoObject.getPremise() || '-');
             console.log('Номер здания: %s', firstGeoObject.getPremiseNumber() || '-');
 	    var Zdanie = firstGeoObject.getPremise() || '-';
@@ -157,7 +158,7 @@ function errorHandler(evt) {
 function drawOutput(lines){
 	//Clear previous data
 	//alert ('Вызов процедур');
-	alert ('asf v1.6462');
+	alert ('asf v1.6463');
 	document.getElementById("output").innerHTML = "";
 	var table = document.createElement("table");
 	for (var i = 0; i < lines.length; i++) {
