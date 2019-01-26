@@ -25,7 +25,7 @@ ymaps.ready(function () {
     });
 
     // Добавление маршрута на карту.
-    console.log('v1.04');
+    console.log('v1.05');
     myMap.geoObjects.add(multiRoute);
 
     // Подписка на событие обновления данных маршрута.
@@ -37,10 +37,14 @@ ymaps.ready(function () {
         //alert (activeRoute);
         if (activeRoute == null){
             alert (activeRoute, 'sadf');
-        }
-        // Вывод информации о маршруте.
-        console.log("Длина: " + activeRoute.properties.get("distance").text);
+            console.log("Нетю");
+        } else {
+		console.log("Длина: " + activeRoute.properties.get("distance").text);
         console.log("Время прохождения: " + activeRoute.properties.get("duration").text);
+	}
+        // Вывод информации о маршруте.
+        //console.log("Длина: " + activeRoute.properties.get("distance").text);
+        //console.log("Время прохождения: " + activeRoute.properties.get("duration").text);
         // Для автомобильных маршрутов можно вывести 
         // информацию о перекрытых участках.
         if (activeRoute.properties.get("blocked")) {
