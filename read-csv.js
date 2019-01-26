@@ -59,6 +59,7 @@ function init (gg,wp,point,pointB) {
             * Прямые методы для работы с результатами геокодирования.
             * @see https://tech.yandex.ru/maps/doc/jsapi/2.1/ref/reference/GeocodeResult-docpage/#getAddressLine
             */
+	    console.log('\Координаты: %s', firstGeoObject.geometry.getCoordinates()); 
             console.log('\nГосударство: %s', firstGeoObject.getCountry());
             console.log('Населенный пункт: %s', firstGeoObject.getLocalities().join(', '));
             console.log('Адрес объекта: %s', firstGeoObject.getAddressLine());
@@ -91,6 +92,7 @@ function init (gg,wp,point,pointB) {
 	 
 	multiRouteKO.model.events.add("requestsuccess", function (event) {
 	A=multiRouteKO.getRoutes().get(0).properties.get("distance").value;
+	//console.log("Время прохождения: " + activeRoute.properties.get("duration").text); //Время в пути
 	//alert ((A*0.001).toFixed());
 	map.geoObjects.add(DistKO);	
 	var theEl=document.getElementById("output");
@@ -155,7 +157,7 @@ function errorHandler(evt) {
 function drawOutput(lines){
 	//Clear previous data
 	//alert ('Вызов процедур');
-	alert ('asf v1.6461');
+	alert ('asf v1.6462');
 	document.getElementById("output").innerHTML = "";
 	var table = document.createElement("table");
 	for (var i = 0; i < lines.length; i++) {
