@@ -23,9 +23,9 @@ ymaps.ready(function () {
     }, {
         boundsAutoApply: true
     });
-
+	console.log(multiRoute.referencePoints.get(0).value);
     // Добавление маршрута на карту.
-    console.log('v1.08');
+    console.log('v1.09');
     myMap.geoObjects.add(multiRoute);
 
     // Подписка на событие обновления данных маршрута.
@@ -38,6 +38,7 @@ ymaps.ready(function () {
         if (activeRoute == null){
             
             console.log("Нетю");
+	    //ymaps.coordSystem.geo.getDistance(moscowCoords, newYorkCoords)
         } else {
 	console.log("Нашли:");
 	console.log("Длина: " + activeRoute.properties.get("distance").text);
