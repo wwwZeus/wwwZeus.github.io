@@ -25,7 +25,7 @@ ymaps.ready(function () {
     });
 
     // Добавление маршрута на карту.
-    console.log('v1.01');
+    console.log('v1.02');
     myMap.geoObjects.add(multiRoute);
 
     // Подписка на событие обновления данных маршрута.
@@ -34,6 +34,7 @@ ymaps.ready(function () {
         // В примере используется автомобильный маршрут,
         // поэтому метод getActiveRoute() вернет объект multiRouter.driving.Route.
         var activeRoute = multiRoute.getActiveRoute();
+        alert (activeRoute);
         // Вывод информации о маршруте.
         console.log("Длина: " + activeRoute.properties.get("distance").text);
         console.log("Время прохождения: " + activeRoute.properties.get("duration").text);
