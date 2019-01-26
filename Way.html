@@ -17,14 +17,15 @@ ymaps.ready(function () {
     // Создание маршрута.
     var multiRoute = new ymaps.multiRouter.MultiRoute({
         referencePoints: [
-            "Омск",
-            "Тарский р-н, Тара г, Красноармейская ул, 81;"
+            "Архангельск",
+            "Нарьян-Мар г, Производственный проезд, д. 3"
         ]
     }, {
         boundsAutoApply: true
     });
 
     // Добавление маршрута на карту.
+    console.log('v1.01');
     myMap.geoObjects.add(multiRoute);
 
     // Подписка на событие обновления данных маршрута.
