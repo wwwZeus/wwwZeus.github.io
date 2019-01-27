@@ -55,7 +55,7 @@ console.log(multiRoute.getRoutes());
       			alert(ymaps.formatter.distance(
           	           ymaps.coordSystem.geo.getDistance(moscowCoords, newYorkCoords)) +'от ['+ moscowCoords[0]+','+moscowCoords[1]+'] до'+'['+ newYorkCoords[0]+','+newYorkCoords[1]+']'
 		        );
-			var WayCoord = (ymaps.formatter.distance(
+			var WayCoord = ymaps.formatter.distance(
           	           ymaps.coordSystem.geo.getDistance(moscowCoords, newYorkCoords)) +'от ['+ moscowCoords[0]+','+moscowCoords[1]+'] до'+'['+ newYorkCoords[0]+','+newYorkCoords[1]+']';
 		 	console.log(WayCoord);
    	     });
