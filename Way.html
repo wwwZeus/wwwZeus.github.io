@@ -25,7 +25,7 @@ ymaps.ready(function () {
     });
 	console.log(multiRoute.referencePoints);
     // Добавление маршрута на карту.
-    console.log('v1.11');
+    console.log('v1.12');
     myMap.geoObjects.add(multiRoute);
 
     // Подписка на событие обновления данных маршрута.
@@ -38,7 +38,7 @@ ymaps.ready(function () {
         if (activeRoute == null){
             
             console.log("Нетю");
-	    ymaps.geocode('Moscow').then(function (res) {
+	    ymaps.geocode('Москва').then(function (res) {
    		 var moscowCoords = res.geoObjects.get(0).geometry.getCoordinates();
    		 // Coordinates of New York.
    		 ymaps.geocode('New York').then(function (res) {
