@@ -18,16 +18,19 @@ ymaps.ready(function () {
     var multiRoute = new ymaps.multiRouter.MultiRoute({
         referencePoints: [
             //"Архангельск",
+	    //64.539393, 40.516939
             //"Нарьян-Мар г, Производственный проезд, д. 3"
-	    "Омск",
-	    "Тарский р-н, Тара г, Красноармейская ул, 81;"
+	    //"Омск",
+	    //"Тарский р-н, Тара г, Красноармейская ул, 81;"
+	    [64.539393, 40.516939],
+	    "Нарьян-Мар г, Производственный проезд, д. 3"
         ]
     }, {
         boundsAutoApply: true
     });
 	console.log(multiRoute.referencePoints);
     // Добавление маршрута на карту.
-    console.log('v1.16');
+    console.log('v1.17');
     myMap.geoObjects.add(multiRoute);
 
     // Подписка на событие обновления данных маршрута.
