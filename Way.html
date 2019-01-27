@@ -8,14 +8,14 @@
 
 <script type="text/javascript">
 ymaps.ready(function () {
-    var myMap = new ymaps.Map('map', {
+    var map = new ymaps.Map('map', {
         center: [54.989342, 73.368212],
         zoom: 7,
         controls: []
     });
 
     // Создание маршрута.
-    var multiRoute = new ymaps.multiRouter.MultiRoute({
+    var multiRouteKO = new ymaps.multiRouter.MultiRoute({
         referencePoints: [
             //"Архангельск",
 	    //64.539393, 40.516939
@@ -31,19 +31,21 @@ ymaps.ready(function () {
 	
     // Добавление маршрута на карту.
     console.log('v1.183');
-    myMap.geoObjects.add(multiRoute);
-console.log(multiRoute.getRoutes());
+    map.geoObjects.add(multiRouteKO);
+console.log(multiRouteKO.getRoutes());
+	
+	
     // Подписка на событие обновления данных маршрута.
-    multiRoute.model.events.add('requestsuccess', function() {
+    multiRouteKO.model.events.add('requestsuccess', function() {
         // Получение ссылки на активный маршрут.
         // В примере используется автомобильный маршрут,
         // поэтому метод getActiveRoute() вернет объект multiRouter.driving.Route.
-        var activeRoute = multiRoute.getActiveRoute();
+        var activeRoute = multiRouteKO.getActiveRoute();
         //alert (activeRoute);
         if (activeRoute == null){
             
             console.log("Нетю");
-	    ymaps.geocode('Архангельск').then(function (res) {
+	    ymaps.geocode('64.539393, 40.516939').then(function (res) {
    		 var moscowCoords = res.geoObjects.get(0).geometry.getCoordinates();
    		 // Coordinates of New York.
    		 ymaps.geocode('Нарьян-Мар г, Производственный проезд, д. 3').then(function (res) {
@@ -60,7 +62,7 @@ console.log(multiRoute.getRoutes());
 	console.log("Нашли:");
 	console.log("Длина: " + activeRoute.properties.get("distance").text);
         console.log("Время прохождения: " + activeRoute.properties.get("duration").text);
-        myMap.geoObjects.add(multiRoute);
+        map.geoObjects.add(multiRouteKO);
 	if (activeRoute.properties.get("blocked")) {
          	   console.log("На маршруте имеются участки с перекрытыми дорогами.");
          }
