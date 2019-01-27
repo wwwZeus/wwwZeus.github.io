@@ -28,11 +28,11 @@ ymaps.ready(function () {
     }, {
         boundsAutoApply: true
     });
-	console.log(multiRoute.referencePoints);
+	console.log(multiRoute.referencePoints.get(1));
     // Добавление маршрута на карту.
-    console.log('v1.18');
+    console.log('v1.181');
     myMap.geoObjects.add(multiRoute);
-
+console.log(multiRoute.getRoutes());
     // Подписка на событие обновления данных маршрута.
     multiRoute.model.events.add('requestsuccess', function() {
         // Получение ссылки на активный маршрут.
