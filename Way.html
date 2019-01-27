@@ -17,16 +17,17 @@ ymaps.ready(function () {
     // Создание маршрута.
     var multiRoute = new ymaps.multiRouter.MultiRoute({
         referencePoints: [
-            "Архангельск",
+            //"Архангельск",
             //"Нарьян-Мар г, Производственный проезд, д. 3"
-	    "Красноселькупский р-н, Толька п,"
+	    "Омск",
+	    "Тарский р-н, Тара г, Красноармейская ул, 81;"
         ]
     }, {
         boundsAutoApply: true
     });
 	console.log(multiRoute.referencePoints);
     // Добавление маршрута на карту.
-    console.log('v1.15');
+    console.log('v1.16');
     myMap.geoObjects.add(multiRoute);
 
     // Подписка на событие обновления данных маршрута.
