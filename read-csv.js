@@ -155,6 +155,7 @@ console.log(multiRouteKO.getRoutes());
 	console.log("Длина: " + activeRoute.properties.get("distance").text);
         console.log("Время прохождения: " + activeRoute.properties.get("duration").text);
         map.geoObjects.add(multiRouteKO);
+	theEl.innerHTML = theEl.innerHTML+'<table border="1"><tr><td class="lc">'+point+';</td><td class="even2">'+pointB+';</td><td class="even">'+ret+';</td><td class="way">'+activeRoute.properties.get("distance").text + ' км.<br /> Время в пути '+ activeRoute.properties.get("duration").text +'</td></tr>'; //+'; Расстояние: '+(A*0.001).toFixed() + 'км.';
 	if (activeRoute.properties.get("blocked")) {
          	   console.log("На маршруте имеются участки с перекрытыми дорогами.");
          }
@@ -224,7 +225,7 @@ function errorHandler(evt) {
 function drawOutput(lines){
 	//Clear previous data
 	//alert ('Вызов процедур');
-	alert ('asf v1.711');
+	alert ('asf v1.712');
 	document.getElementById("output").innerHTML = "";
 	var table = document.createElement("table");
 	for (var i = 0; i < lines.length; i++) {
