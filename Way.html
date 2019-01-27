@@ -38,10 +38,10 @@ ymaps.ready(function () {
         if (activeRoute == null){
             
             console.log("Нетю");
-	    ymaps.geocode('Москва').then(function (res) {
+	    ymaps.geocode('Архангельск').then(function (res) {
    		 var moscowCoords = res.geoObjects.get(0).geometry.getCoordinates();
    		 // Coordinates of New York.
-   		 ymaps.geocode('Ярославль').then(function (res) {
+   		 ymaps.geocode('Нарьян-Мар г, Производственный проезд, д. 3').then(function (res) {
     	    var newYorkCoords = res.geoObjects.get(0).geometry.getCoordinates();
         // Distance.
         alert(ymaps.formatter.distance(
