@@ -132,6 +132,7 @@ console.log(multiRouteKO.getRoutes());
         // Получение ссылки на активный маршрут.
         // В примере используется автомобильный маршрут,
         // поэтому метод getActiveRoute() вернет объект multiRouter.driving.Route.
+	var theEl=document.getElementById("output");
         var activeRoute = multiRouteKO.getActiveRoute();
         //alert (activeRoute);
         if (activeRoute == null){
@@ -225,7 +226,7 @@ function errorHandler(evt) {
 function drawOutput(lines){
 	//Clear previous data
 	//alert ('Вызов процедур');
-	alert ('asf v1.712');
+	alert ('asf v1.713');
 	document.getElementById("output").innerHTML = "";
 	var table = document.createElement("table");
 	for (var i = 0; i < lines.length; i++) {
