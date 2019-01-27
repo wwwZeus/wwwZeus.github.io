@@ -50,10 +50,10 @@ console.log(multiRoute.getRoutes());
     	   		var newYorkCoords = res.geoObjects.get(0).geometry.getCoordinates();
         		// Distance.
       			console.log(ymaps.formatter.distance(
-          	           ymaps.coordSystem.geo.getDistance(moscowCoords, newYorkCoords)),'--',moscowCoords,'--',newYorkCoords
+          	           ymaps.coordSystem.geo.getDistance(moscowCoords, newYorkCoords)),'--',moscowCoords,'--',newYorkCoords.length()
 		        );
       			alert(ymaps.formatter.distance(
-          	           ymaps.coordSystem.geo.getDistance(moscowCoords, newYorkCoords)),'--',moscowCoords,'--',newYorkCoords
+          	           ymaps.coordSystem.geo.getDistance(moscowCoords, newYorkCoords)),'--',moscowCoords,'--',newYorkCoords.length()
 		        );
    	     });
 	});		
