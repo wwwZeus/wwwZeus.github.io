@@ -25,7 +25,7 @@ ymaps.ready(function () {
     });
 	console.log(multiRoute.referencePoints);
     // Добавление маршрута на карту.
-    console.log('v1.13');
+    console.log('v1.14');
     myMap.geoObjects.add(multiRoute);
 
     // Подписка на событие обновления данных маршрута.
@@ -42,11 +42,11 @@ ymaps.ready(function () {
    		 var moscowCoords = res.geoObjects.get(0).geometry.getCoordinates();
    		 // Coordinates of New York.
    		 ymaps.geocode('Нарьян-Мар г, Производственный проезд, д. 3').then(function (res) {
-    	    var newYorkCoords = res.geoObjects.get(0).geometry.getCoordinates();
-        // Distance.
-        alert(ymaps.formatter.distance(
-            ymaps.coordSystem.geo.getDistance(moscowCoords, newYorkCoords)
-       		 ));
+    	   		var newYorkCoords = res.geoObjects.get(0).geometry.getCoordinates();
+        		// Distance.
+      			alert(ymaps.formatter.distance(
+          	           ymaps.coordSystem.geo.getDistance(moscowCoords, newYorkCoords))
+		        );
    	     });
 	});		
 		
@@ -57,8 +57,8 @@ ymaps.ready(function () {
         console.log("Время прохождения: " + activeRoute.properties.get("duration").text);
         myMap.geoObjects.add(multiRoute);
 	if (activeRoute.properties.get("blocked")) {
-            console.log("На маршруте имеются участки с перекрытыми дорогами.");
-        }
+         	   console.log("На маршруте имеются участки с перекрытыми дорогами.");
+         }
 	}
         // Вывод информации о маршруте.
         //console.log("Длина: " + activeRoute.properties.get("distance").text);
