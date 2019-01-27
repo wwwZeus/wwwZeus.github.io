@@ -167,7 +167,7 @@ console.log(multiRouteKO.getRoutes());
 
     }); 
 	 
-	 
+});	 
 //-----Конец создания маршурта	 
 }        
 
@@ -224,7 +224,7 @@ function errorHandler(evt) {
 function drawOutput(lines){
 	//Clear previous data
 	//alert ('Вызов процедур');
-	alert ('asf v1.71');
+	alert ('asf v1.711');
 	document.getElementById("output").innerHTML = "";
 	var table = document.createElement("table");
 	for (var i = 0; i < lines.length; i++) {
