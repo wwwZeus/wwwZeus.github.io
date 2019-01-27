@@ -49,14 +49,8 @@ console.log(multiRoute.getRoutes());
    		 ymaps.geocode('Нарьян-Мар г, Производственный проезд, д. 3').then(function (res) {
     	   		var newYorkCoords = res.geoObjects.get(0).geometry.getCoordinates();
         		// Distance.
-      			console.log(ymaps.formatter.distance(
-          	           ymaps.coordSystem.geo.getDistance(moscowCoords, newYorkCoords)),'--',moscowCoords.length,'--',newYorkCoords.length
-		        );
-      			alert(ymaps.formatter.distance(
-          	           ymaps.coordSystem.geo.getDistance(moscowCoords, newYorkCoords)) +'от ['+ moscowCoords[0]+','+moscowCoords[1]+'] до'+'['+ newYorkCoords[0]+','+newYorkCoords[1]+']'
-		        );
 			var WayCoord = ymaps.formatter.distance(
-          	           ymaps.coordSystem.geo.getDistance(moscowCoords, newYorkCoords)) +'от ['+ moscowCoords[0]+','+moscowCoords[1]+'] до'+'['+ newYorkCoords[0]+','+newYorkCoords[1]+']';
+          	           ymaps.coordSystem.geo.getDistance(moscowCoords, newYorkCoords)) +' от ['+ moscowCoords[0]+','+moscowCoords[1]+'] до '+'['+ newYorkCoords[0]+','+newYorkCoords[1]+']';
 		 	console.log(WayCoord);
    	     });
 	});		
