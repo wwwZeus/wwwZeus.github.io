@@ -75,7 +75,9 @@ function init (gg,wp,point,pointB) {
 	var ret = Adress;
 	
  //----------------------------------------------------
-	var DistKO = new ymaps.Placemark([57.768087, 40.926583], {
+	 
+//---Создание маршрута--------------------------
+/*	var DistKO = new ymaps.Placemark([57.768087, 40.926583], {
             iconCaption: '456 км'
         }, {
             preset: 'islands#grayCircleDotIcon',
@@ -102,7 +104,71 @@ function init (gg,wp,point,pointB) {
 		
 	});	 
 	 map.geoObjects.add(multiRouteKO);	 
- });
+ });*/
+
+    // Создание маршрута.
+    var multiRouteKO = new ymaps.multiRouter.MultiRoute({
+        referencePoints: [
+            //"Архангельск",
+	    //64.539393, 40.516939
+            //"Нарьян-Мар г, Производственный проезд, д. 3"
+	    //"Омск",
+	    //"Тарский р-н, Тара г, Красноармейская ул, 81;"
+	  pointB, //[57.635685, 39.882938] Сбербанк
+          firstGeoObject.geometry.getCoordinates()  //Искомый объект
+        ]},{
+        boundsAutoApply: true
+    });
+	
+    // Добавление маршрута на карту.
+    console.log('v1.20');
+    console.log(multiRouteKO.referencePoints);
+    map.geoObjects.add(multiRouteKO);
+console.log(multiRouteKO.getRoutes());
+	
+	
+    // Подписка на событие обновления данных маршрута.
+    multiRouteKO.model.events.add('requestsuccess', function() {
+        // Получение ссылки на активный маршрут.
+        // В примере используется автомобильный маршрут,
+        // поэтому метод getActiveRoute() вернет объект multiRouter.driving.Route.
+        var activeRoute = multiRouteKO.getActiveRoute();
+        //alert (activeRoute);
+        if (activeRoute == null){
+            
+            console.log("Нетю");
+	    ymaps.geocode(pointB).then(function (res) {
+   		 var moscowCoords = res.geoObjects.get(0).geometry.getCoordinates();
+   		 // Coordinates of New York.
+   		 ymaps.geocode( firstGeoObject.geometry.getCoordinates()).then(function (res) {
+    	   		var newYorkCoords = res.geoObjects.get(0).geometry.getCoordinates();
+        		// Distance.
+			var WayCoord = ymaps.formatter.distance(
+          	           ymaps.coordSystem.geo.getDistance(moscowCoords, newYorkCoords)) +' от ['+ moscowCoords[0]+','+moscowCoords[1]+'] до '+'['+ newYorkCoords[0]+','+newYorkCoords[1]+']';
+		 	console.log(WayCoord);
+   	     });
+	});		
+		
+	    //ymaps.coordSystem.geo.getDistance(moscowCoords, newYorkCoords)
+        } else {
+	console.log("Нашли:");
+	console.log("Длина: " + activeRoute.properties.get("distance").text);
+        console.log("Время прохождения: " + activeRoute.properties.get("duration").text);
+        map.geoObjects.add(multiRouteKO);
+	if (activeRoute.properties.get("blocked")) {
+         	   console.log("На маршруте имеются участки с перекрытыми дорогами.");
+         }
+	}
+        // Вывод информации о маршруте.
+        //console.log("Длина: " + activeRoute.properties.get("distance").text);
+        //console.log("Время прохождения: " + activeRoute.properties.get("duration").text);
+        // Для автомобильных маршрутов можно вывести 
+        // информацию о перекрытых участках.
+
+    }); 
+	 
+	 
+//-----Конец создания маршурта	 
 }        
 
 function handleFiles(files) {
@@ -158,7 +224,7 @@ function errorHandler(evt) {
 function drawOutput(lines){
 	//Clear previous data
 	//alert ('Вызов процедур');
-	alert ('asf v1.6463');
+	alert ('asf v1.71');
 	document.getElementById("output").innerHTML = "";
 	var table = document.createElement("table");
 	for (var i = 0; i < lines.length; i++) {
