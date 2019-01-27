@@ -53,7 +53,7 @@ console.log(multiRoute.getRoutes());
           	           ymaps.coordSystem.geo.getDistance(moscowCoords, newYorkCoords)),'--',moscowCoords.length,'--',newYorkCoords.length
 		        );
       			alert(ymaps.formatter.distance(
-          	           ymaps.coordSystem.geo.getDistance(moscowCoords, newYorkCoords)) +' -- '+ moscowCoords.length
+          	           ymaps.coordSystem.geo.getDistance(moscowCoords, newYorkCoords)) +'['+ moscowCoords[0]
 		        );
    	     });
 	});		
