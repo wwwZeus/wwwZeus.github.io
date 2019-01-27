@@ -41,7 +41,7 @@ ymaps.ready(function () {
 	    ymaps.geocode('Москва').then(function (res) {
    		 var moscowCoords = res.geoObjects.get(0).geometry.getCoordinates();
    		 // Coordinates of New York.
-   		 ymaps.geocode('New York').then(function (res) {
+   		 ymaps.geocode('Ярославль').then(function (res) {
     	    var newYorkCoords = res.geoObjects.get(0).geometry.getCoordinates();
         // Distance.
         alert(ymaps.formatter.distance(
