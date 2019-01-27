@@ -28,9 +28,9 @@ ymaps.ready(function () {
     }, {
         boundsAutoApply: true
     });
-	console.log(multiRoute.referencePoints);
+	
     // Добавление маршрута на карту.
-    console.log('v1.181');
+    console.log('v1.182');
     myMap.geoObjects.add(multiRoute);
 console.log(multiRoute.getRoutes());
     // Подписка на событие обновления данных маршрута.
@@ -50,7 +50,7 @@ console.log(multiRoute.getRoutes());
     	   		var newYorkCoords = res.geoObjects.get(0).geometry.getCoordinates();
         		// Distance.
       			console.log(ymaps.formatter.distance(
-          	           ymaps.coordSystem.geo.getDistance(moscowCoords, newYorkCoords))
+          	           ymaps.coordSystem.geo.getDistance(moscowCoords, newYorkCoords)),'--',moscowCoords,'--',newYorkCoords
 		        );
    	     });
 	});		
