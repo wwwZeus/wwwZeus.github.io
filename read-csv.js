@@ -150,6 +150,7 @@ function init (gg,wp,point,pointB,pointNum) {
 		 	//console.log(WayCoord);
 			theEl.innerHTML = theEl.innerHTML+'<table border="1"><tr><td class="lc">'+point+';</td><td class="even2">'+pointB+';</td><td class="even">'+ret+';</td><td class="way">'+ WayCoord +'</td><td class="way">'+pointNum+'</td></tr>'; //+'; Расстояние: '+(A*0.001).toFixed() + 'км.';
 			theEl2.innerHTML = theEl2.innerHTML+' '+point+';||'+pointB+';||'+ret2+';||'+ WayCoord +'||'+pointNum+'<br />'; //+'; Расстояние: '+(A*0.001).toFixed() + 'км.';
+			map.geoObjects.add(multiRouteKO);
    	     });
 	});		
 		
@@ -230,7 +231,7 @@ function errorHandler(evt) {
 function drawOutput(lines){
 	//Clear previous data
 	//alert ('Вызов процедур');
-	alert ('asf v1.73');
+	alert ('asf v1.74');
 	document.getElementById("output").innerHTML = "";
 	var table = document.createElement("table");
 	for (var i = 0; i < lines.length; i++) {
