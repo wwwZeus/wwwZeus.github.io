@@ -72,7 +72,9 @@ function init (gg,wp,point,pointB,pointNum) {
 	 
             //alert ("Государство: " + firstGeoObject.getCountry()+", Населенный пункт: "+firstGeoObject.getLocalities().join(', ')+", Адрес объекта: "+firstGeoObject.getAddressLine()+", Наименование здания: "+Zdanie+ ", Номер здания: " + NZdanie);
         var Adress = "<b>Координаты:</b> " + firstGeoObject.geometry.getCoordinates() + ";<br /> <b>Государство:</b> " + firstGeoObject.getCountry()+";<br /> <b>Населенный пункт: </b>"+firstGeoObject.getLocalities().join(', ')+";<br /> <b>Адрес объекта:</b> "+firstGeoObject.getAddressLine()+"; Наименование здания: "+Zdanie+ "; Номер здания: " + NZdanie;
+	var Adress2 = "Координаты: " + firstGeoObject.geometry.getCoordinates() + "; Государство:" + firstGeoObject.getCountry()+"; Населенный пункт: "+firstGeoObject.getLocalities().join(', ')+"; Адрес объекта: "+firstGeoObject.getAddressLine()+"; Наименование здания: "+Zdanie+ "; Номер здания: " + NZdanie;
 	var ret = Adress;
+	var ret2 = Adress2;
 	
  //----------------------------------------------------
 	 
@@ -133,6 +135,7 @@ console.log(multiRouteKO.getRoutes());
         // В примере используется автомобильный маршрут,
         // поэтому метод getActiveRoute() вернет объект multiRouter.driving.Route.
 	var theEl=document.getElementById("output");
+	var theEl2=document.getElementById("output2");
         var activeRoute = multiRouteKO.getActiveRoute();
         //alert (activeRoute);
         if (activeRoute == null){
@@ -148,6 +151,7 @@ console.log(multiRouteKO.getRoutes());
           	           ymaps.coordSystem.geo.getDistance(moscowCoords, newYorkCoords)) +' от ['+ moscowCoords[0]+','+moscowCoords[1]+'] до '+'['+ newYorkCoords[0]+','+newYorkCoords[1]+']';
 		 	console.log(WayCoord);
 			theEl.innerHTML = theEl.innerHTML+'<table border="1"><tr><td class="lc">'+point+';</td><td class="even2">'+pointB+';</td><td class="even">'+ret+';</td><td class="way">'+ WayCoord +'</td><td class="way">'+pointNum+'</td></tr>'; //+'; Расстояние: '+(A*0.001).toFixed() + 'км.';
+			theEl2.innerHTML = theEl2.innerHTML+' '+point+'; '+pointB+'; '+ret2+'; '+ WayCoord +' '+pointNum+'<br />'; //+'; Расстояние: '+(A*0.001).toFixed() + 'км.';
    	     });
 	});		
 		
@@ -158,6 +162,7 @@ console.log(multiRouteKO.getRoutes());
         console.log("Время прохождения: " + activeRoute.properties.get("duration").text);
         map.geoObjects.add(multiRouteKO);
 	theEl.innerHTML = theEl.innerHTML+'<table border="1"><tr><td class="lc">'+point+';</td><td class="even2">'+pointB+';</td><td class="even">'+ret+';</td><td class="way">'+activeRoute.properties.get("distance").text + '.<br /> Время в пути '+ activeRoute.properties.get("duration").text +'</td><td class="way">'+pointNum+'</td></tr>'; //+'; Расстояние: '+(A*0.001).toFixed() + 'км.';
+	theEl2.innerHTML = theEl2.innerHTML+'||'+point+';||'+pointB+';||'+ret2+'||'+activeRoute.properties.get("distance").text + '||'+ activeRoute.properties.get("duration").text +'||'+pointNum+'</td></tr>'; //+'; Расстояние: '+(A*0.001).toFixed() + 'км.';
 	if (activeRoute.properties.get("blocked")) {
          	   console.log("На маршруте имеются участки с перекрытыми дорогами.");
          }
@@ -243,6 +248,7 @@ function drawOutput(lines){
 	//document.getElementById("output").appendChild(table);
 	
 	var theEl=document.getElementById("output");
+	var theEl2=document.getElementById("output2");
 	theEl.innerHTML = theEl.innerHTML+'<table border="0">'
 		
 	//alert ('DRAW');
