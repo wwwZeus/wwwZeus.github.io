@@ -21,7 +21,7 @@ function init (gg,wp,point,pointB,pointNum) {
             firstGeoObject.properties.set('iconCaption', firstGeoObject.getAddressLine());
 
             // Добавляем первый найденный геообъект на карту.
-            map.geoObjects.add(firstGeoObject);
+            //map.geoObjects.add(firstGeoObject);
             // Масштабируем карту на область видимости геообъекта.
             map.setBounds(bounds, {
                 // Проверяем наличие тайлов на данном масштабе.
@@ -31,35 +31,37 @@ function init (gg,wp,point,pointB,pointNum) {
             /**
              * Все данные в виде javascript-объекта.
              */
-            console.log('Все данные геообъекта: ', firstGeoObject.properties.getAll());
+          /*console.log('Все данные геообъекта: ', firstGeoObject.properties.getAll());
             /**
              * Метаданные запроса и ответа геокодера.
              * @see https://api.yandex.ru/maps/doc/geocoder/desc/reference/GeocoderResponseMetaData.xml
              */
-            console.log('Метаданные ответа геокодера: ', res.metaData);
+           //console.log('Метаданные ответа геокодера: ', res.metaData);
             /**
              * Метаданные геокодера, возвращаемые для найденного объекта.
              * @see https://api.yandex.ru/maps/doc/geocoder/desc/reference/GeocoderMetaData.xml
              */
-            console.log('Метаданные геокодера: ', firstGeoObject.properties.get('metaDataProperty.GeocoderMetaData'));
+           //console.log('Метаданные геокодера: ', firstGeoObject.properties.get('metaDataProperty.GeocoderMetaData'));
             /**
              * Точность ответа (precision) возвращается только для домов.
              * @see https://api.yandex.ru/maps/doc/geocoder/desc/reference/precision.xml
              */
-            console.log('precision', firstGeoObject.properties.get('metaDataProperty.GeocoderMetaData.precision'));
+          //console.log('precision', firstGeoObject.properties.get('metaDataProperty.GeocoderMetaData.precision'));
             /**
              * Тип найденного объекта (kind).
              * @see https://api.yandex.ru/maps/doc/geocoder/desc/reference/kind.xml
              */
+	 /*  
             console.log('Тип геообъекта: %s', firstGeoObject.properties.get('metaDataProperty.GeocoderMetaData.kind'));
             console.log('Название объекта: %s', firstGeoObject.properties.get('name'));
             console.log('Описание объекта: %s', firstGeoObject.properties.get('description'));
             console.log('Полное описание объекта: %s', firstGeoObject.properties.get('text'));
+	  */
             /**
             * Прямые методы для работы с результатами геокодирования.
             * @see https://tech.yandex.ru/maps/doc/jsapi/2.1/ref/reference/GeocodeResult-docpage/#getAddressLine
             */
-	    
+	  /*  
             console.log('\nГосударство: %s', firstGeoObject.getCountry());
             console.log('Населенный пункт: %s', firstGeoObject.getLocalities().join(', '));
             console.log('Адрес объекта: %s', firstGeoObject.getAddressLine());
@@ -67,6 +69,7 @@ function init (gg,wp,point,pointB,pointNum) {
 	 
             console.log('Наименование здания: %s', firstGeoObject.getPremise() || '-');
             console.log('Номер здания: %s', firstGeoObject.getPremiseNumber() || '-');
+	 */
 	    var Zdanie = firstGeoObject.getPremise() || '-';
 	    var NZdanie = firstGeoObject.getPremiseNumber() || '-';
 	 
@@ -111,11 +114,6 @@ function init (gg,wp,point,pointB,pointNum) {
     // Создание маршрута.
     var multiRouteKO = new ymaps.multiRouter.MultiRoute({
         referencePoints: [
-            //"Архангельск",
-	    //64.539393, 40.516939
-            //"Нарьян-Мар г, Производственный проезд, д. 3"
-	    //"Омск",
-	    //"Тарский р-н, Тара г, Красноармейская ул, 81;"
 	  pointB, //[57.635685, 39.882938] Сбербанк
           firstGeoObject.geometry.getCoordinates()  //Искомый объект
         ]},{
@@ -123,10 +121,10 @@ function init (gg,wp,point,pointB,pointNum) {
     });
 	
     // Добавление маршрута на карту.
-    console.log('v1.20');
-    console.log(multiRouteKO.referencePoints);
+    //console.log('v1.20');
+    //console.log(multiRouteKO.referencePoints);
     map.geoObjects.add(multiRouteKO);
-console.log(multiRouteKO.getRoutes());
+//console.log(multiRouteKO.getRoutes());
 	
 	
     // Подписка на событие обновления данных маршрута.
@@ -232,7 +230,7 @@ function errorHandler(evt) {
 function drawOutput(lines){
 	//Clear previous data
 	//alert ('Вызов процедур');
-	alert ('asf v1.717');
+	alert ('asf v1.72');
 	document.getElementById("output").innerHTML = "";
 	var table = document.createElement("table");
 	for (var i = 0; i < lines.length; i++) {
