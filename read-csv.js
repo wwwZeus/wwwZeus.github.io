@@ -123,7 +123,7 @@ function init (gg,wp,point,pointB,pointNum) {
     // Добавление маршрута на карту.
     //console.log('v1.20');
     //console.log(multiRouteKO.referencePoints);
-    map.geoObjects.add(multiRouteKO);
+    //map.geoObjects.add(multiRouteKO);
 //console.log(multiRouteKO.getRoutes());
 	
 	
@@ -147,7 +147,7 @@ function init (gg,wp,point,pointB,pointNum) {
         		// Distance.
 			var WayCoord = ymaps.formatter.distance(
           	           ymaps.coordSystem.geo.getDistance(moscowCoords, newYorkCoords)) +'|| от ['+ moscowCoords[0]+','+moscowCoords[1]+'] до '+'['+ newYorkCoords[0]+','+newYorkCoords[1]+']';
-		 	console.log(WayCoord);
+		 	//console.log(WayCoord);
 			theEl.innerHTML = theEl.innerHTML+'<table border="1"><tr><td class="lc">'+point+';</td><td class="even2">'+pointB+';</td><td class="even">'+ret+';</td><td class="way">'+ WayCoord +'</td><td class="way">'+pointNum+'</td></tr>'; //+'; Расстояние: '+(A*0.001).toFixed() + 'км.';
 			theEl2.innerHTML = theEl2.innerHTML+' '+point+';||'+pointB+';||'+ret2+';||'+ WayCoord +'||'+pointNum+'<br />'; //+'; Расстояние: '+(A*0.001).toFixed() + 'км.';
    	     });
@@ -155,9 +155,9 @@ function init (gg,wp,point,pointB,pointNum) {
 		
 	    //ymaps.coordSystem.geo.getDistance(moscowCoords, newYorkCoords)
         } else {
-	console.log("Нашли:");
-	console.log("Длина: " + activeRoute.properties.get("distance").text);
-        console.log("Время прохождения: " + activeRoute.properties.get("duration").text);
+	//console.log("Нашли:");
+	//console.log("Длина: " + activeRoute.properties.get("distance").text);
+        //console.log("Время прохождения: " + activeRoute.properties.get("duration").text);
         map.geoObjects.add(multiRouteKO);
 	theEl.innerHTML = theEl.innerHTML+'<table border="1"><tr><td class="lc">'+point+';</td><td class="even2">'+pointB+';</td><td class="even">'+ret+';</td><td class="way">'+activeRoute.properties.get("distance").text + '.<br /> Время в пути '+ activeRoute.properties.get("duration").text +'</td><td class="way">'+pointNum+'</td></tr>'; //+'; Расстояние: '+(A*0.001).toFixed() + 'км.';
 	theEl2.innerHTML = theEl2.innerHTML+' '+point+';||'+pointB+';||'+ret2+'||'+activeRoute.properties.get("distance").text + '||'+ activeRoute.properties.get("duration").text +'||'+pointNum+'<br />'; //+'; Расстояние: '+(A*0.001).toFixed() + 'км.';
@@ -230,7 +230,7 @@ function errorHandler(evt) {
 function drawOutput(lines){
 	//Clear previous data
 	//alert ('Вызов процедур');
-	alert ('asf v1.72');
+	alert ('asf v1.73');
 	document.getElementById("output").innerHTML = "";
 	var table = document.createElement("table");
 	for (var i = 0; i < lines.length; i++) {
