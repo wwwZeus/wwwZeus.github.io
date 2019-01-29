@@ -231,7 +231,7 @@ function errorHandler(evt) {
 function drawOutput(lines){
 	//Clear previous data
 	//alert ('Вызов процедур');
-	alert ('asf v1.76');
+	alert ('asf v1.77');
 	document.getElementById("output").innerHTML = "";
 	document.getElementById("output2").innerHTML = "";
 	var table = document.createElement("table");
