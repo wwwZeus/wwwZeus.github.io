@@ -234,8 +234,8 @@ function drawOutput(lines){
 	alert ('asf v1.81');
 	document.getElementById("output").innerHTML = "";
 	document.getElementById("output2").innerHTML = "";
-	document.getElementById("c_Start").innerHTML = 0;
-	document.getElementById("c_Finish").innerHTML = 0;
+	document.getElementById("c_Start").innerHTML = 1;
+	document.getElementById("c_Finish").innerHTML = 12;
 	
 	var table = document.createElement("table");
 	for (var i = 0; i < lines.length; i++) {
