@@ -9,6 +9,8 @@ function init (gg,wp,point,pointB,pointNum) {
  ymaps.geocode(point, {
        results: 1
     }).then(function (res) {
+	    cStart.innerHTML = cStart.innerHTML+1;
+	    cFinish.innerHTML = cStart.innerHTML+1;
             // Выбираем первый результат геокодирования.
             var firstGeoObject = res.geoObjects.get(0),
                 // Координаты геообъекта.
@@ -253,10 +255,8 @@ function drawOutput(lines){
 	var theEl=document.getElementById("output");
 	var theEl2=document.getElementById("output2");
 	var cStart=document.getElementById("c_Start");
-	cStart=0;
-	cStart.innerHTML = cStart.innerHTML+1;
 	var cFinish=document.getElementById("c_Finish");
-	cFinish=0;
+	cStart.innerHTML = cStart.innerHTML+1;
 	cFinish.innerHTML = cStart.innerHTML+1;
 	
 	theEl.innerHTML = theEl.innerHTML+'<table border="0">'
