@@ -9,10 +9,9 @@ function init (gg,wp,point,pointB,pointNum) {
  ymaps.geocode(point, {
        results: 1
     }).then(function (res) {
+	    //Кол-во стартов процедуры
 	    var cStart=document.getElementById("c_Start");
-	    var cFinish=document.getElementById("c_Finish");
-	    cStart.innerHTML = cStart.innerHTML+2;
-	    cFinish.innerHTML = cStart.innerHTML+2;
+	    cStart.innerHTML = cStart.innerHTML+1;
             // Выбираем первый результат геокодирования.
             var firstGeoObject = res.geoObjects.get(0),
                 // Координаты геообъекта.
@@ -141,7 +140,9 @@ function init (gg,wp,point,pointB,pointNum) {
         var activeRoute = multiRouteKO.getActiveRoute();
         //alert (activeRoute);
         if (activeRoute == null){
-            
+	    //Кол-во найденных объектов
+            var cFinish=document.getElementById("c_Finish");
+	    cFinish.innerHTML = cFinish.innerHTML+1;
             console.log("Нетю, Пусто");
 	    ymaps.geocode(pointB).then(function (res) {
    		 var moscowCoords = res.geoObjects.get(0).geometry.getCoordinates();
@@ -164,6 +165,9 @@ function init (gg,wp,point,pointB,pointNum) {
 	//console.log("Длина: " + activeRoute.properties.get("distance").text);
         //console.log("Время прохождения: " + activeRoute.properties.get("duration").text);
         map.geoObjects.add(multiRouteKO);
+	//Кол-во найденных объектов
+	var cFinish=document.getElementById("c_Finish");
+	cFinish.innerHTML = cFinish.innerHTML+1;
 	theEl.innerHTML = theEl.innerHTML+'<table border="1"><tr><td class="lc">'+pointB+';</td><td class="even2">'+point+';</td><td class="even">'+ret+';</td><td class="way">'+activeRoute.properties.get("distance").text + '.<br /> Время в пути '+ activeRoute.properties.get("duration").text +'</td><td class="way">'+pointNum+'</td></tr>'; //+'; Расстояние: '+(A*0.001).toFixed() + 'км.';
 	theEl2.innerHTML = theEl2.innerHTML+' '+pointB+';||'+point+';||'+ret2+'||'+activeRoute.properties.get("distance").text + '||'+ activeRoute.properties.get("duration").text +'||'+pointNum+'<br />'; //+'; Расстояние: '+(A*0.001).toFixed() + 'км.';
 	if (activeRoute.properties.get("blocked")) {
@@ -235,7 +239,7 @@ function errorHandler(evt) {
 function drawOutput(lines){
 	//Clear previous data
 	//alert ('Вызов процедур');
-	alert ('asf v1.81');
+	alert ('asf v1.82');
 	document.getElementById("output").innerHTML = "";
 	document.getElementById("output2").innerHTML = "";
 	document.getElementById("c_Start").innerHTML = 1;
