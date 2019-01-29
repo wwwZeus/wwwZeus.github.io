@@ -27,7 +27,7 @@ function init (gg,wp,point,pointB,pointNum) {
             //map.geoObjects.add(firstGeoObject);
             // Масштабируем карту на область видимости геообъекта.
             map.setBounds(bounds, {
-                // Проверяем наличие тайлов на данном масштабе.
+                //Проверяем наличие тайлов на данном масштабе.
                 checkZoomRange: true
             });
 
