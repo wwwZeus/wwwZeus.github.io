@@ -243,7 +243,7 @@ function drawOutput(lines){
 	
 	var table = document.createElement("table");
 	
-	document.getElementById("title").innerHTML = "HTML5 File v1.842 API";
+	document.getElementById("title").innerHTML = "HTML5 File v1.844 API";
 	
 	document.getElementById("output").innerHTML = "";
 	document.getElementById("output2").innerHTML = "";
@@ -258,7 +258,7 @@ function drawOutput(lines){
 	document.getElementById("c_Start").innerHTML = 2;
 	document.getElementById("c_Finish").innerHTML = 2;
 	
-	cStart.textContent = textContent(cStart.textContent)+1;
+	cStart.textContent = Number(cStart.textContent)+1;
 	cFinish.innerHTML = cFinish.innerHTML+1;
 	
 	document.getElementById("c_Start").innerHTML = 3;
