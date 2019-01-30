@@ -11,7 +11,8 @@ function init (gg,wp,point,pointB,pointNum) {
     }).then(function (res) {
 	    //Кол-во стартов процедуры
 	    var cStart=document.getElementById("c_Start");
-	    cStart.innerHTML = cStart.innerHTML+1;
+	    var cNStart = cNStart+1;
+	    cStart.innerHTML = cStart.innerHTML+cNStart;
             // Выбираем первый результат геокодирования.
             var firstGeoObject = res.geoObjects.get(0),
                 // Координаты геообъекта.
@@ -242,8 +243,8 @@ function drawOutput(lines){
 	alert ('asf v1.831');
 	document.getElementById("output").innerHTML = "";
 	document.getElementById("output2").innerHTML = "";
-	document.getElementById("c_Start").innerHTML = 0;
-	document.getElementById("c_Finish").innerHTML = 0;
+	document.getElementById("c_Start").innerHTML = " ";
+	document.getElementById("c_Finish").innerHTML =" ";
 	
 	var table = document.createElement("table");
 	for (var i = 0; i < lines.length; i++) {
@@ -262,8 +263,10 @@ function drawOutput(lines){
 	var theEl2=document.getElementById("output2");
 	var cStart=document.getElementById("c_Start");
 	var cFinish=document.getElementById("c_Finish");
-	cStart.innerHTML = cStart.innerHTML+2;
-	cFinish.innerHTML = cFinish.innerHTML+2;
+	var cNStart = 2;
+	var cNFinish = 2;
+	cStart.innerHTML = cStart.innerHTML+cNStart;
+	cFinish.innerHTML = cFinish.innerHTML+cNFinish;
 	
 	theEl.innerHTML = theEl.innerHTML+'<table border="0">'
 	theEl2.innerHTML = theEl2.innerHTML+'<table border="0">'	
