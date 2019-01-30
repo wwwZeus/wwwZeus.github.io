@@ -267,7 +267,8 @@ function drawOutput(lines){
 	cFinish.innerHTML = cFinish.innerHTML+cNFinish;
 	
 	theEl.innerHTML = theEl.innerHTML+'<table border="0">'
-	theEl2.innerHTML = theEl2.innerHTML+'<table border="0">'	
+	theEl2.innerHTML = theEl2.innerHTML+'<table border="0">'
+	cStart.innerHTML = '<center>'+cStart.innerHTML + '</center>';
 	//alert ('DRAW');
 	//var ret='';
 	//ymaps.ready(init(6,1,'г.Ярославль Батова 26'));
