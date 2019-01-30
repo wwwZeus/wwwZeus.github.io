@@ -75,10 +75,9 @@ function init (gg,wp,point,pointB,pointNum) {
             console.log('Наименование здания: %s', firstGeoObject.getPremise() || '-');
             console.log('Номер здания: %s', firstGeoObject.getPremiseNumber() || '-');
 	 */
-	    var Zdanie = firstGeoObject.getPremise() || '-';
-	    var NZdanie = firstGeoObject.getPremiseNumber() || '-';
+	var Zdanie = firstGeoObject.getPremise() || '-';
+	var NZdanie = firstGeoObject.getPremiseNumber() || '-';
 	 
-            //alert ("Государство: " + firstGeoObject.getCountry()+", Населенный пункт: "+firstGeoObject.getLocalities().join(', ')+", Адрес объекта: "+firstGeoObject.getAddressLine()+", Наименование здания: "+Zdanie+ ", Номер здания: " + NZdanie);
         var Adress = "<b>Координаты:</b> " + firstGeoObject.geometry.getCoordinates() + ";<br /> <b>Государство:</b> " + firstGeoObject.getCountry()+";<br /> <b>Населенный пункт: </b>"+firstGeoObject.getLocalities().join(', ')+";<br /> <b>Адрес объекта:</b> "+firstGeoObject.getAddressLine()+"; Наименование здания: "+Zdanie+ "; Номер здания: " + NZdanie;
 	var Adress2 = "Координаты: " + firstGeoObject.geometry.getCoordinates() + "; Государство:" + firstGeoObject.getCountry()+"; Населенный пункт: "+firstGeoObject.getLocalities().join(', ')+"; Адрес объекта: "+firstGeoObject.getAddressLine()+"; Наименование здания: "+Zdanie+ "; Номер здания: " + NZdanie;
 	var ret = Adress;
@@ -125,11 +124,6 @@ function init (gg,wp,point,pointB,pointNum) {
         boundsAutoApply: true
     });
 	
-    // Добавление маршрута на карту.
-    //console.log('v1.20');
-    //console.log(multiRouteKO.referencePoints);
-    //map.geoObjects.add(multiRouteKO);
-//console.log(multiRouteKO.getRoutes());
 	
 	
     // Подписка на событие обновления данных маршрута.
@@ -141,49 +135,40 @@ function init (gg,wp,point,pointB,pointNum) {
 	var theEl2=document.getElementById("output2");
         var activeRoute = multiRouteKO.getActiveRoute();
         //alert (activeRoute);
-        if (activeRoute == null){
-	    //Кол-во найденных объектов
-            var cFinish=document.getElementById("c_Finish");
-	    cFinish.innerHTML = cFinish.innerHTML+1;
-            console.log("Нетю, Пусто");
-	    ymaps.geocode(pointB).then(function (res) {
-   		 var moscowCoords = res.geoObjects.get(0).geometry.getCoordinates();
-   		 // Coordinates of New York.
-   		 ymaps.geocode( firstGeoObject.geometry.getCoordinates()).then(function (res) {
-    	   		var newYorkCoords = res.geoObjects.get(0).geometry.getCoordinates();
-        		// Distance.
-			var WayCoord = ymaps.formatter.distance(
-          	           ymaps.coordSystem.geo.getDistance(moscowCoords, newYorkCoords)) +'|| от ['+ moscowCoords[0]+','+moscowCoords[1]+'] до '+'['+ newYorkCoords[0]+','+newYorkCoords[1]+']';
+        if (activeRoute == null) {
+	  //Кол-во найденных объектов
+	  var cFinish=document.getElementById("c_Finish");
+	  cFinish.textContent = Number(cFinish.textContent)+1;
+	  cFinish.innerHTML = '<center>'+cFinish.textContent + '</center>';
+		
+          console.log("Нетю, Пусто");
+	  ymaps.geocode(pointB).then(function (res) {
+   	       var moscowCoords = res.geoObjects.get(0).geometry.getCoordinates();
+   	       ymaps.geocode( firstGeoObject.geometry.getCoordinates()).then(function (res) {
+    	   	   var newYorkCoords = res.geoObjects.get(0).geometry.getCoordinates();
+        	   // Distance.
+		   var WayCoord = ymaps.formatter.distance(
+          	       ymaps.coordSystem.geo.getDistance(moscowCoords, newYorkCoords)) +'|| от ['+ moscowCoords[0]+','+moscowCoords[1]+'] до '+'['+ newYorkCoords[0]+','+newYorkCoords[1]+']';
 		 	//console.log(WayCoord);
 			theEl.innerHTML = theEl.innerHTML+'<table border="1"><tr><td class="lc">'+pointB+';</td><td class="even2">'+point+';</td><td class="even">'+ret+';</td><td class="way">'+ WayCoord +'</td><td class="way">'+pointNum+'</td></tr>'; //+'; Расстояние: '+(A*0.001).toFixed() + 'км.';
 			theEl2.innerHTML = theEl2.innerHTML+' '+pointB+';||'+point+';||'+ret2+';||'+ WayCoord +'||'+pointNum+'<br />'; //+'; Расстояние: '+(A*0.001).toFixed() + 'км.';
 			map.geoObjects.add(multiRouteKO);
    	     });
 	});		
-		
-	    //ymaps.coordSystem.geo.getDistance(moscowCoords, newYorkCoords)
+	//ymaps.coordSystem.geo.getDistance(moscowCoords, newYorkCoords)
         } else {
-	//console.log("Нашли:");
-	//console.log("Длина: " + activeRoute.properties.get("distance").text);
-        //console.log("Время прохождения: " + activeRoute.properties.get("duration").text);
-        map.geoObjects.add(multiRouteKO);
-	//Кол-во найденных объектов
-	var cFinish=document.getElementById("c_Finish");
-	cFinish.innerHTML = cFinish.innerHTML+1;
-	theEl.innerHTML = theEl.innerHTML+'<table border="1"><tr><td class="lc">'+pointB+';</td><td class="even2">'+point+';</td><td class="even">'+ret+';</td><td class="way">'+activeRoute.properties.get("distance").text + '.<br /> Время в пути '+ activeRoute.properties.get("duration").text +'</td><td class="way">'+pointNum+'</td></tr>'; //+'; Расстояние: '+(A*0.001).toFixed() + 'км.';
-	theEl2.innerHTML = theEl2.innerHTML+' '+pointB+';||'+point+';||'+ret2+'||'+activeRoute.properties.get("distance").text + '||'+ activeRoute.properties.get("duration").text +'||'+pointNum+'<br />'; //+'; Расстояние: '+(A*0.001).toFixed() + 'км.';
-	if (activeRoute.properties.get("blocked")) {
-         	   console.log("На маршруте имеются участки с перекрытыми дорогами.");
-         }
+          	map.geoObjects.add(multiRouteKO);
+	  	//Кол-во найденных объектов
+	  	var cFinish=document.getElementById("c_Finish");
+	  	cFinish.textContent = Number(cFinish.textContent)+1;
+	  	cFinish.innerHTML = '<center>'+cFinish.textContent + '</center>';
+		
+	        theEl.innerHTML = theEl.innerHTML+'<table border="1"><tr><td class="lc">'+pointB+';</td><td class="even2">'+point+';</td><td class="even">'+ret+';</td><td class="way">'+activeRoute.properties.get("distance").text + '.<br /> Время в пути '+ activeRoute.properties.get("duration").text +'</td><td class="way">'+pointNum+'</td></tr>'; //+'; Расстояние: '+(A*0.001).toFixed() + 'км.';
+	        theEl2.innerHTML = theEl2.innerHTML+' '+pointB+';||'+point+';||'+ret2+'||'+activeRoute.properties.get("distance").text + '||'+ activeRoute.properties.get("duration").text +'||'+pointNum+'<br />'; //+'; Расстояние: '+(A*0.001).toFixed() + 'км.';
+		if (activeRoute.properties.get("blocked")) {
+         	   console.log("На маршруте имеются участки с перекрытыми дорогами.");}
 	}
-        // Вывод информации о маршруте.
-        //console.log("Длина: " + activeRoute.properties.get("distance").text);
-        //console.log("Время прохождения: " + activeRoute.properties.get("duration").text);
-        // Для автомобильных маршрутов можно вывести 
-        // информацию о перекрытых участках.
-
     }); 
-	 
 });	 
 //-----Конец создания маршурта	 
 }        
@@ -259,12 +244,16 @@ function drawOutput(lines){
 
 	theEl.innerHTML = theEl.innerHTML+'<table border="0">';
 	theEl2.innerHTML = theEl2.innerHTML+'<table border="0">';
+	
+	
+	cStart.textContent = Number(cStart.textContent)+0;
 	cStart.innerHTML = '<center>'+cStart.textContent + '</center>';
 	
-	cStart.textContent = Number(cStart.textContent)+1;
-	cStart.innerHTML = '<center>'+cStart.textContent + '</center>';
+	//var cFinish=document.getElementById("c_Finish");
+	cFinish.textContent = Number(cFinish.textContent)+0;
+	cFinish.innerHTML = '<center>'+cFinish.textContent + '</center>';
 	
-	cFinish.innerHTML = cFinish.innerHTML+1;
+	//cFinish.innerHTML = cFinish.innerHTML+1;
 	
 	
 	
