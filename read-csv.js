@@ -11,6 +11,7 @@ function init (gg,wp,point,pointB,pointNum) {
     }).then(function (res) {
 	    //Кол-во стартов процедуры
 	    var cStart=document.getElementById("c_Start");
+	    cStart.innerHTML = '<center>'+cStart.textContent + '</center>';
 	    cStart.textContent = Number(cStart.textContent)+1;
             // Выбираем первый результат геокодирования.
             var firstGeoObject = res.geoObjects.get(0),
@@ -243,30 +244,26 @@ function drawOutput(lines){
 	
 	var table = document.createElement("table");
 	
-	document.getElementById("title").innerHTML = "HTML5 File v1.845 API";
+	document.getElementById("title").innerHTML = "HTML5 File v1.846 API";
 	
 	document.getElementById("output").innerHTML = "";
 	document.getElementById("output2").innerHTML = "";
-	document.getElementById("c_Start").innerHTML = 1;
-	document.getElementById("c_Finish").innerHTML = 1;
+	document.getElementById("c_Start").innerHTML = 0;
+	document.getElementById("c_Finish").innerHTML = 0;
 	
 	var theEl=document.getElementById("output");
 	var theEl2=document.getElementById("output2");
 	var cStart=document.getElementById("c_Start");
 	var cFinish=document.getElementById("c_Finish");
-	
-	document.getElementById("c_Start").innerHTML = 2;
-	document.getElementById("c_Finish").innerHTML = 2;
+
+	theEl.innerHTML = theEl.innerHTML+'<table border="0">';
+	theEl2.innerHTML = theEl2.innerHTML+'<table border="0">';
+	cStart.innerHTML = '<center>'+cStart.textContent + '</center>';
 	
 	cStart.textContent = Number(cStart.textContent)+1;
 	cFinish.innerHTML = cFinish.innerHTML+1;
 	
-	document.getElementById("c_Start").innerHTML = 3;
-	document.getElementById("c_Finish").innerHTML = 3;
 	
-	theEl.innerHTML = theEl.innerHTML+'<table border="0">';
-	theEl2.innerHTML = theEl2.innerHTML+'<table border="0">';
-	cStart.innerHTML = '<center>'+cStart.textContent + '</center>';
 	
 	for (var i = 0; i < lines.length; i++) {
 		var row = table.insertRow(-1);
