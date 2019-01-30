@@ -240,7 +240,10 @@ function drawOutput(lines){
 	//Clear previous data
 	//alert ('Вызов процедур');
 	//alert ('asf v1.838');
-	document.getElementById("title").innerHTML = "HTML5 File v1.839 API";
+	
+	var table = document.createElement("table");
+	
+	document.getElementById("title").innerHTML = "HTML5 File v1.840 API";
 	
 	document.getElementById("output").innerHTML = "";
 	document.getElementById("output2").innerHTML = "";
@@ -259,7 +262,7 @@ function drawOutput(lines){
 	theEl2.innerHTML = theEl2.innerHTML+'<table border="0">';
 	cStart.innerHTML = '<center>'+cStart.textContent + '</center>';
 	
-	var table = document.createElement("table");
+	
 	for (var i = 0; i < lines.length; i++) {
 		var row = table.insertRow(-1);
 		//for (var j = 0; j < lines[i].length; j++) {
