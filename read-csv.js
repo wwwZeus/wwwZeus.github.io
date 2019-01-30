@@ -239,13 +239,25 @@ function errorHandler(evt) {
 function drawOutput(lines){
 	//Clear previous data
 	//alert ('Вызов процедур');
-	alert ('asf v1.837');
-	document.getElementById("title").innerHTML = "HTML5 File v1.837 API";
+	alert ('asf v1.838');
+	document.getElementById("title").innerHTML = "HTML5 File v1.838 API";
 	
 	document.getElementById("output").innerHTML = "";
 	document.getElementById("output2").innerHTML = "";
 	document.getElementById("c_Start").innerHTML = 0;
 	document.getElementById("c_Finish").innerHTML =0;
+	
+	var theEl=document.getElementById("output");
+	var theEl2=document.getElementById("output2");
+	var cStart=document.getElementById("c_Start");
+	var cFinish=document.getElementById("c_Finish");
+	
+	cStart.textContent = textContent(cStart.textContent)+1;
+	cFinish.innerHTML = cFinish.innerHTML+cNFinish;
+	
+	theEl.innerHTML = theEl.innerHTML+'<table border="0">'
+	theEl2.innerHTML = theEl2.innerHTML+'<table border="0">'
+	cStart.innerHTML = '<center>'+cStart.innerHTML + '</center>';
 	
 	var table = document.createElement("table");
 	for (var i = 0; i < lines.length; i++) {
@@ -260,29 +272,4 @@ function drawOutput(lines){
 	}
 	//document.getElementById("output").appendChild(table);
 	
-	var theEl=document.getElementById("output");
-	var theEl2=document.getElementById("output2");
-	var cStart=document.getElementById("c_Start");
-	var cFinish=document.getElementById("c_Finish");
-	
-	cStart.textContent = textContent(cStart.textContent)+1;
-	cFinish.innerHTML = cFinish.innerHTML+cNFinish;
-	
-	theEl.innerHTML = theEl.innerHTML+'<table border="0">'
-	theEl2.innerHTML = theEl2.innerHTML+'<table border="0">'
-	cStart.innerHTML = '<center>'+cStart.innerHTML + '</center>';
-	//alert ('DRAW');
-	//var ret='';
-	//ymaps.ready(init(6,1,'г.Ярославль Батова 26'));
-	/*ymaps.ready(init(6,1,'г.Ярославль Тутаевское 71'));
-	ymaps.ready(init(6,1,'г.Ярославль Серго Орджонекидже 22к2'));
-	ymaps.ready(init(6,1,'г.Ярославль Амлазная, дом 5'));
-	ymaps.ready(init(6,1,'г.Ярославль Блюхера, дом 17'));
-	ymaps.ready(init(5,1,'г.Рязань у. Щорса, 30/34'));
-	ymaps.ready(init(6,1,'г.Ярославль Калевала 2'));
-	ymaps.ready(init(6,1,'г.Ярославль Чехова 17к.2'));
-	ymaps.ready(init(6,1,'г.Ярославль Школьный п-д 107'));
-	ymaps.ready(init(6,1,'г.Ярославль Школьный п-д 5'));
-	ymaps.ready(init(6,1,'г.Ярославль Советска 34а'));*/
-	//alert ('Полный  конец скипта');
 } 
