@@ -11,8 +11,9 @@ function init (gg,wp,point,pointB,pointNum) {
     }).then(function (res) {
 	    //Кол-во стартов процедуры
 	    var cStart=document.getElementById("c_Start");
-	    cStart.innerHTML = '<center>'+cStart.textContent + '</center>';
 	    cStart.textContent = Number(cStart.textContent)+1;
+	    cStart.innerHTML = '<center>'+cStart.textContent + '</center>';
+	    
             // Выбираем первый результат геокодирования.
             var firstGeoObject = res.geoObjects.get(0),
                 // Координаты геообъекта.
@@ -244,7 +245,7 @@ function drawOutput(lines){
 	
 	var table = document.createElement("table");
 	
-	document.getElementById("title").innerHTML = "HTML5 File v1.846 API";
+	document.getElementById("title").innerHTML = "HTML5 File v1.847 API";
 	
 	document.getElementById("output").innerHTML = "";
 	document.getElementById("output2").innerHTML = "";
@@ -261,6 +262,8 @@ function drawOutput(lines){
 	cStart.innerHTML = '<center>'+cStart.textContent + '</center>';
 	
 	cStart.textContent = Number(cStart.textContent)+1;
+	cStart.innerHTML = '<center>'+cStart.textContent + '</center>';
+	
 	cFinish.innerHTML = cFinish.innerHTML+1;
 	
 	
