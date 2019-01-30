@@ -239,11 +239,11 @@ function errorHandler(evt) {
 function drawOutput(lines){
 	//Clear previous data
 	//alert ('Вызов процедур');
-	alert ('asf v1.835');
+	alert ('asf v1.836');
 	document.getElementById("output").innerHTML = "";
 	document.getElementById("output2").innerHTML = "";
-	document.getElementById("c_Start").innerHTML = "--";
-	document.getElementById("c_Finish").innerHTML ="--";
+	document.getElementById("c_Start").innerHTML = 0;
+	document.getElementById("c_Finish").innerHTML =0;
 	
 	var table = document.createElement("table");
 	for (var i = 0; i < lines.length; i++) {
@@ -263,7 +263,7 @@ function drawOutput(lines){
 	var cStart=document.getElementById("c_Start");
 	var cFinish=document.getElementById("c_Finish");
 	
-	cStart.innerHTML = cStart.innerHTML+cNStart;
+	cStart.textContent = textContent(cStart.textContent)+1;
 	cFinish.innerHTML = cFinish.innerHTML+cNFinish;
 	
 	theEl.innerHTML = theEl.innerHTML+'<table border="0">'
