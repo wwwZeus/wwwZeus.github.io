@@ -239,7 +239,7 @@ function errorHandler(evt) {
 function drawOutput(lines){
 	//Clear previous data
 	//alert ('Вызов процедур');
-	alert ('asf v1.838');
+	//alert ('asf v1.838');
 	document.getElementById("title").innerHTML = "HTML5 File v1.838 API";
 	
 	document.getElementById("output").innerHTML = "";
@@ -255,9 +255,9 @@ function drawOutput(lines){
 	cStart.textContent = textContent(cStart.textContent)+1;
 	cFinish.innerHTML = cFinish.innerHTML+cNFinish;
 	
-	theEl.innerHTML = theEl.innerHTML+'<table border="0">'
-	theEl2.innerHTML = theEl2.innerHTML+'<table border="0">'
-	cStart.innerHTML = '<center>'+cStart.innerHTML + '</center>';
+	theEl.innerHTML = theEl.innerHTML+'<table border="0">';
+	theEl2.innerHTML = theEl2.innerHTML+'<table border="0">';
+	cStart.innerHTML = '<center>'+cStart.textContent + '</center>';
 	
 	var table = document.createElement("table");
 	for (var i = 0; i < lines.length; i++) {
