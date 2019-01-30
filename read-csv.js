@@ -239,7 +239,7 @@ function errorHandler(evt) {
 function drawOutput(lines){
 	//Clear previous data
 	//alert ('Вызов процедур');
-	alert ('asf v1.836');
+	alert ('asf v1.837');
 	document.getElementById("output").innerHTML = "";
 	document.getElementById("output2").innerHTML = "";
 	document.getElementById("c_Start").innerHTML = 0;
