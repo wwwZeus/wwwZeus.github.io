@@ -240,7 +240,7 @@ function drawOutput(lines){
 	//Clear previous data
 	//alert ('Вызов процедур');
 	//alert ('asf v1.838');
-	document.getElementById("title").innerHTML = "HTML5 File v1.838 API";
+	document.getElementById("title").innerHTML = "HTML5 File v1.839 API";
 	
 	document.getElementById("output").innerHTML = "";
 	document.getElementById("output2").innerHTML = "";
