@@ -277,4 +277,5 @@ function ver () {
     console.log ("ready 1!");
     $("#title").css("background-color", "yellow");
     console.log ($("#title").innerText);
+    console.log ($("#title"));
 }
