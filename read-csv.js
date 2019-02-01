@@ -1,4 +1,4 @@
-function init (gg,wp,point,pointB,pointNum,Wait) {
+function init (gg,wp,point,pointB,pointNum) {
     var map = new ymaps.Map('map', {
             center: [57.626273, 39.894102],
             zoom: gg*wp
@@ -6,8 +6,7 @@ function init (gg,wp,point,pointB,pointNum,Wait) {
         });
 	//map.setZoom(5);
 	//alert ('Яндекс');
-Wait = Wait +1;
-console.log(Wait);
+
 var test_point = point;
 	
 point = point.replace(/[#$@%№&?!*]/gi, "");
@@ -92,35 +91,7 @@ point = point.replace(/[#$@%№&?!*]/gi, "");
 	
  //----------------------------------------------------
 	 
-//---Создание маршрута--------------------------
-/*	var DistKO = new ymaps.Placemark([57.768087, 40.926583], {
-            iconCaption: '456 км'
-        }, {
-            preset: 'islands#grayCircleDotIcon',
-            iconCaptionMaxWidth: '70'
-        });
-	 
-	var multiRouteKO = new ymaps.multiRouter.MultiRoute({   
-   	 // Точки маршрута. Точки могут быть заданы как координатами, так и адресом. 
-    	  referencePoints: [
-          pointB, //[57.635685, 39.882938] Сбербанк
-          firstGeoObject.geometry.getCoordinates()  //Искомый объект
-    	]},{
-	  boundsAutoApply: true
-});
-	 
-	multiRouteKO.model.events.add("requestsuccess", function (event) {
-	A=multiRouteKO.getRoutes().get(0).properties.get("distance").value;
-	//console.log("Время прохождения: " + activeRoute.properties.get("duration").text); //Время в пути
-	//alert ((A*0.001).toFixed());
-	map.geoObjects.add(DistKO);	
-	var theEl=document.getElementById("output");
-	//theEl.innerHTML = theEl.innerHTML+'<tr><td bgcolor="#f0f0f0">34,5</td><td bgcolor="#f0f0f0">3,5</td><td>36</td><td>23</td></tr>'
-	theEl.innerHTML = theEl.innerHTML+'<table border="1"><tr><td class="lc">'+point+';</td><td class="even2">'+pointB+';</td><td class="even">'+ret+';</td><td class="way">'+(A*0.001).toFixed() + ' км.' +'</td></tr>'; //+'; Расстояние: '+(A*0.001).toFixed() + 'км.';	
-		
-	});	 
-	 map.geoObjects.add(multiRouteKO);	 
- });*/
+
 
     // Создание маршрута.
     var multiRouteKO = new ymaps.multiRouter.MultiRoute({
@@ -130,8 +101,6 @@ point = point.replace(/[#$@%№&?!*]/gi, "");
         ]},{
         boundsAutoApply: true
     });
-	
-	
 	
     // Подписка на событие обновления данных маршрута.
     multiRouteKO.model.events.add('requestsuccess', function() {
@@ -252,33 +221,22 @@ function drawOutput(lines){
 	theEl.innerHTML = theEl.innerHTML+'<table border="0">';
 	theEl2.innerHTML = theEl2.innerHTML+'<table border="0">';
 	
-	
 	cStart.textContent = Number(cStart.textContent)+0;
 	cStart.innerHTML = '<center>'+cStart.textContent + '</center>';
 	
 	//var cFinish=document.getElementById("c_Finish");
 	cFinish.textContent = Number(cFinish.textContent)+0;
 	cFinish.innerHTML = '<center>'+cFinish.textContent + '</center>';
-	
-	//cFinish.innerHTML = cFinish.innerHTML+1;
-	
-	
-	
+
 	for (var i = 0; i < lines.length; i++) {
 		var row = table.insertRow(-1);
-		//for (var j = 0; j < lines[i].length; j++) {
-			//var firstNameCell = row.insertCell(-1);
-			//firstNameCell.appendChild(document.createTextNode(lines[i][j]));
-			var a = 0;
-			ymaps.ready(init(4,1,lines[i][1],lines[i][0],lines[i][2],a));
-			console.log(i," - ",a);
-			//alert (lines[i][0]);
-			//alert (lines[i][1]);
-		//}
+		var a = 0;
+		ymaps.ready(init(4,1,lines[i][1],lines[i][0],lines[i][2]));
+		console.log(i," - ",a);
+
 	}
-	//document.getElementById("output").appendChild(table);
-	
 } 
+
 function ver () {
     console.log ("ready 1!");
     $("#title").css("background-color", "#d0f0c0");	
