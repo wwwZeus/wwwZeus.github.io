@@ -3,16 +3,14 @@ function init (gg,wp,point,pointB,pointNum) {
             center: [57.626273, 39.894102],
             zoom: gg*wp
 	    //controls: ['zoomControl']
-        });
+    });
 	//map.setZoom(5);
 	//alert ('Яндекс');
 
 var test_point = point;
 	
 point = point.replace(/[#$@%№&?!*]/gi, "");
-	
-	
- ymaps.geocode(point, {
+ymaps.geocode(point, {
        results: 1
     }).then(function (res) {
 	    //Кол-во стартов процедуры
@@ -89,12 +87,9 @@ point = point.replace(/[#$@%№&?!*]/gi, "");
 	var ret = Adress;
 	var ret2 = Adress2;
 	
- //----------------------------------------------------
-	 
-
-
-    // Создание маршрута.
-    var multiRouteKO = new ymaps.multiRouter.MultiRoute({
+//----------------------------------------------------
+// Создание маршрута.
+  var multiRouteKO = new ymaps.multiRouter.MultiRoute({
         referencePoints: [
 	  pointB, //[57.635685, 39.882938] Сбербанк
           firstGeoObject.geometry.getCoordinates()  //Искомый объект
@@ -103,7 +98,7 @@ point = point.replace(/[#$@%№&?!*]/gi, "");
     });
 	
     // Подписка на событие обновления данных маршрута.
-    multiRouteKO.model.events.add('requestsuccess', function() {
+  multiRouteKO.model.events.add('requestsuccess', function() {
         // Получение ссылки на активный маршрут.
         // В примере используется автомобильный маршрут,
         // поэтому метод getActiveRoute() вернет объект multiRouter.driving.Route.
@@ -144,7 +139,8 @@ point = point.replace(/[#$@%№&?!*]/gi, "");
 		if (activeRoute.properties.get("blocked")) {
          	   console.log("На маршруте имеются участки с перекрытыми дорогами.");}
 	}
-    }); 
+    });
+map.destroy();	 
 });	 
 //-----Конец создания маршурта	 
 }        
