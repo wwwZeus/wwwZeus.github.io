@@ -1,4 +1,4 @@
-function init (gg,wp,point,pointB,pointNum) {
+function init (gg,wp,point,pointB,pointNum,DelMap) {
     var map = new ymaps.Map('map', {
             center: [57.626273, 39.894102],
             zoom: gg*wp
@@ -124,6 +124,7 @@ ymaps.geocode(point, {
 			theEl.innerHTML = theEl.innerHTML+'<table border="1"><tr><td class="lc">'+pointB+';</td><td class="even2">'+point+';</td><td class="even">'+ret+';</td><td class="way">'+ WayCoord +'</td><td class="way">'+pointNum+'</td></tr>'; //+'; Расстояние: '+(A*0.001).toFixed() + 'км.';
 			theEl2.innerHTML = theEl2.innerHTML+' '+pointB+';||'+point+';||'+ret2+';||'+ WayCoord +'||'+pointNum+'<br />'; //+'; Расстояние: '+(A*0.001).toFixed() + 'км.';
 			map.geoObjects.add(multiRouteKO);
+		       if (DelMap) {map.destroy();}
    	     });
 	});		
 	//ymaps.coordSystem.geo.getDistance(moscowCoords, newYorkCoords)
@@ -136,11 +137,13 @@ ymaps.geocode(point, {
 		
 	        theEl.innerHTML = theEl.innerHTML+'<table border="1"><tr><td class="lc">'+pointB+';</td><td class="even2">'+point+';</td><td class="even">'+ret+';</td><td class="way">'+activeRoute.properties.get("distance").text + '.<br /> Время в пути '+ activeRoute.properties.get("duration").text +'</td><td class="way">'+pointNum+'</td></tr>'; //+'; Расстояние: '+(A*0.001).toFixed() + 'км.';
 	        theEl2.innerHTML = theEl2.innerHTML+' '+pointB+';||'+point+';||'+ret2+'||'+activeRoute.properties.get("distance").text + '||'+ activeRoute.properties.get("duration").text +'||'+pointNum+'<br />'; //+'; Расстояние: '+(A*0.001).toFixed() + 'км.';
+		if (DelMap) {map.destroy();}
 		if (activeRoute.properties.get("blocked")) {
          	   console.log("На маршруте имеются участки с перекрытыми дорогами.");}
+		
 	}
     });
-map.destroy();	 
+	 
 });	 
 //-----Конец создания маршурта	 
 }        
@@ -227,7 +230,7 @@ function drawOutput(lines){
 	for (var i = 0; i < lines.length; i++) {
 		var row = table.insertRow(-1);
 		var a = 0;
-		ymaps.ready(init(4,1,lines[i][1],lines[i][0],lines[i][2]));
+		ymaps.ready(init(4,1,lines[i][1],lines[i][0],lines[i][2],True));
 		console.log(i," - ",a);
 
 	}
