@@ -232,9 +232,10 @@ function drawOutput(lines){
 		var a = 0;
 		setTimeout("", 1000);
 		var result = ymaps.ready(init(4,1,lines[i][1],lines[i][0],lines[i][2],'True'));
-		if (!result.isReady()) {    
-			result.then(function () {     console.log("АА");} else {    console.log("ББ");
-		})}
+		if (!result.isReady()) {    result.then(function () {console.log("AA");});} 
+		else {
+		console.log("BB");    
+		}
 	console.log(i," - ",a);
 
 	}
