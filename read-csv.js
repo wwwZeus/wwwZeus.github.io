@@ -278,4 +278,8 @@ function ver () {
     $("#title").css("background-color", "yellow");
     console.log ($("#title").innerText);
     console.log ($("#title"));
+	
+    var Title=document.getElementById("title");
+	console.log (Title);
+    Title.textContent = "юРА!";
 }
