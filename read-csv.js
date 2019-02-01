@@ -233,7 +233,7 @@ function drawOutput(lines){
 	
 	var table = document.createElement("table");
 	
-	document.getElementById("title").innerHTML = "HTML5 File v1.849 API";
+	//document.getElementById("title").innerHTML = "HTML5 File v1.849 API";
 	
 	document.getElementById("output").innerHTML = "";
 	document.getElementById("output2").innerHTML = "";
@@ -275,11 +275,7 @@ function drawOutput(lines){
 } 
 function ver () {
     console.log ("ready 1!");
-    $("#title").css("background-color", "yellow");
-    console.log ($("#title").innerText);
-    console.log ($("#title"));
-	
+    $("#title").css("background-color", "#d0f0c0");	
     var Title=document.getElementById("title");
-	console.log (Title);
-    Title.textContent = "юРА!";
+    Title.textContent = "v 1.85";
 }
