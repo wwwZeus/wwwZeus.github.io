@@ -22,10 +22,10 @@ point = point.replace(/[#$@%№&?!*]/gi, "");
 	    
             // Выбираем первый результат геокодирования.
             var firstGeoObject = res.geoObjects.get(0),
-                // Координаты геообъекта.
-                coords = firstGeoObject.geometry.getCoordinates(),
-                // Область видимости геообъекта.
-                bounds = firstGeoObject.properties.get('boundedBy');
+            // Координаты геообъекта.
+            coords = firstGeoObject.geometry.getCoordinates(),
+            // Область видимости геообъекта.
+            bounds = firstGeoObject.properties.get('boundedBy');
 
             firstGeoObject.options.set('preset', 'islands#darkBlueDotIconWithCaption');
             // Получаем строку с адресом и выводим в иконке геообъекта.
