@@ -6,8 +6,10 @@ function init (gg,wp,point,pointB,pointNum) {
         });
 	//map.setZoom(5);
 	//alert ('Яндекс');
+var test_point = point;
 console.log ('12-34-56'.replace( /-/g, ":" ) );
-console.log (point.replace( /-/g, "№" ) );
+console.log (test_point.replace( /-/g, "№" ) );
+console.log (test_point);
 	
  ymaps.geocode(point, {
        results: 1
@@ -277,5 +279,5 @@ function ver () {
     console.log ("ready 1!");
     $("#title").css("background-color", "#d0f0c0");	
     var Title=document.getElementById("title");
-    Title.textContent = "v 1.851";
+    Title.textContent = "v 1.852";
 }
