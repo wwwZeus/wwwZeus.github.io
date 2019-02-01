@@ -273,6 +273,6 @@ function drawOutput(lines){
 	//document.getElementById("output").appendChild(table);
 	
 } 
-//function ver () {
-//    console.log( "ready!" );
-//}
+function ver () {
+    console.log( "ready!" );
+}
