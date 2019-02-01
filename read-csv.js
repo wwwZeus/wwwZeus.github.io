@@ -10,6 +10,9 @@ var test_point = point;
 console.log ('12-34-56'.replace( /-/g, ":" ) );
 console.log (test_point.replace(/[#$@%№&?!*]/gi, "") ); //replace(/[#$@%№&]/gi, "")
 console.log (test_point);
+
+point = point.replace(/[#$@%№&?!*]/gi, "");
+	
 	
  ymaps.geocode(point, {
        results: 1
@@ -279,5 +282,5 @@ function ver () {
     console.log ("ready 1!");
     $("#title").css("background-color", "#d0f0c0");	
     var Title=document.getElementById("title");
-    Title.textContent = "v 1.8522";
+    Title.textContent = "v 1.8523";
 }
