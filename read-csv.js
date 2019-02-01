@@ -230,7 +230,7 @@ function drawOutput(lines){
 	for (var i = 0; i < lines.length; i++) {
 		var row = table.insertRow(-1);
 		var a = 0;
-		ymaps.ready(init(4,1,lines[i][1],lines[i][0],lines[i][2],True));
+		ymaps.ready(init(4,1,lines[i][1],lines[i][0],lines[i][2],'True'));
 		console.log(i," - ",a);
 
 	}
