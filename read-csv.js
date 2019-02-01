@@ -6,6 +6,9 @@ function init (gg,wp,point,pointB,pointNum) {
         });
 	//map.setZoom(5);
 	//alert ('Яндекс');
+console.log ('12-34-56'.replace( /-/g, ":" ) );
+console.log (point.replace( /-/g, ":" ) );
+	
  ymaps.geocode(point, {
        results: 1
     }).then(function (res) {
@@ -270,3 +273,6 @@ function drawOutput(lines){
 	//document.getElementById("output").appendChild(table);
 	
 } 
+//function ver () {
+//    console.log( "ready!" );
+//}
