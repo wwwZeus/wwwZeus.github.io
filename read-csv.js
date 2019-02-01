@@ -274,6 +274,7 @@ function drawOutput(lines){
 	
 } 
 function ver () {
-    console.log("ready 1!");
-    $("#title").css("background-color", "yellow"); 
+    console.log ("ready 1!");
+    $("#title").css("background-color", "yellow");
+    console.log ($("#title").textContent);
 }
