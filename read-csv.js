@@ -1,4 +1,4 @@
-function init (gg,wp,point,pointB,pointNum) {
+function init (gg,wp,point,pointB,pointNum,Wait) {
     var map = new ymaps.Map('map', {
             center: [57.626273, 39.894102],
             zoom: gg*wp
@@ -6,11 +6,10 @@ function init (gg,wp,point,pointB,pointNum) {
         });
 	//map.setZoom(5);
 	//alert ('Яндекс');
+Wait = Wait +1;
+console.log(Wait);
 var test_point = point;
-console.log ('12-34-56'.replace( /-/g, ":" ) );
-console.log (test_point.replace(/[#$@%№&?!*]/gi, "") ); //replace(/[#$@%№&]/gi, "")
-console.log (test_point);
-
+	
 point = point.replace(/[#$@%№&?!*]/gi, "");
 	
 	
@@ -270,7 +269,9 @@ function drawOutput(lines){
 		//for (var j = 0; j < lines[i].length; j++) {
 			//var firstNameCell = row.insertCell(-1);
 			//firstNameCell.appendChild(document.createTextNode(lines[i][j]));
-			ymaps.ready(init(4,1,lines[i][1],lines[i][0],lines[i][2]));
+			var a = 0;
+			ymaps.ready(init(4,1,lines[i][1],lines[i][0],lines[i][2],a));
+			console.log(i," - ",a);
 			//alert (lines[i][0]);
 			//alert (lines[i][1]);
 		//}
