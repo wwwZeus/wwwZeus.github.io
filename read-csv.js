@@ -8,7 +8,7 @@ function init (gg,wp,point,pointB,pointNum) {
 	//alert ('Яндекс');
 var test_point = point;
 console.log ('12-34-56'.replace( /-/g, ":" ) );
-console.log (test_point.replace( /-/g, "№" ) );
+console.log (test_point.replace( /№/g, ":" ) );
 console.log (test_point);
 	
  ymaps.geocode(point, {
@@ -279,5 +279,5 @@ function ver () {
     console.log ("ready 1!");
     $("#title").css("background-color", "#d0f0c0");	
     var Title=document.getElementById("title");
-    Title.textContent = "v 1.852";
+    Title.textContent = "v 1.8521";
 }
