@@ -232,7 +232,10 @@ function drawOutput(lines){
 		var a = 0;
 		setTimeout("", 1000);
 		var result = ymaps.ready(init(4,1,lines[i][1],lines[i][0],lines[i][2],'True'));
-		console.log(i," - ",a);
+		if (!result.isReady()) {    
+			result.then(function () {     console.log("АА");} else {    console.log("ББ");
+		})}
+	console.log(i," - ",a);
 
 	}
 } 
@@ -241,5 +244,5 @@ function ver () {
     console.log ("ready 1!");
     $("#title").css("background-color", "#d0f0c0");	
     var Title=document.getElementById("title");
-    Title.textContent = " _v. 1.8529";
+    Title.textContent = " _v. 1.85291";
 }
