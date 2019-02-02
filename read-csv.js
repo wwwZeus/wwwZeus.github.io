@@ -122,7 +122,7 @@ ymaps.geocode(point, {
           	       ymaps.coordSystem.geo.getDistance(moscowCoords, newYorkCoords)) +'|| от ['+ moscowCoords[0]+','+moscowCoords[1]+'] до '+'['+ newYorkCoords[0]+','+newYorkCoords[1]+']';
 		 	//console.log(WayCoord);
 			theEl.innerHTML = theEl.innerHTML+'<table border="1px" style="font-family: Verdana; font-size:10px;"><tr><td class="lc">'+pointB+';</td><td class="even2">'+point+';</td><td class="even">'+ret+';</td><td class="way">'+ WayCoord +'</td><td class="way">'+pointNum+'</td></tr>'; //+'; Расстояние: '+(A*0.001).toFixed() + 'км.';
-			theEl2.innerHTML = theEl2.innerHTML+' <p>'+pointB+';||'+point+';||'+ret2+';||'+ WayCoord +'||'+pointNum+'<br></p>'; //+'; Расстояние: '+(A*0.001).toFixed() + 'км.';
+			theEl2.innerHTML = theEl2.innerHTML+' <p>'+pointB+';||'+point+';||'+ret2+';||'+ WayCoord +'||'+pointNum+'</p>'; //+'; Расстояние: '+(A*0.001).toFixed() + 'км.';
 			map.geoObjects.add(multiRouteKO);
 		       if (DelMap) {map.destroy();}
    	     });
@@ -136,7 +136,7 @@ ymaps.geocode(point, {
 	  	cFinish.innerHTML = '<center>'+cFinish.textContent + '</center>';
 		
 	        theEl.innerHTML = theEl.innerHTML+'<table border="1px" style="font-family: Verdana; font-size:10px;"><tr><td class="lc">'+pointB+';</td><td class="even2">'+point+';</td><td class="even">'+ret+';</td><td class="way">'+activeRoute.properties.get("distance").text + '.<br /> Время в пути '+ activeRoute.properties.get("duration").text +'</td><td class="way">'+pointNum+'</td></tr>'; //+'; Расстояние: '+(A*0.001).toFixed() + 'км.';
-	        theEl2.innerHTML = theEl2.innerHTML+' <p>'+pointB+';||'+point+';||'+ret2+'||'+activeRoute.properties.get("distance").text + '||'+ activeRoute.properties.get("duration").text +'||'+pointNum+'<br></p>'; //+'; Расстояние: '+(A*0.001).toFixed() + 'км.';
+	        theEl2.innerHTML = theEl2.innerHTML+' <p>'+pointB+';||'+point+';||'+ret2+'||'+activeRoute.properties.get("distance").text + '||'+ activeRoute.properties.get("duration").text +'||'+pointNum+'</p>'; //+'; Расстояние: '+(A*0.001).toFixed() + 'км.';
 		if (DelMap) {map.destroy();}
 		if (activeRoute.properties.get("blocked")) {
          	   console.log("На маршруте имеются участки с перекрытыми дорогами.");}
@@ -245,5 +245,5 @@ function ver () {
     console.log ("ready 1!");
     $("#title").css("background-color", "#d0f0c0");	
     var Title=document.getElementById("title");
-    Title.textContent = " _v. 1.85297";
+    Title.textContent = " _v. 1.85298";
 }
