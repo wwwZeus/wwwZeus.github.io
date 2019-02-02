@@ -235,7 +235,7 @@ function drawOutput(lines){
 		/**if (!result.isReady()) {    result.then(function () {console.log("AA");});} 
 		else {
 		console.log("BB");    
-		}*//
+		}*/
 	console.log(i," - ",a);
 
 	}
@@ -245,5 +245,5 @@ function ver () {
     console.log ("ready 1!");
     $("#title").css("background-color", "#d0f0c0");	
     var Title=document.getElementById("title");
-    Title.textContent = " _v. 1.85292";
+    Title.textContent = " _v. 1.85293";
 }
