@@ -121,9 +121,9 @@ ymaps.geocode(point, {
 		   var WayCoord = ymaps.formatter.distance(
           	       ymaps.coordSystem.geo.getDistance(moscowCoords, newYorkCoords)) +'|| от ['+ moscowCoords[0]+','+moscowCoords[1]+'] до '+'['+ newYorkCoords[0]+','+newYorkCoords[1]+']';
 		 	//console.log(WayCoord);
-			theEl.innerHTML = theEl.innerHTML+'<table border="1px" style="font-family: Verdana; font-size:10px;"><tr><td class="lc">'+pointB+';</td><td class="even2">'+point+';</td><td class="even">'+ret+';</td><td class="way">'+ WayCoord +'</td><td class="way">'+pointNum+'</td></tr>'; //+'; Расстояние: '+(A*0.001).toFixed() + 'км.';
-			//theEl2.innerHTML = theEl2.innerHTML+' <p>'+pointB+';||'+point+';||'+ret2+';||'+ WayCoord +'||'+pointNum+'</p>'; //+'; Расстояние: '+(A*0.001).toFixed() + 'км.';
-		       theEl2.innerHTML = theEl2.innerHTML+' '+pointB+';||'+point+';||'+ret2+';||'+ WayCoord +'||'+pointNum+'<br>'; //+'; Расстояние: '+(A*0.001).toFixed() + 'км.';
+			theEl.innerHTML = theEl.innerHTML+'<table border="1px" style="font-family: Verdana; font-size:10px;"><tr><td class="lc">'+pointB+';</td><td class="even2">'+test_point+';</td><td class="even">'+ret+';</td><td class="way">'+ WayCoord +'</td><td class="way">'+pointNum+'</td></tr>'; //+'; Расстояние: '+(A*0.001).toFixed() + 'км.';
+			//theEl2.innerHTML = theEl2.innerHTML+' <p>'+pointB+';||'+test_point+';||'+ret2+';||'+ WayCoord +'||'+pointNum+'</p>'; //+'; Расстояние: '+(A*0.001).toFixed() + 'км.';
+		       theEl2.innerHTML = theEl2.innerHTML+' '+pointB+';||'+test_point+'||'+ret2+';||'+ WayCoord +'||'+pointNum+'<br>'; //+'; Расстояние: '+(A*0.001).toFixed() + 'км.';
 			map.geoObjects.add(multiRouteKO);
 		       if (DelMap) {map.destroy();}
    	     });
@@ -136,9 +136,9 @@ ymaps.geocode(point, {
 	  	cFinish.textContent = Number(cFinish.textContent)+1;
 	  	cFinish.innerHTML = '<center>'+cFinish.textContent + '</center>';
 		
-	        theEl.innerHTML = theEl.innerHTML+'<table border="1px" style="font-family: Verdana; font-size:10px;"><tr><td class="lc">'+pointB+';</td><td class="even2">'+point+';</td><td class="even">'+ret+';</td><td class="way">'+activeRoute.properties.get("distance").text + '.<br /> Время в пути '+ activeRoute.properties.get("duration").text +'</td><td class="way">'+pointNum+'</td></tr>'; //+'; Расстояние: '+(A*0.001).toFixed() + 'км.';
-	        //theEl2.innerHTML = theEl2.innerHTML+' <p>'+pointB+';||'+point+';||'+ret2+'||'+activeRoute.properties.get("distance").text + '||'+ activeRoute.properties.get("duration").text +'||'+pointNum+'</p>'; //+'; Расстояние: '+(A*0.001).toFixed() + 'км.';
-		theEl2.innerHTML = theEl2.innerHTML+' '+pointB+';||'+point+';||'+ret2+'||'+activeRoute.properties.get("distance").text + '||'+ activeRoute.properties.get("duration").text +'||'+pointNum+'<br>'; //+'; Расстояние: '+(A*0.001).toFixed() + 'км.';
+	        theEl.innerHTML = theEl.innerHTML+'<table border="1px" style="font-family: Verdana; font-size:10px;"><tr><td class="lc">'+pointB+';</td><td class="even2">'+test_point+';</td><td class="even">'+ret+';</td><td class="way">'+activeRoute.properties.get("distance").text + '.<br /> Время в пути '+ activeRoute.properties.get("duration").text +'</td><td class="way">'+pointNum+'</td></tr>'; //+'; Расстояние: '+(A*0.001).toFixed() + 'км.';
+	        //theEl2.innerHTML = theEl2.innerHTML+' <p>'+pointB+';||'+test_point+';||'+ret2+'||'+activeRoute.properties.get("distance").text + '||'+ activeRoute.properties.get("duration").text +'||'+pointNum+'</p>'; //+'; Расстояние: '+(A*0.001).toFixed() + 'км.';
+		theEl2.innerHTML = theEl2.innerHTML+' '+pointB+';||'+test_point+'||'+ret2+'||'+activeRoute.properties.get("distance").text + '||'+ activeRoute.properties.get("duration").text +'||'+pointNum+'<br>'; //+'; Расстояние: '+(A*0.001).toFixed() + 'км.';
 		if (DelMap) {map.destroy();}
 		if (activeRoute.properties.get("blocked")) {
          	   console.log("На маршруте имеются участки с перекрытыми дорогами.");}
