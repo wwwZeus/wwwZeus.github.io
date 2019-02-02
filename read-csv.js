@@ -135,7 +135,7 @@ ymaps.geocode(point, {
 	  	cFinish.textContent = Number(cFinish.textContent)+1;
 	  	cFinish.innerHTML = '<center>'+cFinish.textContent + '</center>';
 		
-	        theEl.innerHTML = theEl.innerHTML+'<table border="1"><tr><td class="lc">'+pointB+';</td><td class="even2">'+point+';</td><td class="even">'+ret+';</td><td class="way">'+activeRoute.properties.get("distance").text + '.<br /> Время в пути '+ activeRoute.properties.get("duration").text +'</td><td class="way">'+pointNum+'</td></tr>'; //+'; Расстояние: '+(A*0.001).toFixed() + 'км.';
+	        theEl.innerHTML = theEl.innerHTML+'<table border="1" style="text-align: justify; font-family: Verdana; font-size:10px;"><tr><td class="lc">'+pointB+';</td><td class="even2">'+point+';</td><td class="even">'+ret+';</td><td class="way">'+activeRoute.properties.get("distance").text + '.<br /> Время в пути '+ activeRoute.properties.get("duration").text +'</td><td class="way">'+pointNum+'</td></tr>'; //+'; Расстояние: '+(A*0.001).toFixed() + 'км.';
 	        theEl2.innerHTML = theEl2.innerHTML+' '+pointB+';||'+point+';||'+ret2+'||'+activeRoute.properties.get("distance").text + '||'+ activeRoute.properties.get("duration").text +'||'+pointNum+'<br />'; //+'; Расстояние: '+(A*0.001).toFixed() + 'км.';
 		if (DelMap) {map.destroy();}
 		if (activeRoute.properties.get("blocked")) {
@@ -245,5 +245,5 @@ function ver () {
     console.log ("ready 1!");
     $("#title").css("background-color", "#d0f0c0");	
     var Title=document.getElementById("title");
-    Title.textContent = " _v. 1.85291";
+    Title.textContent = " _v. 1.85292";
 }
