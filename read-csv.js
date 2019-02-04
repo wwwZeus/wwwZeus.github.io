@@ -235,7 +235,7 @@ function drawOutput(lines){
 		var a = 0;
 		//setTimeout(ymaps.ready(init(4,1,lines[i][1],lines[i][0],lines[i][2],'False')), 3000*i);
 		//setTimeout("", 1000);
-		var result = ymaps.ready(init(4,1,lines[i][1],lines[i][0],lines[i][2],'True'));
+		var result = ymaps.ready(init(4,1,lines[i][1],lines[i][0],lines[i][2],'False'));
 		/**if (!result.isReady()) {    result.then(function () {console.log("AA");});} 
 		else {
 		console.log("BB");    
