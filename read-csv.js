@@ -5,11 +5,11 @@ function init (gg,wp,point,pointB,pointNum,DelMap) {
 	    //controls: ['zoomControl']
     });
 	//map.setZoom(5);
-	alert (DelMap);
+	//alert (DelMap);
 
 var test_point = point;
-	
 point = point.replace(/[#$@%№&?!*]/gi, "");
+	
 ymaps.geocode(point, {
        results: 1
     }).then(function (res) {
@@ -125,7 +125,7 @@ ymaps.geocode(point, {
 			//theEl2.innerHTML = theEl2.innerHTML+' <p>'+pointB+';||'+test_point+';||'+ret2+';||'+ WayCoord +'||'+pointNum+'</p>'; //+'; Расстояние: '+(A*0.001).toFixed() + 'км.';
 		       theEl2.innerHTML = theEl2.innerHTML+' '+pointB+';||'+test_point+'||'+ret2+';||'+ WayCoord +'||'+pointNum+'<br>'; //+'; Расстояние: '+(A*0.001).toFixed() + 'км.';
 			//map.geoObjects.add(multiRouteKO);
-		       if (DelMap='True') {map.destroy();}
+		       if (DelMap==True) {map.destroy();}
    	     });
 	});		
 	//ymaps.coordSystem.geo.getDistance(moscowCoords, newYorkCoords)
@@ -139,7 +139,7 @@ ymaps.geocode(point, {
 	        theEl.innerHTML = theEl.innerHTML+'<table border="1px" style="font-family: Verdana; font-size:10px;"><tr><td class="lc">'+pointB+';</td><td class="even2">'+test_point+';</td><td class="even">'+ret+';</td><td class="way">'+activeRoute.properties.get("distance").text + '.<br /> Время в пути '+ activeRoute.properties.get("duration").text +'</td><td class="way">'+pointNum+'</td></tr>'; //+'; Расстояние: '+(A*0.001).toFixed() + 'км.';
 	        //theEl2.innerHTML = theEl2.innerHTML+' <p>'+pointB+';||'+test_point+';||'+ret2+'||'+activeRoute.properties.get("distance").text + '||'+ activeRoute.properties.get("duration").text +'||'+pointNum+'</p>'; //+'; Расстояние: '+(A*0.001).toFixed() + 'км.';
 		theEl2.innerHTML = theEl2.innerHTML+' '+pointB+';||'+test_point+'||'+ret2+'||'+activeRoute.properties.get("distance").text + '||'+ activeRoute.properties.get("duration").text +'||'+pointNum+'<br>'; //+'; Расстояние: '+(A*0.001).toFixed() + 'км.';
-		if (DelMap='True') {map.destroy();}
+		if (DelMap==True) {map.destroy();}
 		if (activeRoute.properties.get("blocked")) {
          	   geoObjectsconsole.log("На маршруте имеются участки с перекрытыми дорогами.");}
 		
@@ -247,5 +247,5 @@ function ver () {
     console.log ("ready 1!");
     $("#title").css("background-color", "#d0f0c0");	
     var Title=document.getElementById("title");
-    Title.textContent = " _v. 1.8540";
+    Title.textContent = " _v. 1.8541";
 }
