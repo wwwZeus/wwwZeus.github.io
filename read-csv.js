@@ -5,7 +5,7 @@ function init (gg,wp,point,pointB,pointNum,DelMap) {
 	    //controls: ['zoomControl']
     });
 	//map.setZoom(5);
-	//alert ('Яндекс');
+	alert (DelMap);
 
 var test_point = point;
 	
@@ -233,7 +233,7 @@ function drawOutput(lines){
 		var row = table.insertRow(-1);
 		var a = 0;
 		//setTimeout("", 1000);
-		var result = ymaps.ready(init(4,1,lines[i][1],lines[i][0],lines[i][2],False));
+		var result = ymaps.ready(init(4,1,lines[i][1],lines[i][0],lines[i][2],'False'));
 		/**if (!result.isReady()) {    result.then(function () {console.log("AA");});} 
 		else {
 		console.log("BB");    
