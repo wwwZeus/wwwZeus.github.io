@@ -124,13 +124,13 @@ ymaps.geocode(point, {
 			theEl.innerHTML = theEl.innerHTML+'<table border="1px" style="font-family: Verdana; font-size:10px;"><tr><td class="lc">'+pointB+';</td><td class="even2">'+test_point+';</td><td class="even">'+ret+';</td><td class="way">'+ WayCoord +'</td><td class="way">'+pointNum+'</td></tr>'; //+'; Расстояние: '+(A*0.001).toFixed() + 'км.';
 			//theEl2.innerHTML = theEl2.innerHTML+' <p>'+pointB+';||'+test_point+';||'+ret2+';||'+ WayCoord +'||'+pointNum+'</p>'; //+'; Расстояние: '+(A*0.001).toFixed() + 'км.';
 		       theEl2.innerHTML = theEl2.innerHTML+' '+pointB+';||'+test_point+'||'+ret2+';||'+ WayCoord +'||'+pointNum+'<br>'; //+'; Расстояние: '+(A*0.001).toFixed() + 'км.';
-			map.geoObjects.add(multiRouteKO);
+			//map.geoObjects.add(multiRouteKO);
 		       if (DelMap) {map.destroy();}
    	     });
 	});		
 	//ymaps.coordSystem.geo.getDistance(moscowCoords, newYorkCoords)
         } else {
-          	map.geoObjects.add(multiRouteKO);
+          	//map.geoObjects.add(multiRouteKO);
 	  	//Кол-во найденных объектов
 	  	var cFinish=document.getElementById("c_Finish");
 	  	cFinish.textContent = Number(cFinish.textContent)+1;
@@ -141,7 +141,7 @@ ymaps.geocode(point, {
 		theEl2.innerHTML = theEl2.innerHTML+' '+pointB+';||'+test_point+'||'+ret2+'||'+activeRoute.properties.get("distance").text + '||'+ activeRoute.properties.get("duration").text +'||'+pointNum+'<br>'; //+'; Расстояние: '+(A*0.001).toFixed() + 'км.';
 		if (DelMap) {map.destroy();}
 		if (activeRoute.properties.get("blocked")) {
-         	   console.log("На маршруте имеются участки с перекрытыми дорогами.");}
+         	   geoObjectsconsole.log("На маршруте имеются участки с перекрытыми дорогами.");}
 		
 	}
     });
@@ -232,8 +232,8 @@ function drawOutput(lines){
 	for (var i = 0; i < lines.length; i++) {
 		var row = table.insertRow(-1);
 		var a = 0;
-		setTimeout("", 1000);
-		var result = ymaps.ready(init(4,1,lines[i][1],lines[i][0],lines[i][2],'True'));
+		//setTimeout("", 1000);
+		var result = ymaps.ready(init(4,1,lines[i][1],lines[i][0],lines[i][2],'False'));
 		/**if (!result.isReady()) {    result.then(function () {console.log("AA");});} 
 		else {
 		console.log("BB");    
@@ -247,5 +247,5 @@ function ver () {
     console.log ("ready 1!");
     $("#title").css("background-color", "#d0f0c0");	
     var Title=document.getElementById("title");
-    Title.textContent = " _v. 1.8532";
+    Title.textContent = " _v. 1.8533";
 }
