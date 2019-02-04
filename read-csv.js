@@ -233,7 +233,7 @@ function drawOutput(lines){
 		var row = table.insertRow(-1);
 		var a = 0;
 		//setTimeout("", 1000);
-		var result = ymaps.ready(init(4,1,lines[i][1],lines[i][0],lines[i][2],'False'));
+		var result = ymaps.ready(init(4,1,lines[i][1],lines[i][0],lines[i][2],'True'));
 		/**if (!result.isReady()) {    result.then(function () {console.log("AA");});} 
 		else {
 		console.log("BB");    
@@ -247,5 +247,5 @@ function ver () {
     console.log ("ready 1!");
     $("#title").css("background-color", "#d0f0c0");	
     var Title=document.getElementById("title");
-    Title.textContent = " _v. 1.8544";
+    Title.textContent = " _v. 1.8545";
 }
