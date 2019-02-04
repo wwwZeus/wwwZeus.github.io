@@ -232,13 +232,14 @@ function drawOutput(lines){
 	for (var i = 0; i < lines.length; i++) {
 		var row = table.insertRow(-1);
 		var a = 0;
+		setTimeout(ymaps.ready(init(4,1,lines[i][1],lines[i][0],lines[i][2],'False')), 1000*i);
 		//setTimeout("", 1000);
-		var result = ymaps.ready(init(4,1,lines[i][1],lines[i][0],lines[i][2],'True'));
+		//var result = ymaps.ready(init(4,1,lines[i][1],lines[i][0],lines[i][2],'True'));
 		/**if (!result.isReady()) {    result.then(function () {console.log("AA");});} 
 		else {
 		console.log("BB");    
 		}*/
-	console.log(i," - ",a);
+	//console.log(i," - ",a);
 
 	}
 } 
@@ -247,5 +248,5 @@ function ver () {
     console.log ("ready 1!");
     $("#title").css("background-color", "#d0f0c0");	
     var Title=document.getElementById("title");
-    Title.textContent = " _v. 1.8545";
+    Title.textContent = " _v. 1.901";
 }
