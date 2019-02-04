@@ -6,7 +6,8 @@ function init (gg,wp,point,pointB,pointNum,DelMap) {
     });
 	//map.setZoom(5);
 	//alert (DelMap);
-
+	console.log(pointNum);
+	
 var test_point = point;
 point = point.replace(/[#$@%№&?!*]/gi, "");
 	
@@ -232,7 +233,7 @@ function drawOutput(lines){
 	for (var i = 0; i < lines.length; i++) {
 		var row = table.insertRow(-1);
 		var a = 0;
-		setTimeout(ymaps.ready(init(4,1,lines[i][1],lines[i][0],lines[i][2],'False')), 1000*i);
+		setTimeout(ymaps.ready(init(4,1,lines[i][1],lines[i][0],lines[i][2],'False')), 3000*i);
 		//setTimeout("", 1000);
 		//var result = ymaps.ready(init(4,1,lines[i][1],lines[i][0],lines[i][2],'True'));
 		/**if (!result.isReady()) {    result.then(function () {console.log("AA");});} 
@@ -248,5 +249,5 @@ function ver () {
     console.log ("ready 1!");
     $("#title").css("background-color", "#d0f0c0");	
     var Title=document.getElementById("title");
-    Title.textContent = " _v. 1.901";
+    Title.textContent = " _v. 1.902";
 }
