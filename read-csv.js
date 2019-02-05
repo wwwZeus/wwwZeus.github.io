@@ -234,7 +234,7 @@ function drawOutput(lines){
 		var row = table.insertRow(-1);
 		var a = 0;
 		//setTimeout(ymaps.ready(init(4,1,lines[i][1],lines[i][0],lines[i][2],'False')), 3000*i);
-		setTimeout(init(4,1,lines[i][1],lines[i][0],lines[i][2],'False'), 3000*i);
+		setTimeout(init(4,1,lines[i][1],lines[i][0],lines[i][2],'False'), 10000);
 		//setTimeout("", 1000);
 		
 		//var result = ymaps.ready(init(4,1,lines[i][1],lines[i][0],lines[i][2],'False'));
