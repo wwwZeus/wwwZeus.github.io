@@ -240,9 +240,9 @@ function drawOutput(lines){
 		//var result = ymaps.ready(init(4,1,lines[i][1],lines[i][0],lines[i][2],'False'));
 		var result = init(4,1,lines[i][1],lines[i][0],lines[i][2],'False');
 		
-		if (!result.isReady()) {result.then(function () {alert("AA");});} 
+		if (!result.isReady()) {result.then(function () {alert('AA');});} 
 		else {
-		alert("BB");    
+		alert('BB');    
 		}
 	//console.log(i," - ",a);
 
