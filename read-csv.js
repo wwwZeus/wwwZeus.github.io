@@ -253,5 +253,5 @@ function ver () {
     console.log ("ready 1!");
     $("#title").css("background-color", "#d0f0c0");	
     var Title=document.getElementById("title");
-    Title.textContent = " _v. 1.904";
+    Title.textContent = " _v. 1.905";
 }
