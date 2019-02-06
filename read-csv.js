@@ -95,7 +95,7 @@ ymaps.geocode(point, {
 	  pointB, //[57.635685, 39.882938] Сбербанк
           firstGeoObject.geometry.getCoordinates()  //Искомый объект
         ]},{
-        boundsAutoApply: true
+        boundsAutoApply: false //true
     });
 	
     // Подписка на событие обновления данных маршрута.
