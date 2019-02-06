@@ -234,13 +234,13 @@ function drawOutput(lines){
 		var row = table.insertRow(-1);
 		var a = 0;
 		//setTimeout(ymaps.ready(init(4,1,lines[i][1],lines[i][0],lines[i][2],'False')), 3000*i);
-		//setTimeout(init(4,1,lines[i][1],lines[i][0],lines[i][2],'False'), 10000);
+		setTimeout(init(4,1,lines[i][1],lines[i][0],lines[i][2],'False'), 10000*i);
 		//setTimeout("", 1000);
 		
 		//var result = ymaps.ready(init(4,1,lines[i][1],lines[i][0],lines[i][2],'False'));
-		var result = init(4,1,lines[i][1],lines[i][0],lines[i][2],'False');
+		//var result = init(4,1,lines[i][1],lines[i][0],lines[i][2],'False');
 		
-		/*if (!result.isReady()) {result.then(function () {alert('AA');});} 
+		/*if (!result.isReady()) {result.then(function() {alert('AA');});} 
 		else {
 		alert('BB');    
 		}*/
@@ -253,5 +253,5 @@ function ver () {
     console.log ("ready 1!");
     $("#title").css("background-color", "#d0f0c0");	
     var Title=document.getElementById("title");
-    Title.textContent = " _v. 1.908";
+    Title.textContent = " _v. 1.907";
 }
