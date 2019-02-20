@@ -32,11 +32,13 @@ ymaps.geocode(point, {
 
             // Добавляем первый найденный геообъект на карту.
             //map.geoObjects.add(firstGeoObject);
+	
+	
             // Масштабируем карту на область видимости геообъекта.
-            map.setBounds(bounds, {
+            /*map.setBounds(bounds, {
                 //Проверяем наличие тайлов на данном масштабе.
                 checkZoomRange: true
-            });
+            });*/
 
             /**
              * Все данные в виде javascript-объекта.
@@ -253,5 +255,5 @@ function ver () {
     console.log ("ready 1!");
     $("#title").css("background-color", "#d0f0c0");	
     var Title=document.getElementById("title");
-    Title.textContent = " _v. 1.907";
+    Title.textContent = " _v. 1.9071";
 }
