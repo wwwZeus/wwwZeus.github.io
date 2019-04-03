@@ -88,7 +88,7 @@ ymaps.geocode(point, {
         var Adress = "<b>Координаты:</b> " + firstGeoObject.geometry.getCoordinates() + ";<br /> <b>Государство:</b> " + firstGeoObject.getCountry()+";<br /> <b>Населенный пункт: </b>"+firstGeoObject.getLocalities().join(', ')+";<br /> <b>Адрес объекта:</b> "+firstGeoObject.getAddressLine()+"; Наименование здания: "+Zdanie+ "; Номер здания: " + NZdanie;
 	var Adress2 = "Координаты: " + firstGeoObject.geometry.getCoordinates() + "; Государство:" + firstGeoObject.getCountry()+"; Населенный пункт: "+firstGeoObject.getLocalities().join(', ')+"; Адрес объекта: "+firstGeoObject.getAddressLine()+"; Наименование здания: "+Zdanie+ "; Номер здания: " + NZdanie;
 	var ret = Adress;
-	var ret2 = Adress2;
+	var ret2 = firstGeoObject.properties.get('metaDataProperty.GeocoderMetaData.precision')+'; '+Adress2;
 	
 //----------------------------------------------------
 // Создание маршрута.
@@ -255,5 +255,5 @@ function ver () {
     console.log ("ready 1!");
     $("#title").css("background-color", "#d0f0c0");	
     var Title=document.getElementById("title");
-    Title.textContent = " _v. 1.9073";
+    Title.textContent = " _v. 1.9074";
 }
