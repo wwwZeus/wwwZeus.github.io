@@ -96,9 +96,15 @@ ymaps.geocode(point, {
         referencePoints: [
 	  pointB, //[57.635685, 39.882938] Сбербанк
           firstGeoObject.geometry.getCoordinates()  //Искомый объект
-        ]},{
-        boundsAutoApply: false //true
-    });
+        ], // Параметры маршрутизации.
+            params: {
+                // Ограничение на максимальное количество маршрутов, возвращаемое маршрутизатором.
+                results: 1
+            }
+        }, {
+            // Автоматически устанавливать границы карты так, чтобы маршрут был виден целиком.
+            boundsAutoApply: false
+        });
 	
     // Подписка на событие обновления данных маршрута.
   multiRouteKO.model.events.add('requestsuccess', function() {
