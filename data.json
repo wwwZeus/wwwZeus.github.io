@@ -1,7 +1,7 @@
 {
     "type": "FeatureCollection",
     "features": [
-        {"type": "Feature", "id": 0, "geometry": {"type": "Point", "coordinates": [55.831903, 37.411961]}, "properties": {"balloonContent": "Содержимое <br> балуна 0 \n тратата", "clusterCaption": "Еще одна метка 1", "hintContent": "Текст подсказки"}},
+        {"type": "Feature", "id": 0, "geometry": {"type": "Point", "coordinates": [55.831903, 37.411961]}, "properties": {"balloonContent": "Содержимое <br> <b>балуна 0<\b> тратата <br> <b>САААААААААААААААААААААААААААААААААААА<\b>АААААААААААААААААААААААААААААААААмый линнный текст на свете<\b>", "clusterCaption": "Еще одна метка 1", "hintContent": "Текст подсказки"}},
         {"type": "Feature", "id": 1, "geometry": {"type": "Point", "coordinates": [55.763338, 37.565466]}, "properties": {"balloonContent": "Содержимое балуна 1", "clusterCaption": "Еще одна метка 2", "hintContent": "Текст подсказки"}},
         {"type": "Feature", "id": 2, "geometry": {"type": "Point", "coordinates": [55.763338, 37.565466]}, "properties": {"balloonContent": "Содержимое балуна 2", "clusterCaption": "Еще одна метка 3", "hintContent": "Текст подсказки"}},
         {"type": "Feature", "id": 3, "geometry": {"type": "Point", "coordinates": [55.744522, 37.616378]}, "properties": {"balloonContent": "Содержимое балуна 3", "clusterCaption": "Еще одна метка 4", "hintContent": "Текст подсказки"}},
